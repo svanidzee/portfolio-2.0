@@ -1,4 +1,5 @@
 import { client } from '../lib/graphcms';
+import Highlight from '../components/highlight';
 
 async function getServerSideProps() {
   const { page } = await client.query({
@@ -28,5 +29,5 @@ async function getServerSideProps() {
 
 export default async function Home() {
   const repo = await getServerSideProps();
-  return <div>{repo?.aboutContent}</div>;
+  return <Highlight />;
 }
