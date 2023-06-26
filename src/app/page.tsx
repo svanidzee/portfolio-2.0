@@ -1,29 +1,32 @@
-import { getHomePage } from '../lib/graphql';
+import { client } from '../lib/graphcms';
 
-type Repo = {
-  aboutContent: string;
-  aboutTitle: string;
-  hobbies: string;
-  hobbiesTitle: string;
-  id: string;
-  myName: string;
-  myposition: string;
-  name: string;
-  slug: string;
-  stack: string[];
-  toolsContent: string;
-  toolsTitle: string;
-  __typename: string;
-};
-
-async function getServerSideProps(): Promise<Repo> {
-  const res = await getHomePage();
-  // console.log(res);
-  return res;
+async function getServerSideProps() {
+  const { page } = await client.query({
+    page: {
+      __args: {
+        where: { slug: 'home' },
+        stage: 'PUBLISHED',
+        locales: ['en'],
+      },
+      name: true,
+      aboutTitle: true,
+      aboutContent: true,
+      hobbiesTitle: true,
+      hobbies: true,
+      id: true,
+      myName: true,
+      myposition: true,
+      slug: true,
+      toolsTitle: true,
+      toolsContent: true,
+      stack: true,
+    },
+  });
+  console.log(page);
+  return page;
 }
 
 export default async function Home() {
   const repo = await getServerSideProps();
-  console.log(repo);
-  return <div>{repo.aboutContent}</div>;
+  return <div>{repo?.aboutContent}</div>;
 }
