@@ -1,4 +1,4 @@
-import { getHomePage } from '../lib/graphql';
+import { getHomePage } from '../../lib/graphql';
 
 type Repo = {
   aboutContent: string;

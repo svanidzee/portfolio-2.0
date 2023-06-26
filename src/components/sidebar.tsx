@@ -49,11 +49,15 @@ const SidebarContent = ({ ...rest }: BoxProps) => {
       bg={useColorModeValue('white', 'gray.900')}
       borderRight='1px'
       borderRightColor={useColorModeValue('gray.200', 'gray.700')}
-      w={{ base: 'full', md: 60 }}
-      // pos='fixed'
-      // h='full'
+      w='50'
+      pos='fixed'
+      top='40'
+      right='40'
+      h='300'
+      // mx='40'
+      // my='50'
       {...rest}>
-      <Flex h='20' flexDirection='column' mx='20' my='20'>
+      <Flex h='20' flexDirection='column'>
         {LinkItems.map((link) => (
           <NavItem key={link.name} icon={link.icon}>
             {link.name}
