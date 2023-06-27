@@ -1,29 +1,48 @@
-import { FC } from 'react';
+import Worklist from '../../components/worklist';
 
-const data1 = [
-  {
-    bg: [
-      {
-        height: 731,
-        id: 'clabg3v5b1r110aurr52ey81k',
-        size: 115154,
-        url: 'https://media.graphassets.com/acYKOTq4RUCwhTBtpFBv',
-        width: 1557,
-        __typename: 'Asset',
+import { client } from '../../lib/graphcms';
+
+async function getServerSideProps() {
+  const { work } = await client.query({
+    // works: {
+    //   __args: {
+    //     where: { slug: 'portfolio' },
+    //     stage: 'PUBLISHED',
+    //     locales: ['en'],
+    //   },
+    //   name: true,
+    //   description: true,
+    // },
+    work: {
+      __args: {
+        // where: { slug: 'portfolio' },
+        stage: 'PUBLISHED',
+        locales: ['en'],
       },
-    ],
-    description: ' My personal portfolio built with Next.js, Chakra UI and GraphCMS',
-    githubUrl: 'https://github.com/svanidzee/nextjs-chakra-portfolio',
-    __typename: 'Works',
-    id: 'cla409fuh6mjj0btgrgh060eo',
-    name: 'Portfolio',
-    slug: 'portfolio',
-    stack: ['Next.js', 'Chakra-UI', 'GraphCMS'],
-  },
-];
+      // stack: true,
+      name: true,
+      // githubUrl: true,
+      description: true,
+    },
+  });
 
-const page: FC<IpageProps> = ({}) => {
-  return <div>page</div>;
-};
+  // console.log(work);
+  return work;
+}
 
-export default page;
+export default async function Page() {
+  const work = await getServerSideProps();
+  console.log(work);
+  return (
+    <div>
+      {work.map((w) => (
+        <Worklist key={w.name} {...w} />
+      ))}
+      {/* <Worklist works={works} />
+      <Worklist works={works} /> */}
+      {/* <Worklist />
+      <Worklist />
+      <Worklist /> */}
+    </div>
+  );
+}

@@ -10,24 +10,27 @@ async function getServerSideProps() {
         locales: ['en'],
       },
       name: true,
-      aboutTitle: true,
-      aboutContent: true,
-      hobbiesTitle: true,
-      hobbies: true,
-      id: true,
-      myName: true,
-      myposition: true,
-      slug: true,
-      toolsTitle: true,
-      toolsContent: true,
-      stack: true,
+      // aboutTitle: true,
+      // aboutContent: true,
+      // hobbiesTitle: true,
+      // hobbies: true,
+      // id: true,
+      // myName: true,
+      // myposition: true,
+      // slug: true,
+      // toolsTitle: true,
+      // toolsContent: true,
+      // stack: true,
     },
   });
-  console.log(page);
+  // console.log(page);
   return page;
 }
 
 export default async function Home() {
-  const repo = await getServerSideProps();
-  return <Highlight />;
+  const page = await getServerSideProps();
+  // console.log(repo);
+
+  // return <div>1</div>;
+  return <Highlight page={page} />;
 }
