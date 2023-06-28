@@ -29,6 +29,11 @@ const Text = defineStyleConfig({
       fontWeight: '400',
       ml: '138px',
     },
+    footer: {
+      fontSize: '10',
+      fontWeight: '700',
+      color: 'red',
+    },
   },
   // The default variant value
   // defaultProps: {
