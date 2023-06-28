@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "codegen": "graphql-codegen --watch"
+    "generate": "genql --endpoint https://api-eu-central-1.hygraph.com/v2/cl7oxpeax3pg801uhhojx4bgb/master --output ./generated"
   },
   "dependencies": {
     "@apollo/client": "^3.7.16",
