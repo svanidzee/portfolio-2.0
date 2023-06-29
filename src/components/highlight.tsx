@@ -3,15 +3,16 @@
 import { Heading, Box, useHighlight, Mark } from '@chakra-ui/react';
 
 import { roboto, aboreto, kablammo, press_start, nosifer } from '../lib/fonts';
-import { Page } from '../../generated/schema';
+// import { Page } from '../generated/schema';
 
-type PickProps = Pick<Page, 'name'>;
+// type PickProps = Pick<Page, 'name'>;
 
-interface HighlightProps {
-  page: PickProps | null;
-}
+// interface HighlightProps {
+//   page: PickProps | null;
+// }
 
-const Highlight = ({ page }: HighlightProps) => {
+// const Highlight = ({ page }: HighlightProps) => {
+const Highlight = () => {
   const chunks = useHighlight({
     text: 'Hello, I am a Irakli, passionate about making useful, solid and usable projects. My background includes working with both Frontend and Backend technologies, giving me a diverse range of experience and skills. There are a lot of things and technologies i had not yet learned and I am motivated to learn as much aspossible',
     query: ['Irakli', 'background', 'technologies', 'learned'],

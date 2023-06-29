@@ -1,4 +1,5 @@
 'use client';
+import { archivo } from '../lib/fonts';
 import { Flex, VStack, Text } from '@chakra-ui/react';
 
 interface ItemsProp {
@@ -39,11 +40,20 @@ const Footer = () => {
       justifyContent='space-between'
       // width='full'
       // height='max-content'
-      marginTop='auto'
+      // marginTop='auto'
       // borderTopWidth={2}
-      bg='#ffffff'
-      padding={8}>
-      <Text color='#000000'>{header}</Text>
+      bg='#000'
+      padding={3}>
+      <Text
+        className={archivo.className}
+        color='#fff'
+        fontSize='44'
+        fontWeight='500'
+        // lineHeight='29px'
+        // letterSpacing='tight'
+      >
+        {header}
+      </Text>
 
       {/* <Container> */}
       <VStack
@@ -55,7 +65,13 @@ const Footer = () => {
         // justifyContent='center'
       >
         {items.map((item) => (
-          <Text color='red' key='ss'>
+          <Text
+            key='ss'
+            className={archivo.className}
+            color='#fff'
+            fontSize='36'
+            fontWeight='400'
+            lineHeight='29px'>
             {item.label}
           </Text>
         ))}

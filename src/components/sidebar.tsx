@@ -15,6 +15,7 @@ import {
   useDisclosure,
   BoxProps,
   FlexProps,
+  Container,
 } from '@chakra-ui/react';
 import { FiHome, FiTrendingUp, FiCompass, FiStar, FiSettings, FiMenu } from 'react-icons/fi';
 import { IconType } from 'react-icons';
@@ -36,70 +37,53 @@ const LinkItems: Array<LinkItemProps> = [
 // export default function SimpleSidebar({ children }: { children: ReactNode }) {
 export default function SimpleSidebar() {
   return (
-    // <Box bg={useColorModeValue('gray.100', 'gray.900')}>
-    <Box>
-      <SidebarContent />
-    </Box>
-  );
-}
-
-const SidebarContent = ({ ...rest }: BoxProps) => {
-  return (
     <Box
-      bg={useColorModeValue('white', 'gray.900')}
-      borderRight='1px'
-      borderRightColor={useColorModeValue('gray.200', 'gray.700')}
-      w='50'
-      pos='fixed'
-      top='40'
-      right='40'
-      h='300'
-      // mx='40'
-      // my='50'
-      {...rest}>
-      <Flex h='20' flexDirection='column'>
-        {LinkItems.map((link) => (
-          <NavItem key={link.name} icon={link.icon}>
-            {link.name}
-          </NavItem>
-        ))}
-      </Flex>
+      as='header'
+      aria-label='Main navigation'
+      position='fixed'
+      w='100%'
+      css={{ backdropFilter: 'blur(10px)' }}
+      zIndex={1}
+      // {...props}
+    >
+      <Box display='flex' justifyContent='space-between' w='full'>
+        <Text
+          // mt='30px'
+          px='5'
+          fontSize='70px'
+          fontWeight='700'
+          lineHeight='80px'
+          letterSpacing='-1.6px'
+          textTransform='capitalize'
+          sx={{ wordSpacing: '0' }}
+          color='#000'>
+          Irakli Svanidze
+        </Text>
+        <Text
+          // mt='30px'
+          // p='10'
+          fontSize='70px'
+          fontWeight='700'
+          lineHeight='80px'
+          letterSpacing='-1.6px'
+          textTransform='capitalize'
+          sx={{ wordSpacing: '0' }}
+          color='#000'>
+          About
+        </Text>
+        <Text
+          // mt='30px'
+          px='5'
+          fontSize='70px'
+          fontWeight='700'
+          lineHeight='80px'
+          letterSpacing='-1.6px'
+          textTransform='capitalize'
+          sx={{ wordSpacing: '0' }}
+          color='#000'>
+          Works
+        </Text>
+      </Box>
     </Box>
   );
-};
-
-interface NavItemProps extends FlexProps {
-  icon: IconType;
-  children: ReactText;
 }
-
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
-  return (
-    <Link href='#' style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
-      <Flex
-        align='center'
-        p='4'
-        mx='4'
-        borderRadius='lg'
-        role='group'
-        cursor='pointer'
-        // _hover={{
-        //   bg: 'cyan.400',
-        //   color: 'white',
-        // }}
-        {...rest}>
-        {icon && (
-          <Icon
-            mr='4'
-            fontSize='16'
-            _groupHover={{
-              color: 'white',
-            }}
-            as={icon}
-          />
-        )}
-        {children}
-      </Flex>
-    </Link>
-  );
-};

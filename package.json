@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate": "genql --endpoint https://api-eu-central-1.hygraph.com/v2/cl7oxpeax3pg801uhhojx4bgb/master --output ./generated"
+    "generate": "genql --endpoint https://api-eu-central-1.hygraph.com/v2/cl7oxpeax3pg801uhhojx4bgb/master --output ./src/generated"
   },
   "dependencies": {
     "@apollo/client": "^3.7.16",

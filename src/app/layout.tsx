@@ -8,9 +8,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <body>
         <Providers>
-          {/* <SimpleSidebar /> */}
-          <main className={archivo.className}>{children}</main>
-          <Footer />
+          <SimpleSidebar />
+          {/* <main className={archivo.className}>{children}</main> */}
+          {/* <Footer /> */}
         </Providers>
       </body>
     </html>
