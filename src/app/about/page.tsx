@@ -25,7 +25,7 @@ async function getServerSideProps() {
 
 export default async function Page() {
   const about_page = await getServerSideProps();
-  console.log(about_page);
+  // console.log(about_page);
   const [{ toolsTitle, stack, content1, content2, hobbies }] = about_page;
   return (
     <div>

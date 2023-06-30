@@ -1,5 +1,7 @@
 import { client } from '../lib/graphcms';
 import Highlight from '../components/highlight';
+import Projectlist from '../components/projectlist';
+import HomeNav from '../components/homeNav';
 
 // async function getServerSideProps() {
 //   const { page } = await client.query({
@@ -30,8 +32,9 @@ import Highlight from '../components/highlight';
 export default async function Home() {
   // const page = await getServerSideProps();
   // console.log(repo);
-
   // return <div>1</div>;
   // return <Highlight page={page} />;
-  return <Highlight />;
+  // return <Highlight />;
+  // return <Projectlist text='animated text with framer-motion' />;
+  return <HomeNav />;
 }
