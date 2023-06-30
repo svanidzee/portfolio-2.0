@@ -31,7 +31,8 @@
 
 'use client';
 
-import { Flex, Text } from '@chakra-ui/react';
+import { archivo } from '../lib/fonts';
+import { Box, Heading, Wrap, WrapItem, useStyleConfig } from '@chakra-ui/react';
 
 type StacksProps = {
   title: string;
@@ -39,41 +40,24 @@ type StacksProps = {
 };
 
 const Stacks = (props: StacksProps) => {
+  const styles = useStyleConfig('WrapItem', { variant: 'base' });
+
   return (
-    <Flex
-      flexDir='column'
-      justifyContent='space-between'
-      style={{ background: '#fff', color: '#000' }}
-      background='#fff'
-      color='#000'>
-      <Text
-        // mt='30px'
-        // p='10'
-        fontSize='70px'
-        fontWeight='700'
-        lineHeight='80px'
-        letterSpacing='-1.6px'
-        textTransform='capitalize'
-        sx={{ wordSpacing: '0' }}>
-        {props.title}
-      </Text>
-      <div>
+    <Box as='section' py='vGutter'>
+      <Box marginBottom='16'>
+        <Heading className={archivo.className} variant='base'>
+          Tools &amp; Softwares
+        </Heading>
+      </Box>
+
+      <Wrap spacing='10'>
         {props.data.map((s) => (
-          <Text
-            // mt='30px'
-            key={s}
-            px='10'
-            fontSize='50px'
-            fontWeight='700'
-            lineHeight='80px'
-            letterSpacing='-1.6px'
-            textTransform='capitalize'
-            sx={{ wordSpacing: '0' }}>
+          <WrapItem key={s} __css={styles}>
             {s}
-          </Text>
+          </WrapItem>
         ))}
-      </div>
-    </Flex>
+      </Wrap>
+    </Box>
   );
 };
 

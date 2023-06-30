@@ -35,16 +35,60 @@ const Text = defineStyleConfig({
       // color: 'red',
     },
     navigation: {
-      // fontSize: '10',
-      // fontWeight: '700',
       px: '10',
       fontSize: '50',
       fontWeight: '700',
       // lineHeight: '80',
       letterSpacing: '-1.6px',
       textTransform: 'capitalize',
-      // sx:{{ wordSpacing: '0' }},
       color: '#000',
+    },
+    content: {
+      p: '10',
+      fontSize: '70px',
+      fontWeight: '700',
+      lineHeight: '80px',
+      letterSpacing: '-1.6px',
+      textTransform: 'capitalize',
+    },
+    hobbies: {
+      p: '10',
+      fontSize: '70px',
+      fontWeight: '700',
+      lineHeight: '80px',
+      letterSpacing: '-1.6px',
+      textTransform: 'capitalize',
+    },
+    stack: {
+      paddingX: '10',
+      fontSize: '50px',
+      fontWeight: '700',
+      lineHeight: '80px',
+      letterSpacing: '-1.6px',
+      textTransform: 'capitalize',
+    },
+  },
+  // The default variant value
+  // defaultProps: {
+  //   variant: "",
+  // },
+});
+
+const Heading = defineStyleConfig({
+  // The styles all Cards have in common
+  baseStyle: {
+    textTransform: 'uppercase',
+    textDecoration: 'none',
+  },
+  // Two variants: rounded and smooth
+  variants: {
+    base: {
+      paddingX: '10',
+      fontSize: '50px',
+      fontWeight: '700',
+      lineHeight: '80px',
+      letterSpacing: '-1.6px',
+      textTransform: 'capitalize',
     },
   },
   // The default variant value
@@ -55,10 +99,10 @@ const Text = defineStyleConfig({
 
 const Box = defineStyleConfig({
   // The styles all Cards have in common
-  baseStyle: {
-    textTransform: 'uppercase',
-    textDecoration: 'none',
-  },
+  // baseStyle: {
+  //   textTransform: 'uppercase',
+  //   textDecoration: 'none',
+  // },
   // Two variants: rounded and smooth
   variants: {
     // woks_name: {
@@ -91,6 +135,39 @@ const Box = defineStyleConfig({
   // },
 });
 
+const WrapItem = defineStyleConfig({
+  // The styles all Cards have in common
+  // baseStyle: {
+  //   textTransform: 'uppercase',
+  //   textDecoration: 'none',
+  // },
+  // Two variants: rounded and smooth
+  variants: {
+    // woks_name: {
+    //   fontSize: '64',
+    //   fontWeight: '600',
+    // },
+    // works_desc: {
+    //   fontSize: '15',
+    //   fontWeight: '400',
+    //   ml: '138px',
+    // },
+    // footer: {
+    //   fontSize: '10',
+    //   fontWeight: '700',
+    //   // color: 'red',
+    // },
+    base: {
+      paddingX: '10',
+      fontSize: '50px',
+      fontWeight: '700',
+      lineHeight: '80px',
+      letterSpacing: '-1.6px',
+      textTransform: 'capitalize',
+    },
+  },
+});
+
 const theme = extendTheme({
   styles: {
     global: {
@@ -104,6 +181,8 @@ const theme = extendTheme({
     Divider: dividerTheme,
     Text,
     Box,
+    Heading,
+    WrapItem,
   },
 });
 

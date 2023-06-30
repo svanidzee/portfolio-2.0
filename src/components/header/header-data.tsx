@@ -1,4 +1,4 @@
-export const footerData = [
+export const headerData = [
   {
     path: '/',
     label: 'IS',
