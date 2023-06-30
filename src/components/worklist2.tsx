@@ -14,7 +14,7 @@ import LinkItem from './linkitem';
 type PickProps = Pick<Works, 'description' | 'githubUrl' | 'name' | 'stack'>;
 
 const Worklist2 = (props: PickProps) => {
-  console.log(props);
+  // console.log(props);
   return (
     <>
       <Flex

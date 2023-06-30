@@ -27,7 +27,7 @@ async function getServerSideProps() {
 
 export default async function Page() {
   const work = await getServerSideProps();
-  console.log(work);
+  // console.log(work);
   return (
     <div style={{ background: '#fff', color: '#000' }}>
       {work.map(({ id, ...rest }) => (

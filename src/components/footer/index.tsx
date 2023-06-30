@@ -4,9 +4,16 @@ import { Flex, VStack, Text, Heading } from '@chakra-ui/react';
 
 import { archivo } from '../../lib/fonts';
 import { footerData } from './footer-data';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
   const [{ header, items }] = footerData;
+  const pathname = usePathname();
+
+  if (pathname === '/') {
+    return null;
+  }
+
   return (
     <Flex
       className={archivo.className}

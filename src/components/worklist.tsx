@@ -27,7 +27,7 @@ type PickProps = Pick<Works, 'description' | 'githubUrl' | 'name' | 'stack'>;
 // type WorklistProps = Array<Works>
 
 const Worklist = (props: PickProps) => {
-  console.log(props);
+  // console.log(props);
   return (
     <>
       <Flex flexDirection='row' justifyContent='space-around' alignItems='center'>
