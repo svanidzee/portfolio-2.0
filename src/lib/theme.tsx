@@ -30,9 +30,13 @@ const Text = defineStyleConfig({
       ml: '138px',
     },
     footer: {
-      fontSize: '10',
+      paddingX: '10',
+      fontSize: '50px',
       fontWeight: '700',
-      // color: 'red',
+      lineHeight: '80px',
+      letterSpacing: '-1.6px',
+      textTransform: 'capitalize',
+      color: 'white',
     },
     navigation: {
       px: '10',
