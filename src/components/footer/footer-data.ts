@@ -4,17 +4,17 @@ export const footerData = [
     items: [
       {
         id: 1,
-        path: '/',
+        path: '#',
         label: 'ISVANIDZE12@GMAIL.COM',
       },
       {
         id: 2,
-        path: '/',
+        path: 'https://www.linkedin.com/in/svanidzeee',
         label: 'LINKEDIN',
       },
       {
         id: 3,
-        path: '/',
+        path: 'https://github.com/svanidzee',
         label: 'GITHUB',
       },
     ],

@@ -7,14 +7,13 @@ import { Icon } from '@chakra-ui/react';
 import { RiArrowRightUpLine } from 'react-icons/ri';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import { Works } from '../generated/schema';
-import Tex from '../components/text';
+import Tex from './text';
 import { FiArrowUpRight } from 'react-icons/fi';
 import LinkItem from './linkitem';
 
 type PickProps = Pick<Works, 'description' | 'githubUrl' | 'name' | 'stack'>;
 
-const Worklist2 = (props: PickProps) => {
-  // console.log(props);
+const Projects = (props: PickProps) => {
   return (
     <>
       <Flex
@@ -78,4 +77,4 @@ const Worklist2 = (props: PickProps) => {
   );
 };
 
-export default Worklist2;
+export default Projects;

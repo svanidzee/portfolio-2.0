@@ -27,12 +27,12 @@ type About implements Node {
 
   """The unique identifier"""
   id: ID!
-  content1: String
-  content2: String
-  toolsTitle: String
+  content1: String!
+  content2: String!
+  toolsTitle: String!
   slug: String
   stack: [String!]!
-  hobbies: String
+  hobbies: String!
 
   """User that last published this document"""
   publishedBy(
@@ -166,12 +166,12 @@ type AboutConnection {
 input AboutCreateInput {
   updatedAt: DateTime
   createdAt: DateTime
-  content1: String
-  content2: String
-  toolsTitle: String
+  content1: String!
+  content2: String!
+  toolsTitle: String!
   slug: String
-  stack: [String!]
-  hobbies: String
+  stack: [String!]!
+  hobbies: String!
 }
 
 input AboutCreateManyInlineInput {
@@ -5132,12 +5132,11 @@ type Works implements Node {
 
   """The unique identifier"""
   id: ID!
-  works: String
   slug: String
   stack: [String!]!
-  description: String
-  name: String
-  githubUrl: String
+  description: String!
+  name: String!
+  githubUrl: String!
 
   """User that last published this document"""
   publishedBy(
@@ -5300,12 +5299,11 @@ type WorksConnection {
 input WorksCreateInput {
   updatedAt: DateTime
   createdAt: DateTime
-  works: String
   slug: String
-  stack: [String!]
-  description: String
-  name: String
-  githubUrl: String
+  stack: [String!]!
+  description: String!
+  name: String!
+  githubUrl: String!
   bg: AssetCreateManyInlineInput
 }
 
@@ -5444,34 +5442,6 @@ input WorksManyWhereInput {
 
   """All values not ending with the given string"""
   id_not_ends_with: ID
-  works: String
-
-  """Any other value that exists and is not equal to the given value."""
-  works_not: String
-
-  """All values that are contained in given list."""
-  works_in: [String]
-
-  """All values that are not contained in given list."""
-  works_not_in: [String]
-
-  """All values containing the given string."""
-  works_contains: String
-
-  """All values not containing the given string."""
-  works_not_contains: String
-
-  """All values starting with the given string."""
-  works_starts_with: String
-
-  """All values not starting with the given string."""
-  works_not_starts_with: String
-
-  """All values ending with the given string."""
-  works_ends_with: String
-
-  """All values not ending with the given string"""
-  works_not_ends_with: String
   slug: String
 
   """Any other value that exists and is not equal to the given value."""
@@ -5627,8 +5597,6 @@ enum WorksOrderByInput {
   createdAt_DESC
   id_ASC
   id_DESC
-  works_ASC
-  works_DESC
   slug_ASC
   slug_DESC
   stack_ASC
@@ -5642,7 +5610,6 @@ enum WorksOrderByInput {
 }
 
 input WorksUpdateInput {
-  works: String
   slug: String
   stack: [String!]
   description: String
@@ -5677,7 +5644,6 @@ input WorksUpdateManyInlineInput {
 }
 
 input WorksUpdateManyInput {
-  works: String
   stack: [String!]
   description: String
   name: String
@@ -5856,34 +5822,6 @@ input WorksWhereInput {
 
   """All values not ending with the given string"""
   id_not_ends_with: ID
-  works: String
-
-  """Any other value that exists and is not equal to the given value."""
-  works_not: String
-
-  """All values that are contained in given list."""
-  works_in: [String]
-
-  """All values that are not contained in given list."""
-  works_not_in: [String]
-
-  """All values containing the given string."""
-  works_contains: String
-
-  """All values not containing the given string."""
-  works_not_contains: String
-
-  """All values starting with the given string."""
-  works_starts_with: String
-
-  """All values not starting with the given string."""
-  works_not_starts_with: String
-
-  """All values ending with the given string."""
-  works_ends_with: String
-
-  """All values not ending with the given string"""
-  works_not_ends_with: String
   slug: String
 
   """Any other value that exists and is not equal to the given value."""

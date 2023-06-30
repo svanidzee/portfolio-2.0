@@ -39,7 +39,7 @@ type StacksProps = {
   data: string[];
 };
 
-const Stacks = (props: StacksProps) => {
+const Stack = (props: StacksProps) => {
   const styles = useStyleConfig('WrapItem', { variant: 'base' });
 
   return (
@@ -61,4 +61,4 @@ const Stacks = (props: StacksProps) => {
   );
 };
 
-export default Stacks;
+export default Stack;

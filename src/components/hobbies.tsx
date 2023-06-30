@@ -2,9 +2,11 @@
 
 import { Box, Text } from '@chakra-ui/react';
 
-type PickProps = Record<string, string>;
+type HobbiesProps = {
+  hobbies: string;
+};
 
-const Hobbies = (props: PickProps) => {
+const Hobbies = (props: HobbiesProps) => {
   return (
     <Box bg='black' color='white'>
       <Text variant='hobbies'>{props.hobbies}</Text>

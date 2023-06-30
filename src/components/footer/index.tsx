@@ -1,6 +1,7 @@
 'use client';
 
-import { Flex, VStack, Text, Heading } from '@chakra-ui/react';
+import { Flex, VStack, Text, Heading, Box } from '@chakra-ui/react';
+import NextLink from 'next/link';
 
 import { archivo } from '../../lib/fonts';
 import { footerData } from './footer-data';
@@ -26,16 +27,26 @@ const Footer = () => {
 
       <VStack
         as='footer'
+        display='flex'
         // width='full'
         height='300px'
         // spacing={4}
-        // alignItems='center'
-        // justifyContent='center'
+        alignItems='flex-end'
+        // justifyContent="flex-end"
       >
-        {items.map((item) => (
-          <Text variant='footer' key={item.id}>
-            {item.label}
-          </Text>
+        {items.map(({ path, label, id }) => (
+          <Box
+            key={label}
+            as={NextLink}
+            href={path}
+            prefetch={false}
+            rel='noopener noreferrer'
+            target='_blank'
+            className={archivo.className}>
+            <Text variant='footer' key={id}>
+              {label}
+            </Text>
+          </Box>
         ))}
       </VStack>
     </Flex>

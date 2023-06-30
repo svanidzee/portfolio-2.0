@@ -6119,9 +6119,6 @@ export default {
             "id": [
                 67
             ],
-            "works": [
-                123
-            ],
             "slug": [
                 123
             ],
@@ -6287,9 +6284,6 @@ export default {
             ],
             "createdAt": [
                 60
-            ],
-            "works": [
-                123
             ],
             "slug": [
                 123
@@ -6470,36 +6464,6 @@ export default {
             "id_not_ends_with": [
                 67
             ],
-            "works": [
-                123
-            ],
-            "works_not": [
-                123
-            ],
-            "works_in": [
-                123
-            ],
-            "works_not_in": [
-                123
-            ],
-            "works_contains": [
-                123
-            ],
-            "works_not_contains": [
-                123
-            ],
-            "works_starts_with": [
-                123
-            ],
-            "works_not_starts_with": [
-                123
-            ],
-            "works_ends_with": [
-                123
-            ],
-            "works_not_ends_with": [
-                123
-            ],
             "slug": [
                 123
             ],
@@ -6668,9 +6632,6 @@ export default {
         },
         "WorksOrderByInput": {},
         "WorksUpdateInput": {
-            "works": [
-                123
-            ],
             "slug": [
                 123
             ],
@@ -6720,9 +6681,6 @@ export default {
             ]
         },
         "WorksUpdateManyInput": {
-            "works": [
-                123
-            ],
             "stack": [
                 123
             ],
@@ -6937,36 +6895,6 @@ export default {
             ],
             "id_not_ends_with": [
                 67
-            ],
-            "works": [
-                123
-            ],
-            "works_not": [
-                123
-            ],
-            "works_in": [
-                123
-            ],
-            "works_not_in": [
-                123
-            ],
-            "works_contains": [
-                123
-            ],
-            "works_not_contains": [
-                123
-            ],
-            "works_starts_with": [
-                123
-            ],
-            "works_not_starts_with": [
-                123
-            ],
-            "works_ends_with": [
-                123
-            ],
-            "works_not_ends_with": [
-                123
             ],
             "slug": [
                 123

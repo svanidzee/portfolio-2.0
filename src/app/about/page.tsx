@@ -1,8 +1,7 @@
-// import Stacks from '../../components/stacks';
 import Hobbies from '../../components/hobbies';
 import { client } from '../../lib/graphcms';
 import Info from '../../components/info';
-import Stacks from '../../components/stacks';
+import Stack from '../../components/stack';
 
 async function getServerSideProps() {
   const { about_page } = await client.query({
@@ -26,11 +25,12 @@ async function getServerSideProps() {
 export default async function Page() {
   const about_page = await getServerSideProps();
   const [{ toolsTitle, stack, content1, content2, hobbies }] = about_page;
+
   return (
     <div>
-      <Info content1={content1 as string} content2={content2 as string} />
-      <Hobbies hobbies={hobbies as string} />
-      <Stacks title={toolsTitle as string} data={stack} />
+      <Info content1={content1} content2={content2} />
+      <Hobbies hobbies={hobbies} />
+      <Stack title={toolsTitle} data={stack} />
     </div>
   );
 }

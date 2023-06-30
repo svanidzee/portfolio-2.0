@@ -32,12 +32,12 @@ export interface About {
     createdAt: Scalars['DateTime']
     /** The unique identifier */
     id: Scalars['ID']
-    content1: (Scalars['String'] | null)
-    content2: (Scalars['String'] | null)
-    toolsTitle: (Scalars['String'] | null)
+    content1: Scalars['String']
+    content2: Scalars['String']
+    toolsTitle: Scalars['String']
     slug: (Scalars['String'] | null)
     stack: Scalars['String'][]
-    hobbies: (Scalars['String'] | null)
+    hobbies: Scalars['String']
     /** User that last published this document */
     publishedBy: (User | null)
     /** User that last updated this document */
@@ -638,12 +638,11 @@ export interface Works {
     createdAt: Scalars['DateTime']
     /** The unique identifier */
     id: Scalars['ID']
-    works: (Scalars['String'] | null)
     slug: (Scalars['String'] | null)
     stack: Scalars['String'][]
-    description: (Scalars['String'] | null)
-    name: (Scalars['String'] | null)
-    githubUrl: (Scalars['String'] | null)
+    description: Scalars['String']
+    name: Scalars['String']
+    githubUrl: Scalars['String']
     /** User that last published this document */
     publishedBy: (User | null)
     /** User that last updated this document */
@@ -678,7 +677,7 @@ export interface WorksEdge {
     __typename: 'WorksEdge'
 }
 
-export type WorksOrderByInput = 'publishedAt_ASC' | 'publishedAt_DESC' | 'updatedAt_ASC' | 'updatedAt_DESC' | 'createdAt_ASC' | 'createdAt_DESC' | 'id_ASC' | 'id_DESC' | 'works_ASC' | 'works_DESC' | 'slug_ASC' | 'slug_DESC' | 'stack_ASC' | 'stack_DESC' | 'description_ASC' | 'description_DESC' | 'name_ASC' | 'name_DESC' | 'githubUrl_ASC' | 'githubUrl_DESC'
+export type WorksOrderByInput = 'publishedAt_ASC' | 'publishedAt_DESC' | 'updatedAt_ASC' | 'updatedAt_DESC' | 'createdAt_ASC' | 'createdAt_DESC' | 'id_ASC' | 'id_DESC' | 'slug_ASC' | 'slug_DESC' | 'stack_ASC' | 'stack_DESC' | 'description_ASC' | 'description_DESC' | 'name_ASC' | 'name_DESC' | 'githubUrl_ASC' | 'githubUrl_DESC'
 
 export type _FilterKind = 'search' | 'AND' | 'OR' | 'NOT' | 'eq' | 'eq_not' | 'in' | 'not_in' | 'lt' | 'lte' | 'gt' | 'gte' | 'contains' | 'not_contains' | 'starts_with' | 'not_starts_with' | 'ends_with' | 'not_ends_with' | 'contains_all' | 'contains_some' | 'contains_none' | 'relational_single' | 'relational_every' | 'relational_some' | 'relational_none' | 'json_path_exists' | 'json_value_recursive' | 'union_empty' | 'union_single' | 'union_some' | 'union_every' | 'union_none'
 
@@ -826,7 +825,7 @@ export interface AboutConnectionGenqlSelection{
     __scalar?: boolean | number
 }
 
-export interface AboutCreateInput {updatedAt?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),content1?: (Scalars['String'] | null),content2?: (Scalars['String'] | null),toolsTitle?: (Scalars['String'] | null),slug?: (Scalars['String'] | null),stack?: (Scalars['String'][] | null),hobbies?: (Scalars['String'] | null)}
+export interface AboutCreateInput {updatedAt?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),content1?: Scalars['String'],content2?: Scalars['String'],toolsTitle?: Scalars['String'],slug?: (Scalars['String'] | null),stack?: Scalars['String'][],hobbies?: Scalars['String']}
 
 export interface AboutCreateManyInlineInput {
 /** Create and connect multiple existing About documents */
@@ -3960,7 +3959,6 @@ export interface WorksGenqlSelection{
     createdAt?: boolean | number
     /** The unique identifier */
     id?: boolean | number
-    works?: boolean | number
     slug?: boolean | number
     stack?: boolean | number
     description?: boolean | number
@@ -4090,7 +4088,7 @@ export interface WorksConnectionGenqlSelection{
     __scalar?: boolean | number
 }
 
-export interface WorksCreateInput {updatedAt?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),works?: (Scalars['String'] | null),slug?: (Scalars['String'] | null),stack?: (Scalars['String'][] | null),description?: (Scalars['String'] | null),name?: (Scalars['String'] | null),githubUrl?: (Scalars['String'] | null),bg?: (AssetCreateManyInlineInput | null)}
+export interface WorksCreateInput {updatedAt?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),slug?: (Scalars['String'] | null),stack?: Scalars['String'][],description?: Scalars['String'],name?: Scalars['String'],githubUrl?: Scalars['String'],bg?: (AssetCreateManyInlineInput | null)}
 
 export interface WorksCreateManyInlineInput {
 /** Create and connect multiple existing Works documents */
@@ -4185,25 +4183,7 @@ id_not_starts_with?: (Scalars['ID'] | null),
 /** All values ending with the given string. */
 id_ends_with?: (Scalars['ID'] | null),
 /** All values not ending with the given string */
-id_not_ends_with?: (Scalars['ID'] | null),works?: (Scalars['String'] | null),
-/** Any other value that exists and is not equal to the given value. */
-works_not?: (Scalars['String'] | null),
-/** All values that are contained in given list. */
-works_in?: ((Scalars['String'] | null)[] | null),
-/** All values that are not contained in given list. */
-works_not_in?: ((Scalars['String'] | null)[] | null),
-/** All values containing the given string. */
-works_contains?: (Scalars['String'] | null),
-/** All values not containing the given string. */
-works_not_contains?: (Scalars['String'] | null),
-/** All values starting with the given string. */
-works_starts_with?: (Scalars['String'] | null),
-/** All values not starting with the given string. */
-works_not_starts_with?: (Scalars['String'] | null),
-/** All values ending with the given string. */
-works_ends_with?: (Scalars['String'] | null),
-/** All values not ending with the given string */
-works_not_ends_with?: (Scalars['String'] | null),slug?: (Scalars['String'] | null),
+id_not_ends_with?: (Scalars['ID'] | null),slug?: (Scalars['String'] | null),
 /** Any other value that exists and is not equal to the given value. */
 slug_not?: (Scalars['String'] | null),
 /** All values that are contained in given list. */
@@ -4287,7 +4267,7 @@ githubUrl_ends_with?: (Scalars['String'] | null),
 /** All values not ending with the given string */
 githubUrl_not_ends_with?: (Scalars['String'] | null),publishedBy?: (UserWhereInput | null),updatedBy?: (UserWhereInput | null),createdBy?: (UserWhereInput | null),bg_every?: (AssetWhereInput | null),bg_some?: (AssetWhereInput | null),bg_none?: (AssetWhereInput | null),scheduledIn_every?: (ScheduledOperationWhereInput | null),scheduledIn_some?: (ScheduledOperationWhereInput | null),scheduledIn_none?: (ScheduledOperationWhereInput | null)}
 
-export interface WorksUpdateInput {works?: (Scalars['String'] | null),slug?: (Scalars['String'] | null),stack?: (Scalars['String'][] | null),description?: (Scalars['String'] | null),name?: (Scalars['String'] | null),githubUrl?: (Scalars['String'] | null),bg?: (AssetUpdateManyInlineInput | null)}
+export interface WorksUpdateInput {slug?: (Scalars['String'] | null),stack?: (Scalars['String'][] | null),description?: (Scalars['String'] | null),name?: (Scalars['String'] | null),githubUrl?: (Scalars['String'] | null),bg?: (AssetUpdateManyInlineInput | null)}
 
 export interface WorksUpdateManyInlineInput {
 /** Create and connect multiple Works documents */
@@ -4305,7 +4285,7 @@ disconnect?: (WorksWhereUniqueInput[] | null),
 /** Delete multiple Works documents */
 delete?: (WorksWhereUniqueInput[] | null)}
 
-export interface WorksUpdateManyInput {works?: (Scalars['String'] | null),stack?: (Scalars['String'][] | null),description?: (Scalars['String'] | null),name?: (Scalars['String'] | null),githubUrl?: (Scalars['String'] | null)}
+export interface WorksUpdateManyInput {stack?: (Scalars['String'][] | null),description?: (Scalars['String'] | null),name?: (Scalars['String'] | null),githubUrl?: (Scalars['String'] | null)}
 
 export interface WorksUpdateManyWithNestedWhereInput {
 /** Document search */
@@ -4421,25 +4401,7 @@ id_not_starts_with?: (Scalars['ID'] | null),
 /** All values ending with the given string. */
 id_ends_with?: (Scalars['ID'] | null),
 /** All values not ending with the given string */
-id_not_ends_with?: (Scalars['ID'] | null),works?: (Scalars['String'] | null),
-/** Any other value that exists and is not equal to the given value. */
-works_not?: (Scalars['String'] | null),
-/** All values that are contained in given list. */
-works_in?: ((Scalars['String'] | null)[] | null),
-/** All values that are not contained in given list. */
-works_not_in?: ((Scalars['String'] | null)[] | null),
-/** All values containing the given string. */
-works_contains?: (Scalars['String'] | null),
-/** All values not containing the given string. */
-works_not_contains?: (Scalars['String'] | null),
-/** All values starting with the given string. */
-works_starts_with?: (Scalars['String'] | null),
-/** All values not starting with the given string. */
-works_not_starts_with?: (Scalars['String'] | null),
-/** All values ending with the given string. */
-works_ends_with?: (Scalars['String'] | null),
-/** All values not ending with the given string */
-works_not_ends_with?: (Scalars['String'] | null),slug?: (Scalars['String'] | null),
+id_not_ends_with?: (Scalars['ID'] | null),slug?: (Scalars['String'] | null),
 /** Any other value that exists and is not equal to the given value. */
 slug_not?: (Scalars['String'] | null),
 /** All values that are contained in given list. */
@@ -4968,8 +4930,6 @@ export const enumWorksOrderByInput = {
    createdAt_DESC: 'createdAt_DESC' as const,
    id_ASC: 'id_ASC' as const,
    id_DESC: 'id_DESC' as const,
-   works_ASC: 'works_ASC' as const,
-   works_DESC: 'works_DESC' as const,
    slug_ASC: 'slug_ASC' as const,
    slug_DESC: 'slug_DESC' as const,
    stack_ASC: 'stack_ASC' as const,
