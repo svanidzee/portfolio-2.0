@@ -1,19 +1,14 @@
 'use client';
 
-import { Box, Text } from '@chakra-ui/react';
+import Paragraph from './paragraph';
+import { Container } from '../components/container';
+import { Text } from '@chakra-ui/react';
+import Section from './layout/section';
 
-type InfoProps = {
-  content1: string;
-  content2: string;
-};
-
-const Info = (props: InfoProps) => {
+export const Info = ({ about }: { about: string }) => {
   return (
-    <Box bg='white' color='black'>
-      <Text variant='content'>{props.content1}</Text>
-      <Text variant='content'>{props.content2}</Text>
-    </Box>
+    <Section>
+      <Paragraph variant='secondary'>{about}</Paragraph>
+    </Section>
   );
 };
-
-export default Info;

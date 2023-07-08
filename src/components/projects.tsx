@@ -1,79 +1,101 @@
 'use client';
 
-import { FC } from 'react';
-import { Box, Divider, Flex, Grid, Tag, Wrap, Text } from '@chakra-ui/react';
-import { TfiArrowTopRight } from 'react-icons/tfi';
-import { Icon } from '@chakra-ui/react';
-import { RiArrowRightUpLine } from 'react-icons/ri';
-import { MdOutlineArrowOutward } from 'react-icons/md';
-import { Works } from '../generated/schema';
-import Tex from './text';
-import { FiArrowUpRight } from 'react-icons/fi';
-import LinkItem from './linkitem';
+import {
+  Divider,
+  Flex,
+  Box,
+  Text,
+  Card,
+  CardBody,
+  // Image,
+  Stack,
+  Heading,
+  CardFooter,
+  ButtonGroup,
+  Button,
+  SimpleGrid,
+  VStack,
+  GridItem,
+  Grid,
+  Container,
+  ScaleFade,
+} from '@chakra-ui/react';
+import Image from 'next/image';
 
-type PickProps = Pick<Works, 'description' | 'githubUrl' | 'name' | 'stack'>;
+import { Works, Asset } from '../generated/schema';
+import Paragraph from './paragraph';
+import { BsGearFill } from 'react-icons/bs';
+import Link from 'next/link';
 
-const Projects = (props: PickProps) => {
+type WantedKeys = 'name' | 'githubUrl' | 'stack' | 'description' | 'bg';
+type ProjectsProps = Pick<Works, WantedKeys>;
+
+type WantedKeys2 = 'url';
+type ProjectsProps2 = Pick<Asset, WantedKeys2>;
+
+// const Projects = ({ name, githubUrl, stack, description, bg }: ProjectsProps) => {
+const Projects = ({ bg }: { bg: ProjectsProps2[] }) => {
+  console.log(bg);
   return (
-    <>
-      <Flex
-        flexDirection='row'
-        justifyContent='space-between'
-        alignItems='center'
-        px={10}
-        // py={5}
-      >
-        <Flex flexDir='column'>
-          <Text
-            //   variant='woks_name'
-            fontSize='50px'
-            fontWeight='700'
-            lineHeight='80px'
-            letterSpacing='-1.6px'
-            textTransform='capitalize'
-            sx={{ wordSpacing: '0' }}>
-            {props.name}
-          </Text>
-          <Text
-            //   variant='woks_name'
-            fontSize='20px'
-            fontWeight='400'
-            lineHeight='80px'
-            letterSpacing='-1.6px'
-            textTransform='capitalize'
-            sx={{ wordSpacing: '0' }}>
-            {props.description}
-          </Text>
-        </Flex>
-
-        <Flex gap={5} justifyContent='center' alignItems='center' mb={20}>
-          <Divider variant='thick' />
-          <div style={{ width: '400px' }}>
-            <Text
-              as='span'
-              display='inline'
-              fontSize='13px'
-              fontWeight='700'
-              // justifySelf='baseline'
-              //   justifyItems=""
-            >
-              VIEW PROJECT
+    // <div>
+    //   {bg.map((b, i) => (
+    //     <Image key={i} alt='sss' src={b.url} width={300} height={300} />
+    //   ))}
+    // </div>
+    <Stack
+      bg='secondary'
+      borderRadius='10px'
+      minH='320px'
+      maxH='500px'
+      border='1px'
+      borderColor={{ base: '#333', md: 'borderColor' }}>
+      <Link href='/' isExternal>
+        {/* <ScaleFade in={true} transition={{ duration: 1 }}> */}
+        {bg.map((b, i) => (
+          <Image
+            key={i}
+            width={1250}
+            height={600}
+            src={b.url}
+            // transition='0.3s'
+            // borderRadius='10px 10px 0px 0px'
+            alt='project image'
+          />
+        ))}
+        <Stack px={4} py={2}>
+          <Stack isInline justifyContent='space-between' alignItems='center'>
+            <Text fontFamily='Ubuntu' fontSize='2xl' color='displayColor'>
+              csdcdcdscdsc
             </Text>
-          </div>
-        </Flex>
-
-        {/* <Wrap gap={10}>
-          {props.stack.map((s) => (
-            <Tag key={s} size='lg' variant='outline' colorScheme='teal' px='5' py='2'>
-              {s}
-            </Tag>
-          ))}
-        </Wrap> */}
-        {/* <LinkItem isExternal href={props.githubUrl as string} icon={FiArrowUpRight} /> */}
-      </Flex>
-      {/* <Tex variant='works_desc'>{props.description}</Tex> */}
-      <Divider orientation='horizontal' variant='thick' mt='20px' />
-    </>
+            {/* <Stack isInline justifyContent='flex-end' alignItems='center' spacing={4}>
+                {githubLink && (
+                  <Link
+                    href={githubLink}
+                    color='white'
+                    isExternal>
+                    <FaGithub aria-label='github' size={23} />
+                  </Link>
+                )}
+                {deployLink && (
+                  <Link
+                    href={deployLink}
+                    color='white'
+                    onClick={() => handleClick(`deploylink_${title.replace('@', '-at')}`)}
+                    isExternal>
+                    <FaExternalLinkAlt aria-label='project link' size={20} />
+                  </Link>
+                )}
+              </Stack> */}
+          </Stack>
+          {/* <Stack isInline>{Tags}</Stack> */}
+          <Divider />
+          <Text color='textSecondary' fontSize={['sm', 'md']}>
+            csdcscsdcdc
+          </Text>
+        </Stack>
+        {/* </ScaleFade> */}
+      </Link>
+    </Stack>
   );
 };
 

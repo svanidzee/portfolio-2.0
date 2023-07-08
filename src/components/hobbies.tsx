@@ -1,17 +1,16 @@
 'use client';
 
+import Paragraph from './paragraph';
+import { Container } from '../components/container';
 import { Box, Text } from '@chakra-ui/react';
+import Section from './layout/section';
 
-type HobbiesProps = {
-  hobbies: string;
-};
-
-const Hobbies = (props: HobbiesProps) => {
+export const Hobbies = ({ hobbies }: { hobbies: string }) => {
   return (
     <Box bg='black' color='white'>
-      <Text variant='hobbies'>{props.hobbies}</Text>
+      <Section>
+        <Paragraph variant='secondary'>{hobbies}</Paragraph>
+      </Section>
     </Box>
   );
 };
-
-export default Hobbies;

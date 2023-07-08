@@ -1,5 +1,9 @@
+'use client';
+
+import { Box, Container } from '@chakra-ui/react';
+
 import { Providers } from './providers';
-import { archivo } from '../lib/fonts';
+import { kanit, poppins, archivo, myFont } from '../lib/fonts';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
@@ -9,7 +13,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Providers>
           <Header />
-          <main className={archivo.className}>{children}</main>
+          <Box as='main' maxW='max-content' className={poppins.className}>
+            {/* <Box as='main' maxW='max-content' className={myFont.className}> */}
+            {children}
+          </Box>
           <Footer />
         </Providers>
       </body>

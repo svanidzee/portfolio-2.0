@@ -1,11 +1,134 @@
-import { extendTheme } from '@chakra-ui/react';
-import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
+import { extendTheme, theme as baseTheme } from '@chakra-ui/react';
+import { createMultiStyleConfigHelpers, defineStyle, defineStyleConfig } from '@chakra-ui/react';
+import { menuAnatomy } from '@chakra-ui/anatomy';
+
+const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(
+  menuAnatomy.keys,
+);
+
+const baseStyle = definePartsStyle({
+  button: {
+    // MenuButton component
+    fontWeight: 'bold',
+    // fontSize: '110',
+    bg: 'white',
+    color: 'black',
+    _hover: {
+      bg: 'red',
+      color: 'white',
+    },
+  },
+  list: {
+    // MenuList component
+    py: '4',
+    borderRadius: 'xl',
+    border: 'none',
+    bg: 'white',
+    color: 'black',
+    marginLeft: '12px',
+  },
+  item: {
+    // MenuItem and MenuItemOption components
+    // color: 'gray.200',
+    bg: 'white',
+    color: 'black',
+    fontWeight: '600',
+    _hover: {
+      // bg: 'teal.600',
+    },
+    _focus: {
+      // bg: 'teal.600',
+    },
+  },
+  groupTitle: {
+    // this will style the text defined by the title prop
+    // in the MenuGroup and MenuOptionGroup components
+    textTransform: 'uppercase',
+    color: 'white',
+    textAlign: 'center',
+    letterSpacing: 'wider',
+    opacity: '0.7',
+  },
+  command: {
+    // this will style the text defined by the command
+    // prop in the MenuItem and MenuItemOption components
+    opacity: '0.8',
+    fontFamily: 'mono',
+    fontSize: 'sm',
+    letterSpacing: 'tighter',
+    pl: '4',
+  },
+  divider: {
+    // this will style the MenuDivider component
+    my: '4',
+    borderColor: 'red',
+    borderBottom: '2px dotted',
+  },
+});
+
+// define custom styles
+const lg = defineStyle({
+  fontSize: 'lg',
+  my: '1',
+});
+
+const xl = defineStyle({
+  fontWeight: '600',
+  lineHeight: '2.138rem',
+  fontSize: '1.363rem',
+  letterSpacing: '-0.125rem',
+  px: '4',
+  py: '2',
+});
+
+// define custom sizes
+const sizes = {
+  // apply custom styles to parts
+  xl: definePartsStyle({
+    button: xl,
+    item: xl,
+    groupTitle: lg,
+    command: xl,
+  }),
+};
+
+// define custom variants
+const variants = {
+  roundLeft: definePartsStyle({
+    button: {
+      borderLeftRadius: 'full',
+      pl: '6',
+    },
+  }),
+  roundRight: definePartsStyle({
+    button: {
+      borderRightRadius: 'full',
+      pr: '6',
+    },
+    divider: {
+      color: 'red',
+      borderColor: 'red',
+      borderBottom: '2px dotted',
+    },
+  }),
+};
+
+// export the component theme
+const menuTheme = defineMultiStyleConfig({
+  baseStyle,
+  sizes,
+  variants,
+  defaultProps: {
+    // define which size is applied by default
+    size: 'xl',
+  },
+});
 
 const thick = defineStyle({
-  borderWidth: '1px', // change the width of the border
-  borderStyle: 'solid', // change the style of the border
-  borderRadius: 10, // set border radius to 10
-  borderColor: '#000',
+  borderWidth: '1px',
+  borderStyle: 'solid',
+  borderRadius: 5,
+  borderColor: '#ececec',
 });
 
 const dividerTheme = defineStyleConfig({
@@ -13,161 +136,60 @@ const dividerTheme = defineStyleConfig({
 });
 
 const Text = defineStyleConfig({
-  // The styles all Cards have in common
   baseStyle: {
-    textTransform: 'uppercase',
-    textDecoration: 'none',
+    fontWeight: 600,
   },
-  // Two variants: rounded and smooth
   variants: {
-    woks_name: {
-      fontSize: '64',
-      fontWeight: '600',
+    // ?
+    primary: {
+      fontSize: '176px',
+      lineHeight: '160px',
+      fontWeight: '900',
+      textIndent: '1em',
     },
-    works_desc: {
-      fontSize: '15',
-      fontWeight: '400',
-      ml: '138px',
-    },
-    footer: {
-      paddingX: '10',
-      fontSize: '50px',
-      fontWeight: '700',
-      lineHeight: '80px',
-      letterSpacing: '-1.6px',
-      textTransform: 'capitalize',
-      color: 'white',
-    },
-    navigation: {
-      px: '10',
-      fontSize: '50',
-      fontWeight: '700',
-      // lineHeight: '80',
-      letterSpacing: '-1.6px',
-      textTransform: 'capitalize',
-      color: '#000',
-    },
-    content: {
-      p: '10',
-      fontSize: '70px',
-      fontWeight: '700',
-      lineHeight: '80px',
-      letterSpacing: '-1.6px',
-      textTransform: 'capitalize',
-    },
-    hobbies: {
-      p: '10',
-      fontSize: '70px',
-      fontWeight: '700',
-      lineHeight: '80px',
-      letterSpacing: '-1.6px',
-      textTransform: 'capitalize',
-    },
-    stack: {
-      paddingX: '10',
-      fontSize: '50px',
-      fontWeight: '700',
-      lineHeight: '80px',
-      letterSpacing: '-1.6px',
-      textTransform: 'capitalize',
+    secondary: {
+      lineHeight: ['2.438rem', '2.438rem', '2.438rem', '2.438rem', '4.1rem'],
+      fontSize: ['1.563rem', '1.563rem', '1.875rem', '2.5rem', '3.513rem'],
+      letterSpacing: ['-0.125rem', '-0.125rem', '0', '0', '0rem'],
     },
   },
-  // The default variant value
-  // defaultProps: {
-  //   variant: "",
-  // },
 });
 
 const Heading = defineStyleConfig({
-  // The styles all Cards have in common
   baseStyle: {
-    textTransform: 'uppercase',
-    textDecoration: 'none',
+    fontWeight: 600,
   },
-  // Two variants: rounded and smooth
   variants: {
     base: {
-      paddingX: '10',
-      fontSize: '50px',
-      fontWeight: '700',
-      lineHeight: '80px',
-      letterSpacing: '-1.6px',
-      textTransform: 'capitalize',
+      lineHeight: ['6.25rem', '6.25rem', '3.125rem', '5rem', '5rem'],
+      fontSize: ['1.875rem', '1.875rem', '1.875rem', '2.625rem', '4.813rem'],
     },
   },
-  // The default variant value
-  // defaultProps: {
-  //   variant: "",
-  // },
-});
-
-const Box = defineStyleConfig({
-  // The styles all Cards have in common
-  // baseStyle: {
-  //   textTransform: 'uppercase',
-  //   textDecoration: 'none',
-  // },
-  // Two variants: rounded and smooth
-  variants: {
-    // woks_name: {
-    //   fontSize: '64',
-    //   fontWeight: '600',
-    // },
-    // works_desc: {
-    //   fontSize: '15',
-    //   fontWeight: '400',
-    //   ml: '138px',
-    // },
-    // footer: {
-    //   fontSize: '10',
-    //   fontWeight: '700',
-    //   // color: 'red',
-    // },
-    navigation: {
-      width: '100%',
-      marginBottom: '60px',
-      background: '#fff',
-      color: '#000',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-    },
-  },
-  // The default variant value
-  // defaultProps: {
-  //   variant: "",
-  // },
 });
 
 const WrapItem = defineStyleConfig({
-  // The styles all Cards have in common
-  // baseStyle: {
-  //   textTransform: 'uppercase',
-  //   textDecoration: 'none',
-  // },
-  // Two variants: rounded and smooth
+  baseStyle: {
+    fontWeight: 600,
+  },
   variants: {
-    // woks_name: {
-    //   fontSize: '64',
-    //   fontWeight: '600',
-    // },
-    // works_desc: {
-    //   fontSize: '15',
-    //   fontWeight: '400',
-    //   ml: '138px',
-    // },
-    // footer: {
-    //   fontSize: '10',
-    //   fontWeight: '700',
-    //   // color: 'red',
-    // },
     base: {
-      paddingX: '10',
-      fontSize: '50px',
-      fontWeight: '700',
-      lineHeight: '80px',
-      letterSpacing: '-1.6px',
-      textTransform: 'capitalize',
+      lineHeight: ['1.25rem', '1.25rem', '3.125rem', '5rem', '5rem'],
+      fontSize: ['1.375rem', '1.375rem', '1.875rem', '2.625rem', '3.75rem'],
+    },
+  },
+});
+
+// ?
+const Box = defineStyleConfig({
+  variants: {
+    navigation: {
+      width: '100%',
+      marginBottom: '3.75rem',
+      background: 'white',
+      color: 'black',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'end',
     },
   },
 });
@@ -187,6 +209,7 @@ const theme = extendTheme({
     Box,
     Heading,
     WrapItem,
+    Menu: menuTheme,
   },
 });
 

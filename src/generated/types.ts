@@ -1,13 +1,13 @@
 export default {
     "scalars": [
-        8,
-        33,
-        55,
-        59,
-        60,
-        61,
-        65,
-        66,
+        12,
+        34,
+        38,
+        39,
+        40,
+        44,
+        45,
+        54,
         67,
         68,
         71,
@@ -37,1028 +37,6 @@ export default {
         171
     ],
     "types": {
-        "About": {
-            "stage": [
-                122
-            ],
-            "documentInStages": [
-                0,
-                {
-                    "stages": [
-                        122,
-                        "[Stage!]!"
-                    ],
-                    "includeCurrent": [
-                        55,
-                        "Boolean!"
-                    ],
-                    "inheritLocale": [
-                        55,
-                        "Boolean!"
-                    ]
-                }
-            ],
-            "publishedAt": [
-                60
-            ],
-            "updatedAt": [
-                60
-            ],
-            "createdAt": [
-                60
-            ],
-            "id": [
-                67
-            ],
-            "content1": [
-                123
-            ],
-            "content2": [
-                123
-            ],
-            "toolsTitle": [
-                123
-            ],
-            "slug": [
-                123
-            ],
-            "stack": [
-                123
-            ],
-            "hobbies": [
-                123
-            ],
-            "publishedBy": [
-                126,
-                {
-                    "locales": [
-                        73,
-                        "[Locale!]"
-                    ],
-                    "forceParentLocale": [
-                        55
-                    ]
-                }
-            ],
-            "updatedBy": [
-                126,
-                {
-                    "locales": [
-                        73,
-                        "[Locale!]"
-                    ],
-                    "forceParentLocale": [
-                        55
-                    ]
-                }
-            ],
-            "createdBy": [
-                126,
-                {
-                    "locales": [
-                        73,
-                        "[Locale!]"
-                    ],
-                    "forceParentLocale": [
-                        55
-                    ]
-                }
-            ],
-            "scheduledIn": [
-                88,
-                {
-                    "where": [
-                        100
-                    ],
-                    "skip": [
-                        71
-                    ],
-                    "after": [
-                        123
-                    ],
-                    "before": [
-                        123
-                    ],
-                    "first": [
-                        71
-                    ],
-                    "last": [
-                        71
-                    ],
-                    "locales": [
-                        73,
-                        "[Locale!]"
-                    ],
-                    "forceParentLocale": [
-                        55
-                    ]
-                }
-            ],
-            "history": [
-                141,
-                {
-                    "limit": [
-                        71,
-                        "Int!"
-                    ],
-                    "skip": [
-                        71,
-                        "Int!"
-                    ],
-                    "stageOverride": [
-                        122
-                    ]
-                }
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutConnectInput": {
-            "where": [
-                20
-            ],
-            "position": [
-                58
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutConnection": {
-            "pageInfo": [
-                79
-            ],
-            "edges": [
-                6
-            ],
-            "aggregate": [
-                21
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutCreateInput": {
-            "updatedAt": [
-                60
-            ],
-            "createdAt": [
-                60
-            ],
-            "content1": [
-                123
-            ],
-            "content2": [
-                123
-            ],
-            "toolsTitle": [
-                123
-            ],
-            "slug": [
-                123
-            ],
-            "stack": [
-                123
-            ],
-            "hobbies": [
-                123
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutCreateManyInlineInput": {
-            "create": [
-                3
-            ],
-            "connect": [
-                20
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutCreateOneInlineInput": {
-            "create": [
-                3
-            ],
-            "connect": [
-                20
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutEdge": {
-            "node": [
-                0
-            ],
-            "cursor": [
-                123
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutManyWhereInput": {
-            "_search": [
-                123
-            ],
-            "AND": [
-                18
-            ],
-            "OR": [
-                18
-            ],
-            "NOT": [
-                18
-            ],
-            "documentInStages_every": [
-                19
-            ],
-            "documentInStages_some": [
-                19
-            ],
-            "documentInStages_none": [
-                19
-            ],
-            "publishedAt": [
-                60
-            ],
-            "publishedAt_not": [
-                60
-            ],
-            "publishedAt_in": [
-                60
-            ],
-            "publishedAt_not_in": [
-                60
-            ],
-            "publishedAt_lt": [
-                60
-            ],
-            "publishedAt_lte": [
-                60
-            ],
-            "publishedAt_gt": [
-                60
-            ],
-            "publishedAt_gte": [
-                60
-            ],
-            "updatedAt": [
-                60
-            ],
-            "updatedAt_not": [
-                60
-            ],
-            "updatedAt_in": [
-                60
-            ],
-            "updatedAt_not_in": [
-                60
-            ],
-            "updatedAt_lt": [
-                60
-            ],
-            "updatedAt_lte": [
-                60
-            ],
-            "updatedAt_gt": [
-                60
-            ],
-            "updatedAt_gte": [
-                60
-            ],
-            "createdAt": [
-                60
-            ],
-            "createdAt_not": [
-                60
-            ],
-            "createdAt_in": [
-                60
-            ],
-            "createdAt_not_in": [
-                60
-            ],
-            "createdAt_lt": [
-                60
-            ],
-            "createdAt_lte": [
-                60
-            ],
-            "createdAt_gt": [
-                60
-            ],
-            "createdAt_gte": [
-                60
-            ],
-            "id": [
-                67
-            ],
-            "id_not": [
-                67
-            ],
-            "id_in": [
-                67
-            ],
-            "id_not_in": [
-                67
-            ],
-            "id_contains": [
-                67
-            ],
-            "id_not_contains": [
-                67
-            ],
-            "id_starts_with": [
-                67
-            ],
-            "id_not_starts_with": [
-                67
-            ],
-            "id_ends_with": [
-                67
-            ],
-            "id_not_ends_with": [
-                67
-            ],
-            "content1": [
-                123
-            ],
-            "content1_not": [
-                123
-            ],
-            "content1_in": [
-                123
-            ],
-            "content1_not_in": [
-                123
-            ],
-            "content1_contains": [
-                123
-            ],
-            "content1_not_contains": [
-                123
-            ],
-            "content1_starts_with": [
-                123
-            ],
-            "content1_not_starts_with": [
-                123
-            ],
-            "content1_ends_with": [
-                123
-            ],
-            "content1_not_ends_with": [
-                123
-            ],
-            "content2": [
-                123
-            ],
-            "content2_not": [
-                123
-            ],
-            "content2_in": [
-                123
-            ],
-            "content2_not_in": [
-                123
-            ],
-            "content2_contains": [
-                123
-            ],
-            "content2_not_contains": [
-                123
-            ],
-            "content2_starts_with": [
-                123
-            ],
-            "content2_not_starts_with": [
-                123
-            ],
-            "content2_ends_with": [
-                123
-            ],
-            "content2_not_ends_with": [
-                123
-            ],
-            "toolsTitle": [
-                123
-            ],
-            "toolsTitle_not": [
-                123
-            ],
-            "toolsTitle_in": [
-                123
-            ],
-            "toolsTitle_not_in": [
-                123
-            ],
-            "toolsTitle_contains": [
-                123
-            ],
-            "toolsTitle_not_contains": [
-                123
-            ],
-            "toolsTitle_starts_with": [
-                123
-            ],
-            "toolsTitle_not_starts_with": [
-                123
-            ],
-            "toolsTitle_ends_with": [
-                123
-            ],
-            "toolsTitle_not_ends_with": [
-                123
-            ],
-            "slug": [
-                123
-            ],
-            "slug_not": [
-                123
-            ],
-            "slug_in": [
-                123
-            ],
-            "slug_not_in": [
-                123
-            ],
-            "slug_contains": [
-                123
-            ],
-            "slug_not_contains": [
-                123
-            ],
-            "slug_starts_with": [
-                123
-            ],
-            "slug_not_starts_with": [
-                123
-            ],
-            "slug_ends_with": [
-                123
-            ],
-            "slug_not_ends_with": [
-                123
-            ],
-            "stack": [
-                123
-            ],
-            "stack_not": [
-                123
-            ],
-            "stack_contains_all": [
-                123
-            ],
-            "stack_contains_some": [
-                123
-            ],
-            "stack_contains_none": [
-                123
-            ],
-            "hobbies": [
-                123
-            ],
-            "hobbies_not": [
-                123
-            ],
-            "hobbies_in": [
-                123
-            ],
-            "hobbies_not_in": [
-                123
-            ],
-            "hobbies_contains": [
-                123
-            ],
-            "hobbies_not_contains": [
-                123
-            ],
-            "hobbies_starts_with": [
-                123
-            ],
-            "hobbies_not_starts_with": [
-                123
-            ],
-            "hobbies_ends_with": [
-                123
-            ],
-            "hobbies_not_ends_with": [
-                123
-            ],
-            "publishedBy": [
-                138
-            ],
-            "updatedBy": [
-                138
-            ],
-            "createdBy": [
-                138
-            ],
-            "scheduledIn_every": [
-                100
-            ],
-            "scheduledIn_some": [
-                100
-            ],
-            "scheduledIn_none": [
-                100
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutOrderByInput": {},
-        "AboutUpdateInput": {
-            "content1": [
-                123
-            ],
-            "content2": [
-                123
-            ],
-            "toolsTitle": [
-                123
-            ],
-            "slug": [
-                123
-            ],
-            "stack": [
-                123
-            ],
-            "hobbies": [
-                123
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutUpdateManyInlineInput": {
-            "create": [
-                3
-            ],
-            "connect": [
-                1
-            ],
-            "set": [
-                20
-            ],
-            "update": [
-                14
-            ],
-            "upsert": [
-                16
-            ],
-            "disconnect": [
-                20
-            ],
-            "delete": [
-                20
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutUpdateManyInput": {
-            "content1": [
-                123
-            ],
-            "content2": [
-                123
-            ],
-            "toolsTitle": [
-                123
-            ],
-            "stack": [
-                123
-            ],
-            "hobbies": [
-                123
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutUpdateManyWithNestedWhereInput": {
-            "where": [
-                18
-            ],
-            "data": [
-                11
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutUpdateOneInlineInput": {
-            "create": [
-                3
-            ],
-            "update": [
-                14
-            ],
-            "upsert": [
-                16
-            ],
-            "connect": [
-                20
-            ],
-            "disconnect": [
-                55
-            ],
-            "delete": [
-                55
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutUpdateWithNestedWhereUniqueInput": {
-            "where": [
-                20
-            ],
-            "data": [
-                9
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutUpsertInput": {
-            "create": [
-                3
-            ],
-            "update": [
-                9
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutUpsertWithNestedWhereUniqueInput": {
-            "where": [
-                20
-            ],
-            "data": [
-                15
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutWhereComparatorInput": {
-            "outdated_to": [
-                55
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutWhereInput": {
-            "_search": [
-                123
-            ],
-            "AND": [
-                18
-            ],
-            "OR": [
-                18
-            ],
-            "NOT": [
-                18
-            ],
-            "documentInStages_every": [
-                19
-            ],
-            "documentInStages_some": [
-                19
-            ],
-            "documentInStages_none": [
-                19
-            ],
-            "publishedAt": [
-                60
-            ],
-            "publishedAt_not": [
-                60
-            ],
-            "publishedAt_in": [
-                60
-            ],
-            "publishedAt_not_in": [
-                60
-            ],
-            "publishedAt_lt": [
-                60
-            ],
-            "publishedAt_lte": [
-                60
-            ],
-            "publishedAt_gt": [
-                60
-            ],
-            "publishedAt_gte": [
-                60
-            ],
-            "updatedAt": [
-                60
-            ],
-            "updatedAt_not": [
-                60
-            ],
-            "updatedAt_in": [
-                60
-            ],
-            "updatedAt_not_in": [
-                60
-            ],
-            "updatedAt_lt": [
-                60
-            ],
-            "updatedAt_lte": [
-                60
-            ],
-            "updatedAt_gt": [
-                60
-            ],
-            "updatedAt_gte": [
-                60
-            ],
-            "createdAt": [
-                60
-            ],
-            "createdAt_not": [
-                60
-            ],
-            "createdAt_in": [
-                60
-            ],
-            "createdAt_not_in": [
-                60
-            ],
-            "createdAt_lt": [
-                60
-            ],
-            "createdAt_lte": [
-                60
-            ],
-            "createdAt_gt": [
-                60
-            ],
-            "createdAt_gte": [
-                60
-            ],
-            "id": [
-                67
-            ],
-            "id_not": [
-                67
-            ],
-            "id_in": [
-                67
-            ],
-            "id_not_in": [
-                67
-            ],
-            "id_contains": [
-                67
-            ],
-            "id_not_contains": [
-                67
-            ],
-            "id_starts_with": [
-                67
-            ],
-            "id_not_starts_with": [
-                67
-            ],
-            "id_ends_with": [
-                67
-            ],
-            "id_not_ends_with": [
-                67
-            ],
-            "content1": [
-                123
-            ],
-            "content1_not": [
-                123
-            ],
-            "content1_in": [
-                123
-            ],
-            "content1_not_in": [
-                123
-            ],
-            "content1_contains": [
-                123
-            ],
-            "content1_not_contains": [
-                123
-            ],
-            "content1_starts_with": [
-                123
-            ],
-            "content1_not_starts_with": [
-                123
-            ],
-            "content1_ends_with": [
-                123
-            ],
-            "content1_not_ends_with": [
-                123
-            ],
-            "content2": [
-                123
-            ],
-            "content2_not": [
-                123
-            ],
-            "content2_in": [
-                123
-            ],
-            "content2_not_in": [
-                123
-            ],
-            "content2_contains": [
-                123
-            ],
-            "content2_not_contains": [
-                123
-            ],
-            "content2_starts_with": [
-                123
-            ],
-            "content2_not_starts_with": [
-                123
-            ],
-            "content2_ends_with": [
-                123
-            ],
-            "content2_not_ends_with": [
-                123
-            ],
-            "toolsTitle": [
-                123
-            ],
-            "toolsTitle_not": [
-                123
-            ],
-            "toolsTitle_in": [
-                123
-            ],
-            "toolsTitle_not_in": [
-                123
-            ],
-            "toolsTitle_contains": [
-                123
-            ],
-            "toolsTitle_not_contains": [
-                123
-            ],
-            "toolsTitle_starts_with": [
-                123
-            ],
-            "toolsTitle_not_starts_with": [
-                123
-            ],
-            "toolsTitle_ends_with": [
-                123
-            ],
-            "toolsTitle_not_ends_with": [
-                123
-            ],
-            "slug": [
-                123
-            ],
-            "slug_not": [
-                123
-            ],
-            "slug_in": [
-                123
-            ],
-            "slug_not_in": [
-                123
-            ],
-            "slug_contains": [
-                123
-            ],
-            "slug_not_contains": [
-                123
-            ],
-            "slug_starts_with": [
-                123
-            ],
-            "slug_not_starts_with": [
-                123
-            ],
-            "slug_ends_with": [
-                123
-            ],
-            "slug_not_ends_with": [
-                123
-            ],
-            "stack": [
-                123
-            ],
-            "stack_not": [
-                123
-            ],
-            "stack_contains_all": [
-                123
-            ],
-            "stack_contains_some": [
-                123
-            ],
-            "stack_contains_none": [
-                123
-            ],
-            "hobbies": [
-                123
-            ],
-            "hobbies_not": [
-                123
-            ],
-            "hobbies_in": [
-                123
-            ],
-            "hobbies_not_in": [
-                123
-            ],
-            "hobbies_contains": [
-                123
-            ],
-            "hobbies_not_contains": [
-                123
-            ],
-            "hobbies_starts_with": [
-                123
-            ],
-            "hobbies_not_starts_with": [
-                123
-            ],
-            "hobbies_ends_with": [
-                123
-            ],
-            "hobbies_not_ends_with": [
-                123
-            ],
-            "publishedBy": [
-                138
-            ],
-            "updatedBy": [
-                138
-            ],
-            "createdBy": [
-                138
-            ],
-            "scheduledIn_every": [
-                100
-            ],
-            "scheduledIn_some": [
-                100
-            ],
-            "scheduledIn_none": [
-                100
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutWhereStageInput": {
-            "AND": [
-                19
-            ],
-            "OR": [
-                19
-            ],
-            "NOT": [
-                19
-            ],
-            "stage": [
-                122
-            ],
-            "compareWithParent": [
-                17
-            ],
-            "__typename": [
-                123
-            ]
-        },
-        "AboutWhereUniqueInput": {
-            "id": [
-                67
-            ],
-            "slug": [
-                123
-            ],
-            "__typename": [
-                123
-            ]
-        },
         "Aggregate": {
             "count": [
                 71
@@ -1075,31 +53,31 @@ export default {
                 73
             ],
             "localizations": [
-                22,
+                1,
                 {
                     "locales": [
                         73,
                         "[Locale!]!"
                     ],
                     "includeCurrent": [
-                        55,
+                        34,
                         "Boolean!"
                     ]
                 }
             ],
             "documentInStages": [
-                22,
+                1,
                 {
                     "stages": [
                         122,
                         "[Stage!]!"
                     ],
                     "includeCurrent": [
-                        55,
+                        34,
                         "Boolean!"
                     ],
                     "inheritLocale": [
-                        55,
+                        34,
                         "Boolean!"
                     ]
                 }
@@ -1108,13 +86,13 @@ export default {
                 123
             ],
             "size": [
-                65
+                44
             ],
             "width": [
-                65
+                44
             ],
             "height": [
-                65
+                44
             ],
             "fileName": [
                 123
@@ -1123,7 +101,7 @@ export default {
                 123
             ],
             "publishedAt": [
-                60,
+                39,
                 {
                     "variation": [
                         124,
@@ -1132,7 +110,7 @@ export default {
                 }
             ],
             "updatedAt": [
-                60,
+                39,
                 {
                     "variation": [
                         124,
@@ -1141,7 +119,7 @@ export default {
                 }
             ],
             "createdAt": [
-                60,
+                39,
                 {
                     "variation": [
                         124,
@@ -1160,7 +138,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -1172,7 +150,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -1184,7 +162,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -1217,7 +195,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -1247,7 +225,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -1271,7 +249,7 @@ export default {
                 123,
                 {
                     "transformation": [
-                        34
+                        13
                     ]
                 }
             ],
@@ -1281,10 +259,10 @@ export default {
         },
         "AssetConnectInput": {
             "where": [
-                53
+                32
             ],
             "position": [
-                58
+                37
             ],
             "__typename": [
                 123
@@ -1295,10 +273,10 @@ export default {
                 79
             ],
             "edges": [
-                31
+                10
             ],
             "aggregate": [
-                21
+                0
             ],
             "__typename": [
                 123
@@ -1309,13 +287,13 @@ export default {
                 123
             ],
             "size": [
-                65
+                44
             ],
             "width": [
-                65
+                44
             ],
             "height": [
-                65
+                44
             ],
             "fileName": [
                 123
@@ -1324,16 +302,16 @@ export default {
                 123
             ],
             "updatedAt": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "bgWorks": [
                 147
             ],
             "localizations": [
-                28
+                7
             ],
             "__typename": [
                 123
@@ -1344,13 +322,13 @@ export default {
                 123
             ],
             "size": [
-                65
+                44
             ],
             "width": [
-                65
+                44
             ],
             "height": [
-                65
+                44
             ],
             "fileName": [
                 123
@@ -1359,10 +337,10 @@ export default {
                 123
             ],
             "updatedAt": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "__typename": [
                 123
@@ -1370,7 +348,7 @@ export default {
         },
         "AssetCreateLocalizationInput": {
             "data": [
-                26
+                5
             ],
             "locale": [
                 73
@@ -1381,7 +359,7 @@ export default {
         },
         "AssetCreateLocalizationsInput": {
             "create": [
-                27
+                6
             ],
             "__typename": [
                 123
@@ -1389,10 +367,10 @@ export default {
         },
         "AssetCreateManyInlineInput": {
             "create": [
-                25
+                4
             ],
             "connect": [
-                53
+                32
             ],
             "__typename": [
                 123
@@ -1400,10 +378,10 @@ export default {
         },
         "AssetCreateOneInlineInput": {
             "create": [
-                25
+                4
             ],
             "connect": [
-                53
+                32
             ],
             "__typename": [
                 123
@@ -1411,7 +389,7 @@ export default {
         },
         "AssetEdge": {
             "node": [
-                22
+                1
             ],
             "cursor": [
                 123
@@ -1425,94 +403,94 @@ export default {
                 123
             ],
             "AND": [
-                51
+                30
             ],
             "OR": [
-                51
+                30
             ],
             "NOT": [
-                51
+                30
             ],
             "documentInStages_every": [
-                52
+                31
             ],
             "documentInStages_some": [
-                52
+                31
             ],
             "documentInStages_none": [
-                52
+                31
             ],
             "publishedAt": [
-                60
+                39
             ],
             "publishedAt_not": [
-                60
+                39
             ],
             "publishedAt_in": [
-                60
+                39
             ],
             "publishedAt_not_in": [
-                60
+                39
             ],
             "publishedAt_lt": [
-                60
+                39
             ],
             "publishedAt_lte": [
-                60
+                39
             ],
             "publishedAt_gt": [
-                60
+                39
             ],
             "publishedAt_gte": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "updatedAt_not": [
-                60
+                39
             ],
             "updatedAt_in": [
-                60
+                39
             ],
             "updatedAt_not_in": [
-                60
+                39
             ],
             "updatedAt_lt": [
-                60
+                39
             ],
             "updatedAt_lte": [
-                60
+                39
             ],
             "updatedAt_gt": [
-                60
+                39
             ],
             "updatedAt_gte": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "createdAt_not": [
-                60
+                39
             ],
             "createdAt_in": [
-                60
+                39
             ],
             "createdAt_not_in": [
-                60
+                39
             ],
             "createdAt_lt": [
-                60
+                39
             ],
             "createdAt_lte": [
-                60
+                39
             ],
             "createdAt_gt": [
-                60
+                39
             ],
             "createdAt_gte": [
-                60
+                39
             ],
             "id": [
                 67
@@ -1581,10 +559,10 @@ export default {
                 70
             ],
             "document": [
-                63
+                42
             ],
             "validateOptions": [
-                55
+                34
             ],
             "__typename": [
                 123
@@ -1595,13 +573,13 @@ export default {
                 123
             ],
             "size": [
-                65
+                44
             ],
             "width": [
-                65
+                44
             ],
             "height": [
-                65
+                44
             ],
             "fileName": [
                 123
@@ -1613,7 +591,7 @@ export default {
                 153
             ],
             "localizations": [
-                38
+                17
             ],
             "__typename": [
                 123
@@ -1624,13 +602,13 @@ export default {
                 123
             ],
             "size": [
-                65
+                44
             ],
             "width": [
-                65
+                44
             ],
             "height": [
-                65
+                44
             ],
             "fileName": [
                 123
@@ -1644,7 +622,7 @@ export default {
         },
         "AssetUpdateLocalizationInput": {
             "data": [
-                36
+                15
             ],
             "locale": [
                 73
@@ -1655,13 +633,13 @@ export default {
         },
         "AssetUpdateLocalizationsInput": {
             "create": [
-                27
+                6
             ],
             "update": [
-                37
+                16
             ],
             "upsert": [
-                48
+                27
             ],
             "delete": [
                 73
@@ -1672,25 +650,25 @@ export default {
         },
         "AssetUpdateManyInlineInput": {
             "create": [
-                25
+                4
             ],
             "connect": [
-                23
+                2
             ],
             "set": [
-                53
+                32
             ],
             "update": [
-                46
+                25
             ],
             "upsert": [
-                49
+                28
             ],
             "disconnect": [
-                53
+                32
             ],
             "delete": [
-                53
+                32
             ],
             "__typename": [
                 123
@@ -1701,19 +679,19 @@ export default {
                 123
             ],
             "size": [
-                65
+                44
             ],
             "width": [
-                65
+                44
             ],
             "height": [
-                65
+                44
             ],
             "fileName": [
                 123
             ],
             "localizations": [
-                43
+                22
             ],
             "__typename": [
                 123
@@ -1724,13 +702,13 @@ export default {
                 123
             ],
             "size": [
-                65
+                44
             ],
             "width": [
-                65
+                44
             ],
             "height": [
-                65
+                44
             ],
             "fileName": [
                 123
@@ -1741,7 +719,7 @@ export default {
         },
         "AssetUpdateManyLocalizationInput": {
             "data": [
-                41
+                20
             ],
             "locale": [
                 73
@@ -1752,7 +730,7 @@ export default {
         },
         "AssetUpdateManyLocalizationsInput": {
             "update": [
-                42
+                21
             ],
             "__typename": [
                 123
@@ -1760,10 +738,10 @@ export default {
         },
         "AssetUpdateManyWithNestedWhereInput": {
             "where": [
-                51
+                30
             ],
             "data": [
-                40
+                19
             ],
             "__typename": [
                 123
@@ -1771,22 +749,22 @@ export default {
         },
         "AssetUpdateOneInlineInput": {
             "create": [
-                25
+                4
             ],
             "update": [
-                46
+                25
             ],
             "upsert": [
-                49
+                28
             ],
             "connect": [
-                53
+                32
             ],
             "disconnect": [
-                55
+                34
             ],
             "delete": [
-                55
+                34
             ],
             "__typename": [
                 123
@@ -1794,10 +772,10 @@ export default {
         },
         "AssetUpdateWithNestedWhereUniqueInput": {
             "where": [
-                53
+                32
             ],
             "data": [
-                35
+                14
             ],
             "__typename": [
                 123
@@ -1805,10 +783,10 @@ export default {
         },
         "AssetUpsertInput": {
             "create": [
-                25
+                4
             ],
             "update": [
-                35
+                14
             ],
             "__typename": [
                 123
@@ -1816,10 +794,10 @@ export default {
         },
         "AssetUpsertLocalizationInput": {
             "update": [
-                36
+                15
             ],
             "create": [
-                26
+                5
             ],
             "locale": [
                 73
@@ -1830,10 +808,10 @@ export default {
         },
         "AssetUpsertWithNestedWhereUniqueInput": {
             "where": [
-                53
+                32
             ],
             "data": [
-                47
+                26
             ],
             "__typename": [
                 123
@@ -1841,7 +819,7 @@ export default {
         },
         "AssetWhereComparatorInput": {
             "outdated_to": [
-                55
+                34
             ],
             "__typename": [
                 123
@@ -1852,22 +830,22 @@ export default {
                 123
             ],
             "AND": [
-                51
+                30
             ],
             "OR": [
-                51
+                30
             ],
             "NOT": [
-                51
+                30
             ],
             "documentInStages_every": [
-                52
+                31
             ],
             "documentInStages_some": [
-                52
+                31
             ],
             "documentInStages_none": [
-                52
+                31
             ],
             "mimeType": [
                 123
@@ -1900,76 +878,76 @@ export default {
                 123
             ],
             "size": [
-                65
+                44
             ],
             "size_not": [
-                65
+                44
             ],
             "size_in": [
-                65
+                44
             ],
             "size_not_in": [
-                65
+                44
             ],
             "size_lt": [
-                65
+                44
             ],
             "size_lte": [
-                65
+                44
             ],
             "size_gt": [
-                65
+                44
             ],
             "size_gte": [
-                65
+                44
             ],
             "width": [
-                65
+                44
             ],
             "width_not": [
-                65
+                44
             ],
             "width_in": [
-                65
+                44
             ],
             "width_not_in": [
-                65
+                44
             ],
             "width_lt": [
-                65
+                44
             ],
             "width_lte": [
-                65
+                44
             ],
             "width_gt": [
-                65
+                44
             ],
             "width_gte": [
-                65
+                44
             ],
             "height": [
-                65
+                44
             ],
             "height_not": [
-                65
+                44
             ],
             "height_in": [
-                65
+                44
             ],
             "height_not_in": [
-                65
+                44
             ],
             "height_lt": [
-                65
+                44
             ],
             "height_lte": [
-                65
+                44
             ],
             "height_gt": [
-                65
+                44
             ],
             "height_gte": [
-                65
+                44
             ],
             "fileName": [
                 123
@@ -2032,76 +1010,76 @@ export default {
                 123
             ],
             "publishedAt": [
-                60
+                39
             ],
             "publishedAt_not": [
-                60
+                39
             ],
             "publishedAt_in": [
-                60
+                39
             ],
             "publishedAt_not_in": [
-                60
+                39
             ],
             "publishedAt_lt": [
-                60
+                39
             ],
             "publishedAt_lte": [
-                60
+                39
             ],
             "publishedAt_gt": [
-                60
+                39
             ],
             "publishedAt_gte": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "updatedAt_not": [
-                60
+                39
             ],
             "updatedAt_in": [
-                60
+                39
             ],
             "updatedAt_not_in": [
-                60
+                39
             ],
             "updatedAt_lt": [
-                60
+                39
             ],
             "updatedAt_lte": [
-                60
+                39
             ],
             "updatedAt_gt": [
-                60
+                39
             ],
             "updatedAt_gte": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "createdAt_not": [
-                60
+                39
             ],
             "createdAt_in": [
-                60
+                39
             ],
             "createdAt_not_in": [
-                60
+                39
             ],
             "createdAt_lt": [
-                60
+                39
             ],
             "createdAt_lte": [
-                60
+                39
             ],
             "createdAt_gt": [
-                60
+                39
             ],
             "createdAt_gte": [
-                60
+                39
             ],
             "id": [
                 67
@@ -2166,19 +1144,19 @@ export default {
         },
         "AssetWhereStageInput": {
             "AND": [
-                52
+                31
             ],
             "OR": [
-                52
+                31
             ],
             "NOT": [
-                52
+                31
             ],
             "stage": [
                 122
             ],
             "compareWithParent": [
-                50
+                29
             ],
             "__typename": [
                 123
@@ -2203,7 +1181,7 @@ export default {
         "Boolean": {},
         "Color": {
             "hex": [
-                66
+                45
             ],
             "rgba": [
                 82
@@ -2217,7 +1195,7 @@ export default {
         },
         "ColorInput": {
             "hex": [
-                66
+                45
             ],
             "rgba": [
                 84
@@ -2234,10 +1212,10 @@ export default {
                 67
             ],
             "start": [
-                55
+                34
             ],
             "end": [
-                55
+                34
             ],
             "__typename": [
                 123
@@ -2248,7 +1226,7 @@ export default {
         "DocumentFileTypes": {},
         "DocumentOutputInput": {
             "format": [
-                61
+                40
             ],
             "__typename": [
                 123
@@ -2256,7 +1234,7 @@ export default {
         },
         "DocumentTransformationInput": {
             "output": [
-                62
+                41
             ],
             "__typename": [
                 123
@@ -2273,7 +1251,7 @@ export default {
                 71
             ],
             "createdAt": [
-                60
+                39
             ],
             "data": [
                 72
@@ -2284,6 +1262,956 @@ export default {
         },
         "Float": {},
         "Hex": {},
+        "Home": {
+            "stage": [
+                122
+            ],
+            "documentInStages": [
+                46,
+                {
+                    "stages": [
+                        122,
+                        "[Stage!]!"
+                    ],
+                    "includeCurrent": [
+                        34,
+                        "Boolean!"
+                    ],
+                    "inheritLocale": [
+                        34,
+                        "Boolean!"
+                    ]
+                }
+            ],
+            "publishedAt": [
+                39
+            ],
+            "updatedAt": [
+                39
+            ],
+            "createdAt": [
+                39
+            ],
+            "id": [
+                67
+            ],
+            "about": [
+                123
+            ],
+            "title": [
+                123
+            ],
+            "slug": [
+                123
+            ],
+            "stack": [
+                123
+            ],
+            "hobbies": [
+                123
+            ],
+            "publishedBy": [
+                126,
+                {
+                    "locales": [
+                        73,
+                        "[Locale!]"
+                    ],
+                    "forceParentLocale": [
+                        34
+                    ]
+                }
+            ],
+            "updatedBy": [
+                126,
+                {
+                    "locales": [
+                        73,
+                        "[Locale!]"
+                    ],
+                    "forceParentLocale": [
+                        34
+                    ]
+                }
+            ],
+            "createdBy": [
+                126,
+                {
+                    "locales": [
+                        73,
+                        "[Locale!]"
+                    ],
+                    "forceParentLocale": [
+                        34
+                    ]
+                }
+            ],
+            "scheduledIn": [
+                88,
+                {
+                    "where": [
+                        100
+                    ],
+                    "skip": [
+                        71
+                    ],
+                    "after": [
+                        123
+                    ],
+                    "before": [
+                        123
+                    ],
+                    "first": [
+                        71
+                    ],
+                    "last": [
+                        71
+                    ],
+                    "locales": [
+                        73,
+                        "[Locale!]"
+                    ],
+                    "forceParentLocale": [
+                        34
+                    ]
+                }
+            ],
+            "history": [
+                141,
+                {
+                    "limit": [
+                        71,
+                        "Int!"
+                    ],
+                    "skip": [
+                        71,
+                        "Int!"
+                    ],
+                    "stageOverride": [
+                        122
+                    ]
+                }
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeConnectInput": {
+            "where": [
+                66
+            ],
+            "position": [
+                37
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeConnection": {
+            "pageInfo": [
+                79
+            ],
+            "edges": [
+                52
+            ],
+            "aggregate": [
+                0
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeCreateInput": {
+            "updatedAt": [
+                39
+            ],
+            "createdAt": [
+                39
+            ],
+            "about": [
+                123
+            ],
+            "title": [
+                123
+            ],
+            "slug": [
+                123
+            ],
+            "stack": [
+                123
+            ],
+            "hobbies": [
+                123
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeCreateManyInlineInput": {
+            "create": [
+                49
+            ],
+            "connect": [
+                66
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeCreateOneInlineInput": {
+            "create": [
+                49
+            ],
+            "connect": [
+                66
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeEdge": {
+            "node": [
+                46
+            ],
+            "cursor": [
+                123
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeManyWhereInput": {
+            "_search": [
+                123
+            ],
+            "AND": [
+                64
+            ],
+            "OR": [
+                64
+            ],
+            "NOT": [
+                64
+            ],
+            "documentInStages_every": [
+                65
+            ],
+            "documentInStages_some": [
+                65
+            ],
+            "documentInStages_none": [
+                65
+            ],
+            "publishedAt": [
+                39
+            ],
+            "publishedAt_not": [
+                39
+            ],
+            "publishedAt_in": [
+                39
+            ],
+            "publishedAt_not_in": [
+                39
+            ],
+            "publishedAt_lt": [
+                39
+            ],
+            "publishedAt_lte": [
+                39
+            ],
+            "publishedAt_gt": [
+                39
+            ],
+            "publishedAt_gte": [
+                39
+            ],
+            "updatedAt": [
+                39
+            ],
+            "updatedAt_not": [
+                39
+            ],
+            "updatedAt_in": [
+                39
+            ],
+            "updatedAt_not_in": [
+                39
+            ],
+            "updatedAt_lt": [
+                39
+            ],
+            "updatedAt_lte": [
+                39
+            ],
+            "updatedAt_gt": [
+                39
+            ],
+            "updatedAt_gte": [
+                39
+            ],
+            "createdAt": [
+                39
+            ],
+            "createdAt_not": [
+                39
+            ],
+            "createdAt_in": [
+                39
+            ],
+            "createdAt_not_in": [
+                39
+            ],
+            "createdAt_lt": [
+                39
+            ],
+            "createdAt_lte": [
+                39
+            ],
+            "createdAt_gt": [
+                39
+            ],
+            "createdAt_gte": [
+                39
+            ],
+            "id": [
+                67
+            ],
+            "id_not": [
+                67
+            ],
+            "id_in": [
+                67
+            ],
+            "id_not_in": [
+                67
+            ],
+            "id_contains": [
+                67
+            ],
+            "id_not_contains": [
+                67
+            ],
+            "id_starts_with": [
+                67
+            ],
+            "id_not_starts_with": [
+                67
+            ],
+            "id_ends_with": [
+                67
+            ],
+            "id_not_ends_with": [
+                67
+            ],
+            "about": [
+                123
+            ],
+            "about_not": [
+                123
+            ],
+            "about_in": [
+                123
+            ],
+            "about_not_in": [
+                123
+            ],
+            "about_contains": [
+                123
+            ],
+            "about_not_contains": [
+                123
+            ],
+            "about_starts_with": [
+                123
+            ],
+            "about_not_starts_with": [
+                123
+            ],
+            "about_ends_with": [
+                123
+            ],
+            "about_not_ends_with": [
+                123
+            ],
+            "title": [
+                123
+            ],
+            "title_not": [
+                123
+            ],
+            "title_in": [
+                123
+            ],
+            "title_not_in": [
+                123
+            ],
+            "title_contains": [
+                123
+            ],
+            "title_not_contains": [
+                123
+            ],
+            "title_starts_with": [
+                123
+            ],
+            "title_not_starts_with": [
+                123
+            ],
+            "title_ends_with": [
+                123
+            ],
+            "title_not_ends_with": [
+                123
+            ],
+            "slug": [
+                123
+            ],
+            "slug_not": [
+                123
+            ],
+            "slug_in": [
+                123
+            ],
+            "slug_not_in": [
+                123
+            ],
+            "slug_contains": [
+                123
+            ],
+            "slug_not_contains": [
+                123
+            ],
+            "slug_starts_with": [
+                123
+            ],
+            "slug_not_starts_with": [
+                123
+            ],
+            "slug_ends_with": [
+                123
+            ],
+            "slug_not_ends_with": [
+                123
+            ],
+            "stack": [
+                123
+            ],
+            "stack_not": [
+                123
+            ],
+            "stack_contains_all": [
+                123
+            ],
+            "stack_contains_some": [
+                123
+            ],
+            "stack_contains_none": [
+                123
+            ],
+            "hobbies": [
+                123
+            ],
+            "hobbies_not": [
+                123
+            ],
+            "hobbies_in": [
+                123
+            ],
+            "hobbies_not_in": [
+                123
+            ],
+            "hobbies_contains": [
+                123
+            ],
+            "hobbies_not_contains": [
+                123
+            ],
+            "hobbies_starts_with": [
+                123
+            ],
+            "hobbies_not_starts_with": [
+                123
+            ],
+            "hobbies_ends_with": [
+                123
+            ],
+            "hobbies_not_ends_with": [
+                123
+            ],
+            "publishedBy": [
+                138
+            ],
+            "updatedBy": [
+                138
+            ],
+            "createdBy": [
+                138
+            ],
+            "scheduledIn_every": [
+                100
+            ],
+            "scheduledIn_some": [
+                100
+            ],
+            "scheduledIn_none": [
+                100
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeOrderByInput": {},
+        "HomeUpdateInput": {
+            "about": [
+                123
+            ],
+            "title": [
+                123
+            ],
+            "slug": [
+                123
+            ],
+            "stack": [
+                123
+            ],
+            "hobbies": [
+                123
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeUpdateManyInlineInput": {
+            "create": [
+                49
+            ],
+            "connect": [
+                47
+            ],
+            "set": [
+                66
+            ],
+            "update": [
+                60
+            ],
+            "upsert": [
+                62
+            ],
+            "disconnect": [
+                66
+            ],
+            "delete": [
+                66
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeUpdateManyInput": {
+            "about": [
+                123
+            ],
+            "title": [
+                123
+            ],
+            "stack": [
+                123
+            ],
+            "hobbies": [
+                123
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeUpdateManyWithNestedWhereInput": {
+            "where": [
+                64
+            ],
+            "data": [
+                57
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeUpdateOneInlineInput": {
+            "create": [
+                49
+            ],
+            "update": [
+                60
+            ],
+            "upsert": [
+                62
+            ],
+            "connect": [
+                66
+            ],
+            "disconnect": [
+                34
+            ],
+            "delete": [
+                34
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeUpdateWithNestedWhereUniqueInput": {
+            "where": [
+                66
+            ],
+            "data": [
+                55
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeUpsertInput": {
+            "create": [
+                49
+            ],
+            "update": [
+                55
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeUpsertWithNestedWhereUniqueInput": {
+            "where": [
+                66
+            ],
+            "data": [
+                61
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeWhereComparatorInput": {
+            "outdated_to": [
+                34
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeWhereInput": {
+            "_search": [
+                123
+            ],
+            "AND": [
+                64
+            ],
+            "OR": [
+                64
+            ],
+            "NOT": [
+                64
+            ],
+            "documentInStages_every": [
+                65
+            ],
+            "documentInStages_some": [
+                65
+            ],
+            "documentInStages_none": [
+                65
+            ],
+            "publishedAt": [
+                39
+            ],
+            "publishedAt_not": [
+                39
+            ],
+            "publishedAt_in": [
+                39
+            ],
+            "publishedAt_not_in": [
+                39
+            ],
+            "publishedAt_lt": [
+                39
+            ],
+            "publishedAt_lte": [
+                39
+            ],
+            "publishedAt_gt": [
+                39
+            ],
+            "publishedAt_gte": [
+                39
+            ],
+            "updatedAt": [
+                39
+            ],
+            "updatedAt_not": [
+                39
+            ],
+            "updatedAt_in": [
+                39
+            ],
+            "updatedAt_not_in": [
+                39
+            ],
+            "updatedAt_lt": [
+                39
+            ],
+            "updatedAt_lte": [
+                39
+            ],
+            "updatedAt_gt": [
+                39
+            ],
+            "updatedAt_gte": [
+                39
+            ],
+            "createdAt": [
+                39
+            ],
+            "createdAt_not": [
+                39
+            ],
+            "createdAt_in": [
+                39
+            ],
+            "createdAt_not_in": [
+                39
+            ],
+            "createdAt_lt": [
+                39
+            ],
+            "createdAt_lte": [
+                39
+            ],
+            "createdAt_gt": [
+                39
+            ],
+            "createdAt_gte": [
+                39
+            ],
+            "id": [
+                67
+            ],
+            "id_not": [
+                67
+            ],
+            "id_in": [
+                67
+            ],
+            "id_not_in": [
+                67
+            ],
+            "id_contains": [
+                67
+            ],
+            "id_not_contains": [
+                67
+            ],
+            "id_starts_with": [
+                67
+            ],
+            "id_not_starts_with": [
+                67
+            ],
+            "id_ends_with": [
+                67
+            ],
+            "id_not_ends_with": [
+                67
+            ],
+            "about": [
+                123
+            ],
+            "about_not": [
+                123
+            ],
+            "about_in": [
+                123
+            ],
+            "about_not_in": [
+                123
+            ],
+            "about_contains": [
+                123
+            ],
+            "about_not_contains": [
+                123
+            ],
+            "about_starts_with": [
+                123
+            ],
+            "about_not_starts_with": [
+                123
+            ],
+            "about_ends_with": [
+                123
+            ],
+            "about_not_ends_with": [
+                123
+            ],
+            "title": [
+                123
+            ],
+            "title_not": [
+                123
+            ],
+            "title_in": [
+                123
+            ],
+            "title_not_in": [
+                123
+            ],
+            "title_contains": [
+                123
+            ],
+            "title_not_contains": [
+                123
+            ],
+            "title_starts_with": [
+                123
+            ],
+            "title_not_starts_with": [
+                123
+            ],
+            "title_ends_with": [
+                123
+            ],
+            "title_not_ends_with": [
+                123
+            ],
+            "slug": [
+                123
+            ],
+            "slug_not": [
+                123
+            ],
+            "slug_in": [
+                123
+            ],
+            "slug_not_in": [
+                123
+            ],
+            "slug_contains": [
+                123
+            ],
+            "slug_not_contains": [
+                123
+            ],
+            "slug_starts_with": [
+                123
+            ],
+            "slug_not_starts_with": [
+                123
+            ],
+            "slug_ends_with": [
+                123
+            ],
+            "slug_not_ends_with": [
+                123
+            ],
+            "stack": [
+                123
+            ],
+            "stack_not": [
+                123
+            ],
+            "stack_contains_all": [
+                123
+            ],
+            "stack_contains_some": [
+                123
+            ],
+            "stack_contains_none": [
+                123
+            ],
+            "hobbies": [
+                123
+            ],
+            "hobbies_not": [
+                123
+            ],
+            "hobbies_in": [
+                123
+            ],
+            "hobbies_not_in": [
+                123
+            ],
+            "hobbies_contains": [
+                123
+            ],
+            "hobbies_not_contains": [
+                123
+            ],
+            "hobbies_starts_with": [
+                123
+            ],
+            "hobbies_not_starts_with": [
+                123
+            ],
+            "hobbies_ends_with": [
+                123
+            ],
+            "hobbies_not_ends_with": [
+                123
+            ],
+            "publishedBy": [
+                138
+            ],
+            "updatedBy": [
+                138
+            ],
+            "createdBy": [
+                138
+            ],
+            "scheduledIn_every": [
+                100
+            ],
+            "scheduledIn_some": [
+                100
+            ],
+            "scheduledIn_none": [
+                100
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeWhereStageInput": {
+            "AND": [
+                65
+            ],
+            "OR": [
+                65
+            ],
+            "NOT": [
+                65
+            ],
+            "stage": [
+                122
+            ],
+            "compareWithParent": [
+                63
+            ],
+            "__typename": [
+                123
+            ]
+        },
+        "HomeWhereUniqueInput": {
+            "id": [
+                67
+            ],
+            "slug": [
+                123
+            ],
+            "__typename": [
+                123
+            ]
+        },
         "ID": {},
         "ImageFit": {},
         "ImageResizeInput": {
@@ -2313,13 +2241,13 @@ export default {
         "Locale": {},
         "Location": {
             "latitude": [
-                65
+                44
             ],
             "longitude": [
-                65
+                44
             ],
             "distance": [
-                65,
+                44,
                 {
                     "from": [
                         75,
@@ -2333,10 +2261,10 @@ export default {
         },
         "LocationInput": {
             "latitude": [
-                65
+                44
             ],
             "longitude": [
-                65
+                44
             ],
             "__typename": [
                 123
@@ -2344,56 +2272,56 @@ export default {
         },
         "Long": {},
         "Mutation": {
-            "createAbout": [
-                0,
+            "createHome": [
+                46,
                 {
                     "data": [
-                        3,
-                        "AboutCreateInput!"
+                        49,
+                        "HomeCreateInput!"
                     ]
                 }
             ],
-            "updateAbout": [
-                0,
+            "updateHome": [
+                46,
                 {
                     "where": [
-                        20,
-                        "AboutWhereUniqueInput!"
+                        66,
+                        "HomeWhereUniqueInput!"
                     ],
                     "data": [
-                        9,
-                        "AboutUpdateInput!"
+                        55,
+                        "HomeUpdateInput!"
                     ]
                 }
             ],
-            "deleteAbout": [
-                0,
+            "deleteHome": [
+                46,
                 {
                     "where": [
-                        20,
-                        "AboutWhereUniqueInput!"
+                        66,
+                        "HomeWhereUniqueInput!"
                     ]
                 }
             ],
-            "upsertAbout": [
-                0,
+            "upsertHome": [
+                46,
                 {
                     "where": [
-                        20,
-                        "AboutWhereUniqueInput!"
+                        66,
+                        "HomeWhereUniqueInput!"
                     ],
                     "upsert": [
-                        15,
-                        "AboutUpsertInput!"
+                        61,
+                        "HomeUpsertInput!"
                     ]
                 }
             ],
-            "publishAbout": [
-                0,
+            "publishHome": [
+                46,
                 {
                     "where": [
-                        20,
-                        "AboutWhereUniqueInput!"
+                        66,
+                        "HomeWhereUniqueInput!"
                     ],
                     "to": [
                         122,
@@ -2401,12 +2329,12 @@ export default {
                     ]
                 }
             ],
-            "unpublishAbout": [
-                0,
+            "unpublishHome": [
+                46,
                 {
                     "where": [
-                        20,
-                        "AboutWhereUniqueInput!"
+                        66,
+                        "HomeWhereUniqueInput!"
                     ],
                     "from": [
                         122,
@@ -2414,15 +2342,15 @@ export default {
                     ]
                 }
             ],
-            "updateManyAbout_pageConnection": [
-                2,
+            "updateManyHome_pageConnection": [
+                48,
                 {
                     "where": [
-                        7
+                        53
                     ],
                     "data": [
-                        11,
-                        "AboutUpdateManyInput!"
+                        57,
+                        "HomeUpdateManyInput!"
                     ],
                     "skip": [
                         71
@@ -2441,11 +2369,11 @@ export default {
                     ]
                 }
             ],
-            "deleteManyAbout_pageConnection": [
-                2,
+            "deleteManyHome_pageConnection": [
+                48,
                 {
                     "where": [
-                        7
+                        53
                     ],
                     "skip": [
                         71
@@ -2464,11 +2392,11 @@ export default {
                     ]
                 }
             ],
-            "publishManyAbout_pageConnection": [
-                2,
+            "publishManyHome_pageConnection": [
+                48,
                 {
                     "where": [
-                        7
+                        53
                     ],
                     "from": [
                         122
@@ -2494,11 +2422,11 @@ export default {
                     ]
                 }
             ],
-            "unpublishManyAbout_pageConnection": [
-                2,
+            "unpublishManyHome_pageConnection": [
+                48,
                 {
                     "where": [
-                        7
+                        53
                     ],
                     "stage": [
                         122
@@ -2524,31 +2452,31 @@ export default {
                     ]
                 }
             ],
-            "updateManyAbout_page": [
-                54,
+            "updateManyHome_page": [
+                33,
                 {
                     "where": [
-                        7
+                        53
                     ],
                     "data": [
-                        11,
-                        "AboutUpdateManyInput!"
+                        57,
+                        "HomeUpdateManyInput!"
                     ]
                 }
             ],
-            "deleteManyAbout_page": [
-                54,
+            "deleteManyHome_page": [
+                33,
                 {
                     "where": [
-                        7
+                        53
                     ]
                 }
             ],
-            "publishManyAbout_page": [
-                54,
+            "publishManyHome_page": [
+                33,
                 {
                     "where": [
-                        7
+                        53
                     ],
                     "to": [
                         122,
@@ -2556,11 +2484,11 @@ export default {
                     ]
                 }
             ],
-            "unpublishManyAbout_page": [
-                54,
+            "unpublishManyHome_page": [
+                33,
                 {
                     "where": [
-                        7
+                        53
                     ],
                     "from": [
                         122,
@@ -2568,38 +2496,38 @@ export default {
                     ]
                 }
             ],
-            "schedulePublishAbout": [
-                0,
+            "schedulePublishHome": [
+                46,
                 {
                     "where": [
-                        20,
-                        "AboutWhereUniqueInput!"
+                        66,
+                        "HomeWhereUniqueInput!"
                     ],
                     "to": [
                         122,
                         "[Stage!]!"
                     ],
                     "releaseAt": [
-                        60
+                        39
                     ],
                     "releaseId": [
                         123
                     ]
                 }
             ],
-            "scheduleUnpublishAbout": [
-                0,
+            "scheduleUnpublishHome": [
+                46,
                 {
                     "where": [
-                        20,
-                        "AboutWhereUniqueInput!"
+                        66,
+                        "HomeWhereUniqueInput!"
                     ],
                     "from": [
                         122,
                         "[Stage!]!"
                     ],
                     "releaseAt": [
-                        60
+                        39
                     ],
                     "releaseId": [
                         123
@@ -2607,54 +2535,54 @@ export default {
                 }
             ],
             "createAsset": [
-                22,
+                1,
                 {
                     "data": [
-                        25,
+                        4,
                         "AssetCreateInput!"
                     ]
                 }
             ],
             "updateAsset": [
-                22,
+                1,
                 {
                     "where": [
-                        53,
+                        32,
                         "AssetWhereUniqueInput!"
                     ],
                     "data": [
-                        35,
+                        14,
                         "AssetUpdateInput!"
                     ]
                 }
             ],
             "deleteAsset": [
-                22,
+                1,
                 {
                     "where": [
-                        53,
+                        32,
                         "AssetWhereUniqueInput!"
                     ]
                 }
             ],
             "upsertAsset": [
-                22,
+                1,
                 {
                     "where": [
-                        53,
+                        32,
                         "AssetWhereUniqueInput!"
                     ],
                     "upsert": [
-                        47,
+                        26,
                         "AssetUpsertInput!"
                     ]
                 }
             ],
             "publishAsset": [
-                22,
+                1,
                 {
                     "where": [
-                        53,
+                        32,
                         "AssetWhereUniqueInput!"
                     ],
                     "locales": [
@@ -2662,10 +2590,10 @@ export default {
                         "[Locale!]"
                     ],
                     "publishBase": [
-                        55
+                        34
                     ],
                     "withDefaultLocale": [
-                        55
+                        34
                     ],
                     "to": [
                         122,
@@ -2674,10 +2602,10 @@ export default {
                 }
             ],
             "unpublishAsset": [
-                22,
+                1,
                 {
                     "where": [
-                        53,
+                        32,
                         "AssetWhereUniqueInput!"
                     ],
                     "from": [
@@ -2689,18 +2617,18 @@ export default {
                         "[Locale!]"
                     ],
                     "unpublishBase": [
-                        55
+                        34
                     ]
                 }
             ],
             "updateManyAssetsConnection": [
-                24,
+                3,
                 {
                     "where": [
-                        32
+                        11
                     ],
                     "data": [
-                        40,
+                        19,
                         "AssetUpdateManyInput!"
                     ],
                     "skip": [
@@ -2721,10 +2649,10 @@ export default {
                 }
             ],
             "deleteManyAssetsConnection": [
-                24,
+                3,
                 {
                     "where": [
-                        32
+                        11
                     ],
                     "skip": [
                         71
@@ -2744,10 +2672,10 @@ export default {
                 }
             ],
             "publishManyAssetsConnection": [
-                24,
+                3,
                 {
                     "where": [
-                        32
+                        11
                     ],
                     "from": [
                         122
@@ -2776,18 +2704,18 @@ export default {
                         "[Locale!]"
                     ],
                     "publishBase": [
-                        55
+                        34
                     ],
                     "withDefaultLocale": [
-                        55
+                        34
                     ]
                 }
             ],
             "unpublishManyAssetsConnection": [
-                24,
+                3,
                 {
                     "where": [
-                        32
+                        11
                     ],
                     "stage": [
                         122
@@ -2816,35 +2744,35 @@ export default {
                         "[Locale!]"
                     ],
                     "unpublishBase": [
-                        55
+                        34
                     ]
                 }
             ],
             "updateManyAssets": [
-                54,
+                33,
                 {
                     "where": [
-                        32
+                        11
                     ],
                     "data": [
-                        40,
+                        19,
                         "AssetUpdateManyInput!"
                     ]
                 }
             ],
             "deleteManyAssets": [
-                54,
+                33,
                 {
                     "where": [
-                        32
+                        11
                     ]
                 }
             ],
             "publishManyAssets": [
-                54,
+                33,
                 {
                     "where": [
-                        32
+                        11
                     ],
                     "to": [
                         122,
@@ -2855,18 +2783,18 @@ export default {
                         "[Locale!]"
                     ],
                     "publishBase": [
-                        55
+                        34
                     ],
                     "withDefaultLocale": [
-                        55
+                        34
                     ]
                 }
             ],
             "unpublishManyAssets": [
-                54,
+                33,
                 {
                     "where": [
-                        32
+                        11
                     ],
                     "from": [
                         122,
@@ -2877,15 +2805,15 @@ export default {
                         "[Locale!]"
                     ],
                     "unpublishBase": [
-                        55
+                        34
                     ]
                 }
             ],
             "schedulePublishAsset": [
-                22,
+                1,
                 {
                     "where": [
-                        53,
+                        32,
                         "AssetWhereUniqueInput!"
                     ],
                     "locales": [
@@ -2893,17 +2821,17 @@ export default {
                         "[Locale!]"
                     ],
                     "publishBase": [
-                        55
+                        34
                     ],
                     "withDefaultLocale": [
-                        55
+                        34
                     ],
                     "to": [
                         122,
                         "[Stage!]!"
                     ],
                     "releaseAt": [
-                        60
+                        39
                     ],
                     "releaseId": [
                         123
@@ -2911,10 +2839,10 @@ export default {
                 }
             ],
             "scheduleUnpublishAsset": [
-                22,
+                1,
                 {
                     "where": [
-                        53,
+                        32,
                         "AssetWhereUniqueInput!"
                     ],
                     "from": [
@@ -2922,7 +2850,7 @@ export default {
                         "[Stage!]!"
                     ],
                     "releaseAt": [
-                        60
+                        39
                     ],
                     "releaseId": [
                         123
@@ -2932,7 +2860,7 @@ export default {
                         "[Locale!]"
                     ],
                     "unpublishBase": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -3157,7 +3085,7 @@ export default {
                 }
             ],
             "updateManyWork": [
-                54,
+                33,
                 {
                     "where": [
                         150
@@ -3169,7 +3097,7 @@ export default {
                 }
             ],
             "deleteManyWork": [
-                54,
+                33,
                 {
                     "where": [
                         150
@@ -3177,7 +3105,7 @@ export default {
                 }
             ],
             "publishManyWork": [
-                54,
+                33,
                 {
                     "where": [
                         150
@@ -3189,7 +3117,7 @@ export default {
                 }
             ],
             "unpublishManyWork": [
-                54,
+                33,
                 {
                     "where": [
                         150
@@ -3212,7 +3140,7 @@ export default {
                         "[Stage!]!"
                     ],
                     "releaseAt": [
-                        60
+                        39
                     ],
                     "releaseId": [
                         123
@@ -3231,7 +3159,7 @@ export default {
                         "[Stage!]!"
                     ],
                     "releaseAt": [
-                        60
+                        39
                     ],
                     "releaseId": [
                         123
@@ -3249,11 +3177,11 @@ export default {
             "stage": [
                 122
             ],
-            "on_About": [
-                0
-            ],
             "on_Asset": [
-                22
+                1
+            ],
+            "on_Home": [
+                46
             ],
             "on_ScheduledOperation": [
                 88
@@ -3273,10 +3201,10 @@ export default {
         },
         "PageInfo": {
             "hasNextPage": [
-                55
+                34
             ],
             "hasPreviousPage": [
-                55
+                34
             ],
             "startCursor": [
                 123
@@ -3320,14 +3248,14 @@ export default {
                     ]
                 }
             ],
-            "about_page": [
-                0,
+            "home_page": [
+                46,
                 {
                     "where": [
-                        18
+                        64
                     ],
                     "orderBy": [
-                        8
+                        54
                     ],
                     "skip": [
                         71
@@ -3354,12 +3282,12 @@ export default {
                     ]
                 }
             ],
-            "about": [
-                0,
+            "home": [
+                46,
                 {
                     "where": [
-                        20,
-                        "AboutWhereUniqueInput!"
+                        66,
+                        "HomeWhereUniqueInput!"
                     ],
                     "stage": [
                         122,
@@ -3371,14 +3299,14 @@ export default {
                     ]
                 }
             ],
-            "about_pageConnection": [
-                2,
+            "home_pageConnection": [
+                48,
                 {
                     "where": [
-                        18
+                        64
                     ],
                     "orderBy": [
-                        8
+                        54
                     ],
                     "skip": [
                         71
@@ -3405,8 +3333,8 @@ export default {
                     ]
                 }
             ],
-            "aboutVersion": [
-                64,
+            "homeVersion": [
+                43,
                 {
                     "where": [
                         142,
@@ -3500,13 +3428,13 @@ export default {
                 }
             ],
             "assets": [
-                22,
+                1,
                 {
                     "where": [
-                        51
+                        30
                     ],
                     "orderBy": [
-                        33
+                        12
                     ],
                     "skip": [
                         71
@@ -3534,10 +3462,10 @@ export default {
                 }
             ],
             "asset": [
-                22,
+                1,
                 {
                     "where": [
-                        53,
+                        32,
                         "AssetWhereUniqueInput!"
                     ],
                     "stage": [
@@ -3551,13 +3479,13 @@ export default {
                 }
             ],
             "assetsConnection": [
-                24,
+                3,
                 {
                     "where": [
-                        51
+                        30
                     ],
                     "orderBy": [
-                        33
+                        12
                     ],
                     "skip": [
                         71
@@ -3585,7 +3513,7 @@ export default {
                 }
             ],
             "assetVersion": [
-                64,
+                43,
                 {
                     "where": [
                         142,
@@ -3849,7 +3777,7 @@ export default {
                 }
             ],
             "worksVersion": [
-                64,
+                43,
                 {
                     "where": [
                         142,
@@ -3927,11 +3855,11 @@ export default {
                         "[Stage!]!"
                     ],
                     "includeCurrent": [
-                        55,
+                        34,
                         "Boolean!"
                     ],
                     "inheritLocale": [
-                        55,
+                        34,
                         "Boolean!"
                     ]
                 }
@@ -3946,13 +3874,13 @@ export default {
                 123
             ],
             "publishedAt": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "id": [
                 67
@@ -3965,7 +3893,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -3977,7 +3905,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -3989,7 +3917,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -4001,7 +3929,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -4031,7 +3959,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -4040,11 +3968,11 @@ export default {
             ]
         },
         "ScheduledOperationAffectedDocument": {
-            "on_About": [
-                0
-            ],
             "on_Asset": [
-                22
+                1
+            ],
+            "on_Home": [
+                46
             ],
             "on_Works": [
                 143
@@ -4061,7 +3989,7 @@ export default {
                 101
             ],
             "position": [
-                58
+                37
             ],
             "__typename": [
                 123
@@ -4075,7 +4003,7 @@ export default {
                 94
             ],
             "aggregate": [
-                21
+                0
             ],
             "__typename": [
                 123
@@ -4188,76 +4116,76 @@ export default {
                 123
             ],
             "publishedAt": [
-                60
+                39
             ],
             "publishedAt_not": [
-                60
+                39
             ],
             "publishedAt_in": [
-                60
+                39
             ],
             "publishedAt_not_in": [
-                60
+                39
             ],
             "publishedAt_lt": [
-                60
+                39
             ],
             "publishedAt_lte": [
-                60
+                39
             ],
             "publishedAt_gt": [
-                60
+                39
             ],
             "publishedAt_gte": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "updatedAt_not": [
-                60
+                39
             ],
             "updatedAt_in": [
-                60
+                39
             ],
             "updatedAt_not_in": [
-                60
+                39
             ],
             "updatedAt_lt": [
-                60
+                39
             ],
             "updatedAt_lte": [
-                60
+                39
             ],
             "updatedAt_gt": [
-                60
+                39
             ],
             "updatedAt_gte": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "createdAt_not": [
-                60
+                39
             ],
             "createdAt_in": [
-                60
+                39
             ],
             "createdAt_not_in": [
-                60
+                39
             ],
             "createdAt_lt": [
-                60
+                39
             ],
             "createdAt_lte": [
-                60
+                39
             ],
             "createdAt_gt": [
-                60
+                39
             ],
             "createdAt_gte": [
-                60
+                39
             ],
             "id": [
                 67
@@ -4338,7 +4266,7 @@ export default {
                 101
             ],
             "disconnect": [
-                55
+                34
             ],
             "__typename": [
                 123
@@ -4424,76 +4352,76 @@ export default {
                 123
             ],
             "publishedAt": [
-                60
+                39
             ],
             "publishedAt_not": [
-                60
+                39
             ],
             "publishedAt_in": [
-                60
+                39
             ],
             "publishedAt_not_in": [
-                60
+                39
             ],
             "publishedAt_lt": [
-                60
+                39
             ],
             "publishedAt_lte": [
-                60
+                39
             ],
             "publishedAt_gt": [
-                60
+                39
             ],
             "publishedAt_gte": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "updatedAt_not": [
-                60
+                39
             ],
             "updatedAt_in": [
-                60
+                39
             ],
             "updatedAt_not_in": [
-                60
+                39
             ],
             "updatedAt_lt": [
-                60
+                39
             ],
             "updatedAt_lte": [
-                60
+                39
             ],
             "updatedAt_gt": [
-                60
+                39
             ],
             "updatedAt_gte": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "createdAt_not": [
-                60
+                39
             ],
             "createdAt_in": [
-                60
+                39
             ],
             "createdAt_not_in": [
-                60
+                39
             ],
             "createdAt_lt": [
-                60
+                39
             ],
             "createdAt_lte": [
-                60
+                39
             ],
             "createdAt_gt": [
-                60
+                39
             ],
             "createdAt_gte": [
-                60
+                39
             ],
             "id": [
                 67
@@ -4573,23 +4501,23 @@ export default {
                         "[Stage!]!"
                     ],
                     "includeCurrent": [
-                        55,
+                        34,
                         "Boolean!"
                     ],
                     "inheritLocale": [
-                        55,
+                        34,
                         "Boolean!"
                     ]
                 }
             ],
             "releaseAt": [
-                60
+                39
             ],
             "isImplicit": [
-                55
+                34
             ],
             "isActive": [
-                55
+                34
             ],
             "errorMessage": [
                 123
@@ -4601,13 +4529,13 @@ export default {
                 123
             ],
             "publishedAt": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "id": [
                 67
@@ -4641,7 +4569,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -4653,7 +4581,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -4665,7 +4593,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -4677,7 +4605,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -4693,7 +4621,7 @@ export default {
                 121
             ],
             "position": [
-                58
+                37
             ],
             "__typename": [
                 123
@@ -4707,7 +4635,7 @@ export default {
                 108
             ],
             "aggregate": [
-                21
+                0
             ],
             "__typename": [
                 123
@@ -4715,10 +4643,10 @@ export default {
         },
         "ScheduledReleaseCreateInput": {
             "releaseAt": [
-                60
+                39
             ],
             "isActive": [
-                55
+                34
             ],
             "errorMessage": [
                 123
@@ -4730,10 +4658,10 @@ export default {
                 123
             ],
             "updatedAt": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "__typename": [
                 123
@@ -4786,40 +4714,40 @@ export default {
                 120
             ],
             "releaseAt": [
-                60
+                39
             ],
             "releaseAt_not": [
-                60
+                39
             ],
             "releaseAt_in": [
-                60
+                39
             ],
             "releaseAt_not_in": [
-                60
+                39
             ],
             "releaseAt_lt": [
-                60
+                39
             ],
             "releaseAt_lte": [
-                60
+                39
             ],
             "releaseAt_gt": [
-                60
+                39
             ],
             "releaseAt_gte": [
-                60
+                39
             ],
             "isImplicit": [
-                55
+                34
             ],
             "isImplicit_not": [
-                55
+                34
             ],
             "isActive": [
-                55
+                34
             ],
             "isActive_not": [
-                55
+                34
             ],
             "errorMessage": [
                 123
@@ -4912,76 +4840,76 @@ export default {
                 123
             ],
             "publishedAt": [
-                60
+                39
             ],
             "publishedAt_not": [
-                60
+                39
             ],
             "publishedAt_in": [
-                60
+                39
             ],
             "publishedAt_not_in": [
-                60
+                39
             ],
             "publishedAt_lt": [
-                60
+                39
             ],
             "publishedAt_lte": [
-                60
+                39
             ],
             "publishedAt_gt": [
-                60
+                39
             ],
             "publishedAt_gte": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "updatedAt_not": [
-                60
+                39
             ],
             "updatedAt_in": [
-                60
+                39
             ],
             "updatedAt_not_in": [
-                60
+                39
             ],
             "updatedAt_lt": [
-                60
+                39
             ],
             "updatedAt_lte": [
-                60
+                39
             ],
             "updatedAt_gt": [
-                60
+                39
             ],
             "updatedAt_gte": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "createdAt_not": [
-                60
+                39
             ],
             "createdAt_in": [
-                60
+                39
             ],
             "createdAt_not_in": [
-                60
+                39
             ],
             "createdAt_lt": [
-                60
+                39
             ],
             "createdAt_lte": [
-                60
+                39
             ],
             "createdAt_gt": [
-                60
+                39
             ],
             "createdAt_gte": [
-                60
+                39
             ],
             "id": [
                 67
@@ -5051,10 +4979,10 @@ export default {
         "ScheduledReleaseStatus": {},
         "ScheduledReleaseUpdateInput": {
             "releaseAt": [
-                60
+                39
             ],
             "isActive": [
-                55
+                34
             ],
             "errorMessage": [
                 123
@@ -5097,10 +5025,10 @@ export default {
         },
         "ScheduledReleaseUpdateManyInput": {
             "releaseAt": [
-                60
+                39
             ],
             "isActive": [
-                55
+                34
             ],
             "errorMessage": [
                 123
@@ -5140,10 +5068,10 @@ export default {
                 121
             ],
             "disconnect": [
-                55
+                34
             ],
             "delete": [
-                55
+                34
             ],
             "__typename": [
                 123
@@ -5196,40 +5124,40 @@ export default {
                 120
             ],
             "releaseAt": [
-                60
+                39
             ],
             "releaseAt_not": [
-                60
+                39
             ],
             "releaseAt_in": [
-                60
+                39
             ],
             "releaseAt_not_in": [
-                60
+                39
             ],
             "releaseAt_lt": [
-                60
+                39
             ],
             "releaseAt_lte": [
-                60
+                39
             ],
             "releaseAt_gt": [
-                60
+                39
             ],
             "releaseAt_gte": [
-                60
+                39
             ],
             "isImplicit": [
-                55
+                34
             ],
             "isImplicit_not": [
-                55
+                34
             ],
             "isActive": [
-                55
+                34
             ],
             "isActive_not": [
-                55
+                34
             ],
             "errorMessage": [
                 123
@@ -5322,76 +5250,76 @@ export default {
                 123
             ],
             "publishedAt": [
-                60
+                39
             ],
             "publishedAt_not": [
-                60
+                39
             ],
             "publishedAt_in": [
-                60
+                39
             ],
             "publishedAt_not_in": [
-                60
+                39
             ],
             "publishedAt_lt": [
-                60
+                39
             ],
             "publishedAt_lte": [
-                60
+                39
             ],
             "publishedAt_gt": [
-                60
+                39
             ],
             "publishedAt_gte": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "updatedAt_not": [
-                60
+                39
             ],
             "updatedAt_in": [
-                60
+                39
             ],
             "updatedAt_not_in": [
-                60
+                39
             ],
             "updatedAt_lt": [
-                60
+                39
             ],
             "updatedAt_lte": [
-                60
+                39
             ],
             "updatedAt_gt": [
-                60
+                39
             ],
             "updatedAt_gte": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "createdAt_not": [
-                60
+                39
             ],
             "createdAt_in": [
-                60
+                39
             ],
             "createdAt_not_in": [
-                60
+                39
             ],
             "createdAt_lt": [
-                60
+                39
             ],
             "createdAt_lte": [
-                60
+                39
             ],
             "createdAt_gt": [
-                60
+                39
             ],
             "createdAt_gte": [
-                60
+                39
             ],
             "id": [
                 67
@@ -5491,17 +5419,17 @@ export default {
                         "[Stage!]!"
                     ],
                     "includeCurrent": [
-                        55,
+                        34,
                         "Boolean!"
                     ],
                     "inheritLocale": [
-                        55,
+                        34,
                         "Boolean!"
                     ]
                 }
             ],
             "isActive": [
-                55
+                34
             ],
             "picture": [
                 123
@@ -5510,13 +5438,13 @@ export default {
                 123
             ],
             "publishedAt": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "id": [
                 67
@@ -5533,7 +5461,7 @@ export default {
                 140
             ],
             "position": [
-                58
+                37
             ],
             "__typename": [
                 123
@@ -5547,7 +5475,7 @@ export default {
                 131
             ],
             "aggregate": [
-                21
+                0
             ],
             "__typename": [
                 123
@@ -5604,10 +5532,10 @@ export default {
                 139
             ],
             "isActive": [
-                55
+                34
             ],
             "isActive_not": [
-                55
+                34
             ],
             "picture": [
                 123
@@ -5670,76 +5598,76 @@ export default {
                 123
             ],
             "publishedAt": [
-                60
+                39
             ],
             "publishedAt_not": [
-                60
+                39
             ],
             "publishedAt_in": [
-                60
+                39
             ],
             "publishedAt_not_in": [
-                60
+                39
             ],
             "publishedAt_lt": [
-                60
+                39
             ],
             "publishedAt_lte": [
-                60
+                39
             ],
             "publishedAt_gt": [
-                60
+                39
             ],
             "publishedAt_gte": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "updatedAt_not": [
-                60
+                39
             ],
             "updatedAt_in": [
-                60
+                39
             ],
             "updatedAt_not_in": [
-                60
+                39
             ],
             "updatedAt_lt": [
-                60
+                39
             ],
             "updatedAt_lte": [
-                60
+                39
             ],
             "updatedAt_gt": [
-                60
+                39
             ],
             "updatedAt_gte": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "createdAt_not": [
-                60
+                39
             ],
             "createdAt_in": [
-                60
+                39
             ],
             "createdAt_not_in": [
-                60
+                39
             ],
             "createdAt_lt": [
-                60
+                39
             ],
             "createdAt_lte": [
-                60
+                39
             ],
             "createdAt_gt": [
-                60
+                39
             ],
             "createdAt_gte": [
-                60
+                39
             ],
             "id": [
                 67
@@ -5807,7 +5735,7 @@ export default {
                 140
             ],
             "disconnect": [
-                55
+                34
             ],
             "__typename": [
                 123
@@ -5815,7 +5743,7 @@ export default {
         },
         "UserWhereComparatorInput": {
             "outdated_to": [
-                55
+                34
             ],
             "__typename": [
                 123
@@ -5844,10 +5772,10 @@ export default {
                 139
             ],
             "isActive": [
-                55
+                34
             ],
             "isActive_not": [
-                55
+                34
             ],
             "picture": [
                 123
@@ -5910,76 +5838,76 @@ export default {
                 123
             ],
             "publishedAt": [
-                60
+                39
             ],
             "publishedAt_not": [
-                60
+                39
             ],
             "publishedAt_in": [
-                60
+                39
             ],
             "publishedAt_not_in": [
-                60
+                39
             ],
             "publishedAt_lt": [
-                60
+                39
             ],
             "publishedAt_lte": [
-                60
+                39
             ],
             "publishedAt_gt": [
-                60
+                39
             ],
             "publishedAt_gte": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "updatedAt_not": [
-                60
+                39
             ],
             "updatedAt_in": [
-                60
+                39
             ],
             "updatedAt_not_in": [
-                60
+                39
             ],
             "updatedAt_lt": [
-                60
+                39
             ],
             "updatedAt_lte": [
-                60
+                39
             ],
             "updatedAt_gt": [
-                60
+                39
             ],
             "updatedAt_gte": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "createdAt_not": [
-                60
+                39
             ],
             "createdAt_in": [
-                60
+                39
             ],
             "createdAt_not_in": [
-                60
+                39
             ],
             "createdAt_lt": [
-                60
+                39
             ],
             "createdAt_lte": [
-                60
+                39
             ],
             "createdAt_gt": [
-                60
+                39
             ],
             "createdAt_gte": [
-                60
+                39
             ],
             "id": [
                 67
@@ -6066,7 +5994,7 @@ export default {
                 71
             ],
             "createdAt": [
-                60
+                39
             ],
             "__typename": [
                 123
@@ -6098,23 +6026,23 @@ export default {
                         "[Stage!]!"
                     ],
                     "includeCurrent": [
-                        55,
+                        34,
                         "Boolean!"
                     ],
                     "inheritLocale": [
-                        55,
+                        34,
                         "Boolean!"
                     ]
                 }
             ],
             "publishedAt": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "id": [
                 67
@@ -6142,7 +6070,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -6154,7 +6082,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -6166,18 +6094,18 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
             "bg": [
-                22,
+                1,
                 {
                     "where": [
-                        51
+                        30
                     ],
                     "orderBy": [
-                        33
+                        12
                     ],
                     "skip": [
                         71
@@ -6199,7 +6127,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -6229,7 +6157,7 @@ export default {
                         "[Locale!]"
                     ],
                     "forceParentLocale": [
-                        55
+                        34
                     ]
                 }
             ],
@@ -6258,7 +6186,7 @@ export default {
                 163
             ],
             "position": [
-                58
+                37
             ],
             "__typename": [
                 123
@@ -6272,7 +6200,7 @@ export default {
                 149
             ],
             "aggregate": [
-                21
+                0
             ],
             "__typename": [
                 123
@@ -6280,10 +6208,10 @@ export default {
         },
         "WorksCreateInput": {
             "updatedAt": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "slug": [
                 123
@@ -6301,7 +6229,7 @@ export default {
                 123
             ],
             "bg": [
-                29
+                8
             ],
             "__typename": [
                 123
@@ -6363,76 +6291,76 @@ export default {
                 162
             ],
             "publishedAt": [
-                60
+                39
             ],
             "publishedAt_not": [
-                60
+                39
             ],
             "publishedAt_in": [
-                60
+                39
             ],
             "publishedAt_not_in": [
-                60
+                39
             ],
             "publishedAt_lt": [
-                60
+                39
             ],
             "publishedAt_lte": [
-                60
+                39
             ],
             "publishedAt_gt": [
-                60
+                39
             ],
             "publishedAt_gte": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "updatedAt_not": [
-                60
+                39
             ],
             "updatedAt_in": [
-                60
+                39
             ],
             "updatedAt_not_in": [
-                60
+                39
             ],
             "updatedAt_lt": [
-                60
+                39
             ],
             "updatedAt_lte": [
-                60
+                39
             ],
             "updatedAt_gt": [
-                60
+                39
             ],
             "updatedAt_gte": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "createdAt_not": [
-                60
+                39
             ],
             "createdAt_in": [
-                60
+                39
             ],
             "createdAt_not_in": [
-                60
+                39
             ],
             "createdAt_lt": [
-                60
+                39
             ],
             "createdAt_lte": [
-                60
+                39
             ],
             "createdAt_gt": [
-                60
+                39
             ],
             "createdAt_gte": [
-                60
+                39
             ],
             "id": [
                 67
@@ -6609,13 +6537,13 @@ export default {
                 138
             ],
             "bg_every": [
-                51
+                30
             ],
             "bg_some": [
-                51
+                30
             ],
             "bg_none": [
-                51
+                30
             ],
             "scheduledIn_every": [
                 100
@@ -6648,7 +6576,7 @@ export default {
                 123
             ],
             "bg": [
-                39
+                18
             ],
             "__typename": [
                 123
@@ -6722,10 +6650,10 @@ export default {
                 163
             ],
             "disconnect": [
-                55
+                34
             ],
             "delete": [
-                55
+                34
             ],
             "__typename": [
                 123
@@ -6766,7 +6694,7 @@ export default {
         },
         "WorksWhereComparatorInput": {
             "outdated_to": [
-                55
+                34
             ],
             "__typename": [
                 123
@@ -6795,76 +6723,76 @@ export default {
                 162
             ],
             "publishedAt": [
-                60
+                39
             ],
             "publishedAt_not": [
-                60
+                39
             ],
             "publishedAt_in": [
-                60
+                39
             ],
             "publishedAt_not_in": [
-                60
+                39
             ],
             "publishedAt_lt": [
-                60
+                39
             ],
             "publishedAt_lte": [
-                60
+                39
             ],
             "publishedAt_gt": [
-                60
+                39
             ],
             "publishedAt_gte": [
-                60
+                39
             ],
             "updatedAt": [
-                60
+                39
             ],
             "updatedAt_not": [
-                60
+                39
             ],
             "updatedAt_in": [
-                60
+                39
             ],
             "updatedAt_not_in": [
-                60
+                39
             ],
             "updatedAt_lt": [
-                60
+                39
             ],
             "updatedAt_lte": [
-                60
+                39
             ],
             "updatedAt_gt": [
-                60
+                39
             ],
             "updatedAt_gte": [
-                60
+                39
             ],
             "createdAt": [
-                60
+                39
             ],
             "createdAt_not": [
-                60
+                39
             ],
             "createdAt_in": [
-                60
+                39
             ],
             "createdAt_not_in": [
-                60
+                39
             ],
             "createdAt_lt": [
-                60
+                39
             ],
             "createdAt_lte": [
-                60
+                39
             ],
             "createdAt_gt": [
-                60
+                39
             ],
             "createdAt_gte": [
-                60
+                39
             ],
             "id": [
                 67
@@ -7041,13 +6969,13 @@ export default {
                 138
             ],
             "bg_every": [
-                51
+                30
             ],
             "bg_some": [
-                51
+                30
             ],
             "bg_none": [
-                51
+                30
             ],
             "scheduledIn_every": [
                 100

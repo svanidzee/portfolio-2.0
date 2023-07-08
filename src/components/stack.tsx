@@ -1,64 +1,32 @@
-// 'use client';
-
-// import { FC } from 'react';
-// import { Stack } from '../generated/schema';
-// import { Box, Flex, Grid, GridItem, Heading, SimpleGrid } from '@chakra-ui/react';
-
-// type PickProps = Pick<Stack, 'title' | 'skills' | 'tools'>;
-
-// const Stacks = (props: PickProps) => {
-//   console.log(props);
-//   return (
-//     <div>
-//       <h1>{props.title}</h1>
-//       Skills:
-//       <ul>
-//         {props.skills.map((skill) => (
-//           <li key={skill}>{skill}</li>
-//         ))}
-//       </ul>
-//       Tools:
-//       <ul>
-//         {props.tools.map((tool) => (
-//           <li key={tool}>{tool}</li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default Stacks;
-
 'use client';
 
-import { archivo } from '../lib/fonts';
-import { Box, Heading, Wrap, WrapItem, useStyleConfig } from '@chakra-ui/react';
+import { Heading, Wrap, WrapItem, useStyleConfig } from '@chakra-ui/react';
+
+import { Container } from '../components/container';
+import { poppins } from '../lib/fonts';
+import Section from './layout/section';
 
 type StacksProps = {
   title: string;
-  data: string[];
+  stack: string[];
 };
 
-const Stack = (props: StacksProps) => {
+export const Stack = ({ title, stack }: StacksProps) => {
   const styles = useStyleConfig('WrapItem', { variant: 'base' });
 
   return (
-    <Box as='section' py='vGutter'>
-      <Box marginBottom='16'>
-        <Heading className={archivo.className} variant='base'>
-          Tools &amp; Softwares
-        </Heading>
-      </Box>
+    <Section>
+      <Heading className={poppins.className} variant='base'>
+        {title}
+      </Heading>
 
-      <Wrap spacing='10'>
-        {props.data.map((s) => (
-          <WrapItem key={s} __css={styles}>
+      <Wrap spacing={7} maxH='auto'>
+        {stack.map((s, i) => (
+          <WrapItem key={i} __css={styles}>
             {s}
           </WrapItem>
         ))}
       </Wrap>
-    </Box>
+    </Section>
   );
 };
-
-export default Stack;

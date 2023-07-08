@@ -19,60 +19,6 @@ export type Scalars = {
     String: string,
 }
 
-export interface About {
-    /** System stage field */
-    stage: Stage
-    /** Get the document in other stages */
-    documentInStages: About[]
-    /** The time the document was published. Null on documents in draft stage. */
-    publishedAt: (Scalars['DateTime'] | null)
-    /** The time the document was updated */
-    updatedAt: Scalars['DateTime']
-    /** The time the document was created */
-    createdAt: Scalars['DateTime']
-    /** The unique identifier */
-    id: Scalars['ID']
-    content1: Scalars['String']
-    content2: Scalars['String']
-    toolsTitle: Scalars['String']
-    slug: (Scalars['String'] | null)
-    stack: Scalars['String'][]
-    hobbies: Scalars['String']
-    /** User that last published this document */
-    publishedBy: (User | null)
-    /** User that last updated this document */
-    updatedBy: (User | null)
-    /** User that created this document */
-    createdBy: (User | null)
-    scheduledIn: ScheduledOperation[]
-    /** List of About versions */
-    history: Version[]
-    __typename: 'About'
-}
-
-
-/** A connection to a list of items. */
-export interface AboutConnection {
-    /** Information to aid in pagination. */
-    pageInfo: PageInfo
-    /** A list of edges. */
-    edges: AboutEdge[]
-    aggregate: Aggregate
-    __typename: 'AboutConnection'
-}
-
-
-/** An edge in a connection. */
-export interface AboutEdge {
-    /** The item at the end of the edge. */
-    node: About
-    /** A cursor for use in pagination. */
-    cursor: Scalars['String']
-    __typename: 'AboutEdge'
-}
-
-export type AboutOrderByInput = 'publishedAt_ASC' | 'publishedAt_DESC' | 'updatedAt_ASC' | 'updatedAt_DESC' | 'createdAt_ASC' | 'createdAt_DESC' | 'id_ASC' | 'id_DESC' | 'content1_ASC' | 'content1_DESC' | 'content2_ASC' | 'content2_DESC' | 'toolsTitle_ASC' | 'toolsTitle_DESC' | 'slug_ASC' | 'slug_DESC' | 'stack_ASC' | 'stack_DESC' | 'hobbies_ASC' | 'hobbies_DESC'
-
 export interface Aggregate {
     count: Scalars['Int']
     __typename: 'Aggregate'
@@ -173,6 +119,59 @@ export interface DocumentVersion {
     __typename: 'DocumentVersion'
 }
 
+export interface Home {
+    /** System stage field */
+    stage: Stage
+    /** Get the document in other stages */
+    documentInStages: Home[]
+    /** The time the document was published. Null on documents in draft stage. */
+    publishedAt: (Scalars['DateTime'] | null)
+    /** The time the document was updated */
+    updatedAt: Scalars['DateTime']
+    /** The time the document was created */
+    createdAt: Scalars['DateTime']
+    /** The unique identifier */
+    id: Scalars['ID']
+    about: Scalars['String']
+    title: Scalars['String']
+    slug: (Scalars['String'] | null)
+    stack: Scalars['String'][]
+    hobbies: Scalars['String']
+    /** User that last published this document */
+    publishedBy: (User | null)
+    /** User that last updated this document */
+    updatedBy: (User | null)
+    /** User that created this document */
+    createdBy: (User | null)
+    scheduledIn: ScheduledOperation[]
+    /** List of Home versions */
+    history: Version[]
+    __typename: 'Home'
+}
+
+
+/** A connection to a list of items. */
+export interface HomeConnection {
+    /** Information to aid in pagination. */
+    pageInfo: PageInfo
+    /** A list of edges. */
+    edges: HomeEdge[]
+    aggregate: Aggregate
+    __typename: 'HomeConnection'
+}
+
+
+/** An edge in a connection. */
+export interface HomeEdge {
+    /** The item at the end of the edge. */
+    node: Home
+    /** A cursor for use in pagination. */
+    cursor: Scalars['String']
+    __typename: 'HomeEdge'
+}
+
+export type HomeOrderByInput = 'publishedAt_ASC' | 'publishedAt_DESC' | 'updatedAt_ASC' | 'updatedAt_DESC' | 'createdAt_ASC' | 'createdAt_DESC' | 'id_ASC' | 'id_DESC' | 'about_ASC' | 'about_DESC' | 'title_ASC' | 'title_DESC' | 'slug_ASC' | 'slug_DESC' | 'stack_ASC' | 'stack_DESC' | 'hobbies_ASC' | 'hobbies_DESC'
+
 export type ImageFit = 'clip' | 'crop' | 'scale' | 'max'
 
 
@@ -189,50 +188,50 @@ export interface Location {
 }
 
 export interface Mutation {
-    /** Create one about */
-    createAbout: (About | null)
-    /** Update one about */
-    updateAbout: (About | null)
-    /** Delete one about from _all_ existing stages. Returns deleted document. */
-    deleteAbout: (About | null)
-    /** Upsert one about */
-    upsertAbout: (About | null)
-    /** Publish one about */
-    publishAbout: (About | null)
-    /** Unpublish one about from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
-    unpublishAbout: (About | null)
-    /** Update many About documents */
-    updateManyAbout_pageConnection: AboutConnection
-    /** Delete many About documents, return deleted documents */
-    deleteManyAbout_pageConnection: AboutConnection
-    /** Publish many About documents */
-    publishManyAbout_pageConnection: AboutConnection
-    /** Find many About documents that match criteria in specified stage and unpublish from target stages */
-    unpublishManyAbout_pageConnection: AboutConnection
+    /** Create one home */
+    createHome: (Home | null)
+    /** Update one home */
+    updateHome: (Home | null)
+    /** Delete one home from _all_ existing stages. Returns deleted document. */
+    deleteHome: (Home | null)
+    /** Upsert one home */
+    upsertHome: (Home | null)
+    /** Publish one home */
+    publishHome: (Home | null)
+    /** Unpublish one home from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+    unpublishHome: (Home | null)
+    /** Update many Home documents */
+    updateManyHome_pageConnection: HomeConnection
+    /** Delete many Home documents, return deleted documents */
+    deleteManyHome_pageConnection: HomeConnection
+    /** Publish many Home documents */
+    publishManyHome_pageConnection: HomeConnection
+    /** Find many Home documents that match criteria in specified stage and unpublish from target stages */
+    unpublishManyHome_pageConnection: HomeConnection
     /**
-     * @deprecated Please use the new paginated many mutation (updateManyAbout_pageConnection)
-     * Update many about_page
+     * @deprecated Please use the new paginated many mutation (updateManyHome_pageConnection)
+     * Update many home_page
      */
-    updateManyAbout_page: BatchPayload
+    updateManyHome_page: BatchPayload
     /**
-     * @deprecated Please use the new paginated many mutation (deleteManyAbout_pageConnection)
-     * Delete many About documents
+     * @deprecated Please use the new paginated many mutation (deleteManyHome_pageConnection)
+     * Delete many Home documents
      */
-    deleteManyAbout_page: BatchPayload
+    deleteManyHome_page: BatchPayload
     /**
-     * @deprecated Please use the new paginated many mutation (publishManyAbout_pageConnection)
-     * Publish many About documents
+     * @deprecated Please use the new paginated many mutation (publishManyHome_pageConnection)
+     * Publish many Home documents
      */
-    publishManyAbout_page: BatchPayload
+    publishManyHome_page: BatchPayload
     /**
-     * @deprecated Please use the new paginated many mutation (unpublishManyAbout_pageConnection)
-     * Unpublish many About documents
+     * @deprecated Please use the new paginated many mutation (unpublishManyHome_pageConnection)
+     * Unpublish many Home documents
      */
-    unpublishManyAbout_page: BatchPayload
-    /** Schedule to publish one about */
-    schedulePublishAbout: (About | null)
-    /** Unpublish one about from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
-    scheduleUnpublishAbout: (About | null)
+    unpublishManyHome_page: BatchPayload
+    /** Schedule to publish one home */
+    schedulePublishHome: (Home | null)
+    /** Unpublish one home from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+    scheduleUnpublishHome: (Home | null)
     /**
      * @deprecated Asset mutations will be overhauled soon
      * Create one asset
@@ -337,7 +336,7 @@ export interface Mutation {
 
 
 /** An object with an ID */
-export type Node = (About | Asset | ScheduledOperation | ScheduledRelease | User | Works) & { __isUnion?: true }
+export type Node = (Asset | Home | ScheduledOperation | ScheduledRelease | User | Works) & { __isUnion?: true }
 
 
 /** Information about pagination in a connection. */
@@ -358,14 +357,14 @@ export interface PageInfo {
 export interface Query {
     /** Fetches an object given its ID */
     node: (Node | null)
-    /** Retrieve multiple about_page */
-    about_page: About[]
-    /** Retrieve a single about */
-    about: (About | null)
-    /** Retrieve multiple about_page using the Relay connection interface */
-    about_pageConnection: AboutConnection
+    /** Retrieve multiple home_page */
+    home_page: Home[]
+    /** Retrieve a single home */
+    home: (Home | null)
+    /** Retrieve multiple home_page using the Relay connection interface */
+    home_pageConnection: HomeConnection
     /** Retrieve document version */
-    aboutVersion: (DocumentVersion | null)
+    homeVersion: (DocumentVersion | null)
     /** Retrieve multiple users */
     users: User[]
     /** Retrieve a single user */
@@ -462,7 +461,7 @@ export interface ScheduledOperation {
     __typename: 'ScheduledOperation'
 }
 
-export type ScheduledOperationAffectedDocument = (About | Asset | Works) & { __isUnion?: true }
+export type ScheduledOperationAffectedDocument = (Asset | Home | Works) & { __isUnion?: true }
 
 
 /** A connection to a list of items. */
@@ -694,587 +693,6 @@ export type _RelationInputKind = 'create' | 'update'
 export type _RelationKind = 'regular' | 'union'
 
 export type _SystemDateTimeFieldVariation = 'base' | 'localization' | 'combined'
-
-export interface AboutGenqlSelection{
-    /** System stage field */
-    stage?: boolean | number
-    /** Get the document in other stages */
-    documentInStages?: (AboutGenqlSelection & { __args: {
-    /** Potential stages that should be returned */
-    stages: Stage[], 
-    /** Decides if the current stage should be included or not */
-    includeCurrent: Scalars['Boolean'], 
-    /** Decides if the documents should match the parent documents locale or should use the fallback order defined in the tree */
-    inheritLocale: Scalars['Boolean']} })
-    /** The time the document was published. Null on documents in draft stage. */
-    publishedAt?: boolean | number
-    /** The time the document was updated */
-    updatedAt?: boolean | number
-    /** The time the document was created */
-    createdAt?: boolean | number
-    /** The unique identifier */
-    id?: boolean | number
-    content1?: boolean | number
-    content2?: boolean | number
-    toolsTitle?: boolean | number
-    slug?: boolean | number
-    stack?: boolean | number
-    hobbies?: boolean | number
-    /** User that last published this document */
-    publishedBy?: (UserGenqlSelection & { __args?: {
-    /**
-     * Allows to optionally override locale filtering behaviour in the query's subtree.
-     * 
-     * Note that `publishedBy` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
-     * 
-     * This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
-     */
-    locales?: (Locale[] | null), 
-    /**
-     * Sets the locale of the resolved parent document as the only locale in the query's subtree.
-     * 
-     * Note that `publishedBy` is a model without localized fields and will not be affected directly by this argument, however the locale will be passed on to any relational fields in the query's subtree for filtering.
-     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
-     * 
-     * This argument will affect any existing locale filtering defined in the query's tree for the subtree.
-     */
-    forceParentLocale?: (Scalars['Boolean'] | null)} })
-    /** User that last updated this document */
-    updatedBy?: (UserGenqlSelection & { __args?: {
-    /**
-     * Allows to optionally override locale filtering behaviour in the query's subtree.
-     * 
-     * Note that `updatedBy` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
-     * 
-     * This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
-     */
-    locales?: (Locale[] | null), 
-    /**
-     * Sets the locale of the resolved parent document as the only locale in the query's subtree.
-     * 
-     * Note that `updatedBy` is a model without localized fields and will not be affected directly by this argument, however the locale will be passed on to any relational fields in the query's subtree for filtering.
-     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
-     * 
-     * This argument will affect any existing locale filtering defined in the query's tree for the subtree.
-     */
-    forceParentLocale?: (Scalars['Boolean'] | null)} })
-    /** User that created this document */
-    createdBy?: (UserGenqlSelection & { __args?: {
-    /**
-     * Allows to optionally override locale filtering behaviour in the query's subtree.
-     * 
-     * Note that `createdBy` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
-     * 
-     * This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
-     */
-    locales?: (Locale[] | null), 
-    /**
-     * Sets the locale of the resolved parent document as the only locale in the query's subtree.
-     * 
-     * Note that `createdBy` is a model without localized fields and will not be affected directly by this argument, however the locale will be passed on to any relational fields in the query's subtree for filtering.
-     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
-     * 
-     * This argument will affect any existing locale filtering defined in the query's tree for the subtree.
-     */
-    forceParentLocale?: (Scalars['Boolean'] | null)} })
-    scheduledIn?: (ScheduledOperationGenqlSelection & { __args?: {where?: (ScheduledOperationWhereInput | null), skip?: (Scalars['Int'] | null), after?: (Scalars['String'] | null), before?: (Scalars['String'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), 
-    /**
-     * Allows to optionally override locale filtering behaviour in the query's subtree.
-     * 
-     * Note that `scheduledIn` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
-     * 
-     * This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
-     */
-    locales?: (Locale[] | null), 
-    /**
-     * Sets the locale of the resolved parent document as the only locale in the query's subtree.
-     * 
-     * Note that `scheduledIn` is a model without localized fields and will not be affected directly by this argument, however the locale will be passed on to any relational fields in the query's subtree for filtering.
-     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
-     * 
-     * This argument will affect any existing locale filtering defined in the query's tree for the subtree.
-     */
-    forceParentLocale?: (Scalars['Boolean'] | null)} })
-    /** List of About versions */
-    history?: (VersionGenqlSelection & { __args: {limit: Scalars['Int'], skip: Scalars['Int'], 
-    /** This is optional and can be used to fetch the document version history for a specific stage instead of the current one */
-    stageOverride?: (Stage | null)} })
-    __typename?: boolean | number
-    __scalar?: boolean | number
-}
-
-export interface AboutConnectInput {
-/** Document to connect */
-where?: AboutWhereUniqueInput,
-/** Allow to specify document position in list of connected documents, will default to appending at end of list */
-position?: (ConnectPositionInput | null)}
-
-
-/** A connection to a list of items. */
-export interface AboutConnectionGenqlSelection{
-    /** Information to aid in pagination. */
-    pageInfo?: PageInfoGenqlSelection
-    /** A list of edges. */
-    edges?: AboutEdgeGenqlSelection
-    aggregate?: AggregateGenqlSelection
-    __typename?: boolean | number
-    __scalar?: boolean | number
-}
-
-export interface AboutCreateInput {updatedAt?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),content1?: Scalars['String'],content2?: Scalars['String'],toolsTitle?: Scalars['String'],slug?: (Scalars['String'] | null),stack?: Scalars['String'][],hobbies?: Scalars['String']}
-
-export interface AboutCreateManyInlineInput {
-/** Create and connect multiple existing About documents */
-create?: (AboutCreateInput[] | null),
-/** Connect multiple existing About documents */
-connect?: (AboutWhereUniqueInput[] | null)}
-
-export interface AboutCreateOneInlineInput {
-/** Create and connect one About document */
-create?: (AboutCreateInput | null),
-/** Connect one existing About document */
-connect?: (AboutWhereUniqueInput | null)}
-
-
-/** An edge in a connection. */
-export interface AboutEdgeGenqlSelection{
-    /** The item at the end of the edge. */
-    node?: AboutGenqlSelection
-    /** A cursor for use in pagination. */
-    cursor?: boolean | number
-    __typename?: boolean | number
-    __scalar?: boolean | number
-}
-
-
-/** Identifies documents */
-export interface AboutManyWhereInput {
-/** Contains search across all appropriate fields. */
-_search?: (Scalars['String'] | null),
-/** Logical AND on all given filters. */
-AND?: (AboutWhereInput[] | null),
-/** Logical OR on all given filters. */
-OR?: (AboutWhereInput[] | null),
-/** Logical NOT on all given filters combined by AND. */
-NOT?: (AboutWhereInput[] | null),documentInStages_every?: (AboutWhereStageInput | null),documentInStages_some?: (AboutWhereStageInput | null),documentInStages_none?: (AboutWhereStageInput | null),publishedAt?: (Scalars['DateTime'] | null),
-/** Any other value that exists and is not equal to the given value. */
-publishedAt_not?: (Scalars['DateTime'] | null),
-/** All values that are contained in given list. */
-publishedAt_in?: ((Scalars['DateTime'] | null)[] | null),
-/** All values that are not contained in given list. */
-publishedAt_not_in?: ((Scalars['DateTime'] | null)[] | null),
-/** All values less than the given value. */
-publishedAt_lt?: (Scalars['DateTime'] | null),
-/** All values less than or equal the given value. */
-publishedAt_lte?: (Scalars['DateTime'] | null),
-/** All values greater than the given value. */
-publishedAt_gt?: (Scalars['DateTime'] | null),
-/** All values greater than or equal the given value. */
-publishedAt_gte?: (Scalars['DateTime'] | null),updatedAt?: (Scalars['DateTime'] | null),
-/** Any other value that exists and is not equal to the given value. */
-updatedAt_not?: (Scalars['DateTime'] | null),
-/** All values that are contained in given list. */
-updatedAt_in?: ((Scalars['DateTime'] | null)[] | null),
-/** All values that are not contained in given list. */
-updatedAt_not_in?: ((Scalars['DateTime'] | null)[] | null),
-/** All values less than the given value. */
-updatedAt_lt?: (Scalars['DateTime'] | null),
-/** All values less than or equal the given value. */
-updatedAt_lte?: (Scalars['DateTime'] | null),
-/** All values greater than the given value. */
-updatedAt_gt?: (Scalars['DateTime'] | null),
-/** All values greater than or equal the given value. */
-updatedAt_gte?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),
-/** Any other value that exists and is not equal to the given value. */
-createdAt_not?: (Scalars['DateTime'] | null),
-/** All values that are contained in given list. */
-createdAt_in?: ((Scalars['DateTime'] | null)[] | null),
-/** All values that are not contained in given list. */
-createdAt_not_in?: ((Scalars['DateTime'] | null)[] | null),
-/** All values less than the given value. */
-createdAt_lt?: (Scalars['DateTime'] | null),
-/** All values less than or equal the given value. */
-createdAt_lte?: (Scalars['DateTime'] | null),
-/** All values greater than the given value. */
-createdAt_gt?: (Scalars['DateTime'] | null),
-/** All values greater than or equal the given value. */
-createdAt_gte?: (Scalars['DateTime'] | null),id?: (Scalars['ID'] | null),
-/** Any other value that exists and is not equal to the given value. */
-id_not?: (Scalars['ID'] | null),
-/** All values that are contained in given list. */
-id_in?: ((Scalars['ID'] | null)[] | null),
-/** All values that are not contained in given list. */
-id_not_in?: ((Scalars['ID'] | null)[] | null),
-/** All values containing the given string. */
-id_contains?: (Scalars['ID'] | null),
-/** All values not containing the given string. */
-id_not_contains?: (Scalars['ID'] | null),
-/** All values starting with the given string. */
-id_starts_with?: (Scalars['ID'] | null),
-/** All values not starting with the given string. */
-id_not_starts_with?: (Scalars['ID'] | null),
-/** All values ending with the given string. */
-id_ends_with?: (Scalars['ID'] | null),
-/** All values not ending with the given string */
-id_not_ends_with?: (Scalars['ID'] | null),content1?: (Scalars['String'] | null),
-/** Any other value that exists and is not equal to the given value. */
-content1_not?: (Scalars['String'] | null),
-/** All values that are contained in given list. */
-content1_in?: ((Scalars['String'] | null)[] | null),
-/** All values that are not contained in given list. */
-content1_not_in?: ((Scalars['String'] | null)[] | null),
-/** All values containing the given string. */
-content1_contains?: (Scalars['String'] | null),
-/** All values not containing the given string. */
-content1_not_contains?: (Scalars['String'] | null),
-/** All values starting with the given string. */
-content1_starts_with?: (Scalars['String'] | null),
-/** All values not starting with the given string. */
-content1_not_starts_with?: (Scalars['String'] | null),
-/** All values ending with the given string. */
-content1_ends_with?: (Scalars['String'] | null),
-/** All values not ending with the given string */
-content1_not_ends_with?: (Scalars['String'] | null),content2?: (Scalars['String'] | null),
-/** Any other value that exists and is not equal to the given value. */
-content2_not?: (Scalars['String'] | null),
-/** All values that are contained in given list. */
-content2_in?: ((Scalars['String'] | null)[] | null),
-/** All values that are not contained in given list. */
-content2_not_in?: ((Scalars['String'] | null)[] | null),
-/** All values containing the given string. */
-content2_contains?: (Scalars['String'] | null),
-/** All values not containing the given string. */
-content2_not_contains?: (Scalars['String'] | null),
-/** All values starting with the given string. */
-content2_starts_with?: (Scalars['String'] | null),
-/** All values not starting with the given string. */
-content2_not_starts_with?: (Scalars['String'] | null),
-/** All values ending with the given string. */
-content2_ends_with?: (Scalars['String'] | null),
-/** All values not ending with the given string */
-content2_not_ends_with?: (Scalars['String'] | null),toolsTitle?: (Scalars['String'] | null),
-/** Any other value that exists and is not equal to the given value. */
-toolsTitle_not?: (Scalars['String'] | null),
-/** All values that are contained in given list. */
-toolsTitle_in?: ((Scalars['String'] | null)[] | null),
-/** All values that are not contained in given list. */
-toolsTitle_not_in?: ((Scalars['String'] | null)[] | null),
-/** All values containing the given string. */
-toolsTitle_contains?: (Scalars['String'] | null),
-/** All values not containing the given string. */
-toolsTitle_not_contains?: (Scalars['String'] | null),
-/** All values starting with the given string. */
-toolsTitle_starts_with?: (Scalars['String'] | null),
-/** All values not starting with the given string. */
-toolsTitle_not_starts_with?: (Scalars['String'] | null),
-/** All values ending with the given string. */
-toolsTitle_ends_with?: (Scalars['String'] | null),
-/** All values not ending with the given string */
-toolsTitle_not_ends_with?: (Scalars['String'] | null),slug?: (Scalars['String'] | null),
-/** Any other value that exists and is not equal to the given value. */
-slug_not?: (Scalars['String'] | null),
-/** All values that are contained in given list. */
-slug_in?: ((Scalars['String'] | null)[] | null),
-/** All values that are not contained in given list. */
-slug_not_in?: ((Scalars['String'] | null)[] | null),
-/** All values containing the given string. */
-slug_contains?: (Scalars['String'] | null),
-/** All values not containing the given string. */
-slug_not_contains?: (Scalars['String'] | null),
-/** All values starting with the given string. */
-slug_starts_with?: (Scalars['String'] | null),
-/** All values not starting with the given string. */
-slug_not_starts_with?: (Scalars['String'] | null),
-/** All values ending with the given string. */
-slug_ends_with?: (Scalars['String'] | null),
-/** All values not ending with the given string */
-slug_not_ends_with?: (Scalars['String'] | null),
-/** Matches if the field array contains *all* items provided to the filter and order does match */
-stack?: (Scalars['String'][] | null),
-/** Matches if the field array does not contains *all* items provided to the filter or order does not match */
-stack_not?: (Scalars['String'][] | null),
-/** Matches if the field array contains *all* items provided to the filter */
-stack_contains_all?: (Scalars['String'][] | null),
-/** Matches if the field array contains at least one item provided to the filter */
-stack_contains_some?: (Scalars['String'][] | null),
-/** Matches if the field array does not contain any of the items provided to the filter */
-stack_contains_none?: (Scalars['String'][] | null),hobbies?: (Scalars['String'] | null),
-/** Any other value that exists and is not equal to the given value. */
-hobbies_not?: (Scalars['String'] | null),
-/** All values that are contained in given list. */
-hobbies_in?: ((Scalars['String'] | null)[] | null),
-/** All values that are not contained in given list. */
-hobbies_not_in?: ((Scalars['String'] | null)[] | null),
-/** All values containing the given string. */
-hobbies_contains?: (Scalars['String'] | null),
-/** All values not containing the given string. */
-hobbies_not_contains?: (Scalars['String'] | null),
-/** All values starting with the given string. */
-hobbies_starts_with?: (Scalars['String'] | null),
-/** All values not starting with the given string. */
-hobbies_not_starts_with?: (Scalars['String'] | null),
-/** All values ending with the given string. */
-hobbies_ends_with?: (Scalars['String'] | null),
-/** All values not ending with the given string */
-hobbies_not_ends_with?: (Scalars['String'] | null),publishedBy?: (UserWhereInput | null),updatedBy?: (UserWhereInput | null),createdBy?: (UserWhereInput | null),scheduledIn_every?: (ScheduledOperationWhereInput | null),scheduledIn_some?: (ScheduledOperationWhereInput | null),scheduledIn_none?: (ScheduledOperationWhereInput | null)}
-
-export interface AboutUpdateInput {content1?: (Scalars['String'] | null),content2?: (Scalars['String'] | null),toolsTitle?: (Scalars['String'] | null),slug?: (Scalars['String'] | null),stack?: (Scalars['String'][] | null),hobbies?: (Scalars['String'] | null)}
-
-export interface AboutUpdateManyInlineInput {
-/** Create and connect multiple About documents */
-create?: (AboutCreateInput[] | null),
-/** Connect multiple existing About documents */
-connect?: (AboutConnectInput[] | null),
-/** Override currently-connected documents with multiple existing About documents */
-set?: (AboutWhereUniqueInput[] | null),
-/** Update multiple About documents */
-update?: (AboutUpdateWithNestedWhereUniqueInput[] | null),
-/** Upsert multiple About documents */
-upsert?: (AboutUpsertWithNestedWhereUniqueInput[] | null),
-/** Disconnect multiple About documents */
-disconnect?: (AboutWhereUniqueInput[] | null),
-/** Delete multiple About documents */
-delete?: (AboutWhereUniqueInput[] | null)}
-
-export interface AboutUpdateManyInput {content1?: (Scalars['String'] | null),content2?: (Scalars['String'] | null),toolsTitle?: (Scalars['String'] | null),stack?: (Scalars['String'][] | null),hobbies?: (Scalars['String'] | null)}
-
-export interface AboutUpdateManyWithNestedWhereInput {
-/** Document search */
-where?: AboutWhereInput,
-/** Update many input */
-data?: AboutUpdateManyInput}
-
-export interface AboutUpdateOneInlineInput {
-/** Create and connect one About document */
-create?: (AboutCreateInput | null),
-/** Update single About document */
-update?: (AboutUpdateWithNestedWhereUniqueInput | null),
-/** Upsert single About document */
-upsert?: (AboutUpsertWithNestedWhereUniqueInput | null),
-/** Connect existing About document */
-connect?: (AboutWhereUniqueInput | null),
-/** Disconnect currently connected About document */
-disconnect?: (Scalars['Boolean'] | null),
-/** Delete currently connected About document */
-delete?: (Scalars['Boolean'] | null)}
-
-export interface AboutUpdateWithNestedWhereUniqueInput {
-/** Unique document search */
-where?: AboutWhereUniqueInput,
-/** Document to update */
-data?: AboutUpdateInput}
-
-export interface AboutUpsertInput {
-/** Create document if it didn't exist */
-create?: AboutCreateInput,
-/** Update document if it exists */
-update?: AboutUpdateInput}
-
-export interface AboutUpsertWithNestedWhereUniqueInput {
-/** Unique document search */
-where?: AboutWhereUniqueInput,
-/** Upsert data */
-data?: AboutUpsertInput}
-
-
-/** This contains a set of filters that can be used to compare values internally */
-export interface AboutWhereComparatorInput {
-/** This field can be used to request to check if the entry is outdated by internal comparison */
-outdated_to?: (Scalars['Boolean'] | null)}
-
-
-/** Identifies documents */
-export interface AboutWhereInput {
-/** Contains search across all appropriate fields. */
-_search?: (Scalars['String'] | null),
-/** Logical AND on all given filters. */
-AND?: (AboutWhereInput[] | null),
-/** Logical OR on all given filters. */
-OR?: (AboutWhereInput[] | null),
-/** Logical NOT on all given filters combined by AND. */
-NOT?: (AboutWhereInput[] | null),documentInStages_every?: (AboutWhereStageInput | null),documentInStages_some?: (AboutWhereStageInput | null),documentInStages_none?: (AboutWhereStageInput | null),publishedAt?: (Scalars['DateTime'] | null),
-/** Any other value that exists and is not equal to the given value. */
-publishedAt_not?: (Scalars['DateTime'] | null),
-/** All values that are contained in given list. */
-publishedAt_in?: ((Scalars['DateTime'] | null)[] | null),
-/** All values that are not contained in given list. */
-publishedAt_not_in?: ((Scalars['DateTime'] | null)[] | null),
-/** All values less than the given value. */
-publishedAt_lt?: (Scalars['DateTime'] | null),
-/** All values less than or equal the given value. */
-publishedAt_lte?: (Scalars['DateTime'] | null),
-/** All values greater than the given value. */
-publishedAt_gt?: (Scalars['DateTime'] | null),
-/** All values greater than or equal the given value. */
-publishedAt_gte?: (Scalars['DateTime'] | null),updatedAt?: (Scalars['DateTime'] | null),
-/** Any other value that exists and is not equal to the given value. */
-updatedAt_not?: (Scalars['DateTime'] | null),
-/** All values that are contained in given list. */
-updatedAt_in?: ((Scalars['DateTime'] | null)[] | null),
-/** All values that are not contained in given list. */
-updatedAt_not_in?: ((Scalars['DateTime'] | null)[] | null),
-/** All values less than the given value. */
-updatedAt_lt?: (Scalars['DateTime'] | null),
-/** All values less than or equal the given value. */
-updatedAt_lte?: (Scalars['DateTime'] | null),
-/** All values greater than the given value. */
-updatedAt_gt?: (Scalars['DateTime'] | null),
-/** All values greater than or equal the given value. */
-updatedAt_gte?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),
-/** Any other value that exists and is not equal to the given value. */
-createdAt_not?: (Scalars['DateTime'] | null),
-/** All values that are contained in given list. */
-createdAt_in?: ((Scalars['DateTime'] | null)[] | null),
-/** All values that are not contained in given list. */
-createdAt_not_in?: ((Scalars['DateTime'] | null)[] | null),
-/** All values less than the given value. */
-createdAt_lt?: (Scalars['DateTime'] | null),
-/** All values less than or equal the given value. */
-createdAt_lte?: (Scalars['DateTime'] | null),
-/** All values greater than the given value. */
-createdAt_gt?: (Scalars['DateTime'] | null),
-/** All values greater than or equal the given value. */
-createdAt_gte?: (Scalars['DateTime'] | null),id?: (Scalars['ID'] | null),
-/** Any other value that exists and is not equal to the given value. */
-id_not?: (Scalars['ID'] | null),
-/** All values that are contained in given list. */
-id_in?: ((Scalars['ID'] | null)[] | null),
-/** All values that are not contained in given list. */
-id_not_in?: ((Scalars['ID'] | null)[] | null),
-/** All values containing the given string. */
-id_contains?: (Scalars['ID'] | null),
-/** All values not containing the given string. */
-id_not_contains?: (Scalars['ID'] | null),
-/** All values starting with the given string. */
-id_starts_with?: (Scalars['ID'] | null),
-/** All values not starting with the given string. */
-id_not_starts_with?: (Scalars['ID'] | null),
-/** All values ending with the given string. */
-id_ends_with?: (Scalars['ID'] | null),
-/** All values not ending with the given string */
-id_not_ends_with?: (Scalars['ID'] | null),content1?: (Scalars['String'] | null),
-/** Any other value that exists and is not equal to the given value. */
-content1_not?: (Scalars['String'] | null),
-/** All values that are contained in given list. */
-content1_in?: ((Scalars['String'] | null)[] | null),
-/** All values that are not contained in given list. */
-content1_not_in?: ((Scalars['String'] | null)[] | null),
-/** All values containing the given string. */
-content1_contains?: (Scalars['String'] | null),
-/** All values not containing the given string. */
-content1_not_contains?: (Scalars['String'] | null),
-/** All values starting with the given string. */
-content1_starts_with?: (Scalars['String'] | null),
-/** All values not starting with the given string. */
-content1_not_starts_with?: (Scalars['String'] | null),
-/** All values ending with the given string. */
-content1_ends_with?: (Scalars['String'] | null),
-/** All values not ending with the given string */
-content1_not_ends_with?: (Scalars['String'] | null),content2?: (Scalars['String'] | null),
-/** Any other value that exists and is not equal to the given value. */
-content2_not?: (Scalars['String'] | null),
-/** All values that are contained in given list. */
-content2_in?: ((Scalars['String'] | null)[] | null),
-/** All values that are not contained in given list. */
-content2_not_in?: ((Scalars['String'] | null)[] | null),
-/** All values containing the given string. */
-content2_contains?: (Scalars['String'] | null),
-/** All values not containing the given string. */
-content2_not_contains?: (Scalars['String'] | null),
-/** All values starting with the given string. */
-content2_starts_with?: (Scalars['String'] | null),
-/** All values not starting with the given string. */
-content2_not_starts_with?: (Scalars['String'] | null),
-/** All values ending with the given string. */
-content2_ends_with?: (Scalars['String'] | null),
-/** All values not ending with the given string */
-content2_not_ends_with?: (Scalars['String'] | null),toolsTitle?: (Scalars['String'] | null),
-/** Any other value that exists and is not equal to the given value. */
-toolsTitle_not?: (Scalars['String'] | null),
-/** All values that are contained in given list. */
-toolsTitle_in?: ((Scalars['String'] | null)[] | null),
-/** All values that are not contained in given list. */
-toolsTitle_not_in?: ((Scalars['String'] | null)[] | null),
-/** All values containing the given string. */
-toolsTitle_contains?: (Scalars['String'] | null),
-/** All values not containing the given string. */
-toolsTitle_not_contains?: (Scalars['String'] | null),
-/** All values starting with the given string. */
-toolsTitle_starts_with?: (Scalars['String'] | null),
-/** All values not starting with the given string. */
-toolsTitle_not_starts_with?: (Scalars['String'] | null),
-/** All values ending with the given string. */
-toolsTitle_ends_with?: (Scalars['String'] | null),
-/** All values not ending with the given string */
-toolsTitle_not_ends_with?: (Scalars['String'] | null),slug?: (Scalars['String'] | null),
-/** Any other value that exists and is not equal to the given value. */
-slug_not?: (Scalars['String'] | null),
-/** All values that are contained in given list. */
-slug_in?: ((Scalars['String'] | null)[] | null),
-/** All values that are not contained in given list. */
-slug_not_in?: ((Scalars['String'] | null)[] | null),
-/** All values containing the given string. */
-slug_contains?: (Scalars['String'] | null),
-/** All values not containing the given string. */
-slug_not_contains?: (Scalars['String'] | null),
-/** All values starting with the given string. */
-slug_starts_with?: (Scalars['String'] | null),
-/** All values not starting with the given string. */
-slug_not_starts_with?: (Scalars['String'] | null),
-/** All values ending with the given string. */
-slug_ends_with?: (Scalars['String'] | null),
-/** All values not ending with the given string */
-slug_not_ends_with?: (Scalars['String'] | null),
-/** Matches if the field array contains *all* items provided to the filter and order does match */
-stack?: (Scalars['String'][] | null),
-/** Matches if the field array does not contains *all* items provided to the filter or order does not match */
-stack_not?: (Scalars['String'][] | null),
-/** Matches if the field array contains *all* items provided to the filter */
-stack_contains_all?: (Scalars['String'][] | null),
-/** Matches if the field array contains at least one item provided to the filter */
-stack_contains_some?: (Scalars['String'][] | null),
-/** Matches if the field array does not contain any of the items provided to the filter */
-stack_contains_none?: (Scalars['String'][] | null),hobbies?: (Scalars['String'] | null),
-/** Any other value that exists and is not equal to the given value. */
-hobbies_not?: (Scalars['String'] | null),
-/** All values that are contained in given list. */
-hobbies_in?: ((Scalars['String'] | null)[] | null),
-/** All values that are not contained in given list. */
-hobbies_not_in?: ((Scalars['String'] | null)[] | null),
-/** All values containing the given string. */
-hobbies_contains?: (Scalars['String'] | null),
-/** All values not containing the given string. */
-hobbies_not_contains?: (Scalars['String'] | null),
-/** All values starting with the given string. */
-hobbies_starts_with?: (Scalars['String'] | null),
-/** All values not starting with the given string. */
-hobbies_not_starts_with?: (Scalars['String'] | null),
-/** All values ending with the given string. */
-hobbies_ends_with?: (Scalars['String'] | null),
-/** All values not ending with the given string */
-hobbies_not_ends_with?: (Scalars['String'] | null),publishedBy?: (UserWhereInput | null),updatedBy?: (UserWhereInput | null),createdBy?: (UserWhereInput | null),scheduledIn_every?: (ScheduledOperationWhereInput | null),scheduledIn_some?: (ScheduledOperationWhereInput | null),scheduledIn_none?: (ScheduledOperationWhereInput | null)}
-
-
-/** The document in stages filter allows specifying a stage entry to cross compare the same document between different stages */
-export interface AboutWhereStageInput {
-/** Logical AND on all given filters. */
-AND?: (AboutWhereStageInput[] | null),
-/** Logical OR on all given filters. */
-OR?: (AboutWhereStageInput[] | null),
-/** Logical NOT on all given filters combined by AND. */
-NOT?: (AboutWhereStageInput[] | null),
-/** Specify the stage to compare with */
-stage?: (Stage | null),
-/** This field contains fields which can be set as true or false to specify an internal comparison */
-compareWithParent?: (AboutWhereComparatorInput | null)}
-
-
-/** References About record uniquely */
-export interface AboutWhereUniqueInput {id?: (Scalars['ID'] | null),slug?: (Scalars['String'] | null)}
 
 export interface AggregateGenqlSelection{
     count?: boolean | number
@@ -1932,6 +1350,550 @@ export interface DocumentVersionGenqlSelection{
     __scalar?: boolean | number
 }
 
+export interface HomeGenqlSelection{
+    /** System stage field */
+    stage?: boolean | number
+    /** Get the document in other stages */
+    documentInStages?: (HomeGenqlSelection & { __args: {
+    /** Potential stages that should be returned */
+    stages: Stage[], 
+    /** Decides if the current stage should be included or not */
+    includeCurrent: Scalars['Boolean'], 
+    /** Decides if the documents should match the parent documents locale or should use the fallback order defined in the tree */
+    inheritLocale: Scalars['Boolean']} })
+    /** The time the document was published. Null on documents in draft stage. */
+    publishedAt?: boolean | number
+    /** The time the document was updated */
+    updatedAt?: boolean | number
+    /** The time the document was created */
+    createdAt?: boolean | number
+    /** The unique identifier */
+    id?: boolean | number
+    about?: boolean | number
+    title?: boolean | number
+    slug?: boolean | number
+    stack?: boolean | number
+    hobbies?: boolean | number
+    /** User that last published this document */
+    publishedBy?: (UserGenqlSelection & { __args?: {
+    /**
+     * Allows to optionally override locale filtering behaviour in the query's subtree.
+     * 
+     * Note that `publishedBy` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
+     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+     * 
+     * This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
+     */
+    locales?: (Locale[] | null), 
+    /**
+     * Sets the locale of the resolved parent document as the only locale in the query's subtree.
+     * 
+     * Note that `publishedBy` is a model without localized fields and will not be affected directly by this argument, however the locale will be passed on to any relational fields in the query's subtree for filtering.
+     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+     * 
+     * This argument will affect any existing locale filtering defined in the query's tree for the subtree.
+     */
+    forceParentLocale?: (Scalars['Boolean'] | null)} })
+    /** User that last updated this document */
+    updatedBy?: (UserGenqlSelection & { __args?: {
+    /**
+     * Allows to optionally override locale filtering behaviour in the query's subtree.
+     * 
+     * Note that `updatedBy` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
+     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+     * 
+     * This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
+     */
+    locales?: (Locale[] | null), 
+    /**
+     * Sets the locale of the resolved parent document as the only locale in the query's subtree.
+     * 
+     * Note that `updatedBy` is a model without localized fields and will not be affected directly by this argument, however the locale will be passed on to any relational fields in the query's subtree for filtering.
+     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+     * 
+     * This argument will affect any existing locale filtering defined in the query's tree for the subtree.
+     */
+    forceParentLocale?: (Scalars['Boolean'] | null)} })
+    /** User that created this document */
+    createdBy?: (UserGenqlSelection & { __args?: {
+    /**
+     * Allows to optionally override locale filtering behaviour in the query's subtree.
+     * 
+     * Note that `createdBy` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
+     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+     * 
+     * This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
+     */
+    locales?: (Locale[] | null), 
+    /**
+     * Sets the locale of the resolved parent document as the only locale in the query's subtree.
+     * 
+     * Note that `createdBy` is a model without localized fields and will not be affected directly by this argument, however the locale will be passed on to any relational fields in the query's subtree for filtering.
+     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+     * 
+     * This argument will affect any existing locale filtering defined in the query's tree for the subtree.
+     */
+    forceParentLocale?: (Scalars['Boolean'] | null)} })
+    scheduledIn?: (ScheduledOperationGenqlSelection & { __args?: {where?: (ScheduledOperationWhereInput | null), skip?: (Scalars['Int'] | null), after?: (Scalars['String'] | null), before?: (Scalars['String'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), 
+    /**
+     * Allows to optionally override locale filtering behaviour in the query's subtree.
+     * 
+     * Note that `scheduledIn` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
+     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+     * 
+     * This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
+     */
+    locales?: (Locale[] | null), 
+    /**
+     * Sets the locale of the resolved parent document as the only locale in the query's subtree.
+     * 
+     * Note that `scheduledIn` is a model without localized fields and will not be affected directly by this argument, however the locale will be passed on to any relational fields in the query's subtree for filtering.
+     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
+     * 
+     * This argument will affect any existing locale filtering defined in the query's tree for the subtree.
+     */
+    forceParentLocale?: (Scalars['Boolean'] | null)} })
+    /** List of Home versions */
+    history?: (VersionGenqlSelection & { __args: {limit: Scalars['Int'], skip: Scalars['Int'], 
+    /** This is optional and can be used to fetch the document version history for a specific stage instead of the current one */
+    stageOverride?: (Stage | null)} })
+    __typename?: boolean | number
+    __scalar?: boolean | number
+}
+
+export interface HomeConnectInput {
+/** Document to connect */
+where?: HomeWhereUniqueInput,
+/** Allow to specify document position in list of connected documents, will default to appending at end of list */
+position?: (ConnectPositionInput | null)}
+
+
+/** A connection to a list of items. */
+export interface HomeConnectionGenqlSelection{
+    /** Information to aid in pagination. */
+    pageInfo?: PageInfoGenqlSelection
+    /** A list of edges. */
+    edges?: HomeEdgeGenqlSelection
+    aggregate?: AggregateGenqlSelection
+    __typename?: boolean | number
+    __scalar?: boolean | number
+}
+
+export interface HomeCreateInput {updatedAt?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),about?: Scalars['String'],title?: Scalars['String'],slug?: (Scalars['String'] | null),stack?: Scalars['String'][],hobbies?: Scalars['String']}
+
+export interface HomeCreateManyInlineInput {
+/** Create and connect multiple existing Home documents */
+create?: (HomeCreateInput[] | null),
+/** Connect multiple existing Home documents */
+connect?: (HomeWhereUniqueInput[] | null)}
+
+export interface HomeCreateOneInlineInput {
+/** Create and connect one Home document */
+create?: (HomeCreateInput | null),
+/** Connect one existing Home document */
+connect?: (HomeWhereUniqueInput | null)}
+
+
+/** An edge in a connection. */
+export interface HomeEdgeGenqlSelection{
+    /** The item at the end of the edge. */
+    node?: HomeGenqlSelection
+    /** A cursor for use in pagination. */
+    cursor?: boolean | number
+    __typename?: boolean | number
+    __scalar?: boolean | number
+}
+
+
+/** Identifies documents */
+export interface HomeManyWhereInput {
+/** Contains search across all appropriate fields. */
+_search?: (Scalars['String'] | null),
+/** Logical AND on all given filters. */
+AND?: (HomeWhereInput[] | null),
+/** Logical OR on all given filters. */
+OR?: (HomeWhereInput[] | null),
+/** Logical NOT on all given filters combined by AND. */
+NOT?: (HomeWhereInput[] | null),documentInStages_every?: (HomeWhereStageInput | null),documentInStages_some?: (HomeWhereStageInput | null),documentInStages_none?: (HomeWhereStageInput | null),publishedAt?: (Scalars['DateTime'] | null),
+/** Any other value that exists and is not equal to the given value. */
+publishedAt_not?: (Scalars['DateTime'] | null),
+/** All values that are contained in given list. */
+publishedAt_in?: ((Scalars['DateTime'] | null)[] | null),
+/** All values that are not contained in given list. */
+publishedAt_not_in?: ((Scalars['DateTime'] | null)[] | null),
+/** All values less than the given value. */
+publishedAt_lt?: (Scalars['DateTime'] | null),
+/** All values less than or equal the given value. */
+publishedAt_lte?: (Scalars['DateTime'] | null),
+/** All values greater than the given value. */
+publishedAt_gt?: (Scalars['DateTime'] | null),
+/** All values greater than or equal the given value. */
+publishedAt_gte?: (Scalars['DateTime'] | null),updatedAt?: (Scalars['DateTime'] | null),
+/** Any other value that exists and is not equal to the given value. */
+updatedAt_not?: (Scalars['DateTime'] | null),
+/** All values that are contained in given list. */
+updatedAt_in?: ((Scalars['DateTime'] | null)[] | null),
+/** All values that are not contained in given list. */
+updatedAt_not_in?: ((Scalars['DateTime'] | null)[] | null),
+/** All values less than the given value. */
+updatedAt_lt?: (Scalars['DateTime'] | null),
+/** All values less than or equal the given value. */
+updatedAt_lte?: (Scalars['DateTime'] | null),
+/** All values greater than the given value. */
+updatedAt_gt?: (Scalars['DateTime'] | null),
+/** All values greater than or equal the given value. */
+updatedAt_gte?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),
+/** Any other value that exists and is not equal to the given value. */
+createdAt_not?: (Scalars['DateTime'] | null),
+/** All values that are contained in given list. */
+createdAt_in?: ((Scalars['DateTime'] | null)[] | null),
+/** All values that are not contained in given list. */
+createdAt_not_in?: ((Scalars['DateTime'] | null)[] | null),
+/** All values less than the given value. */
+createdAt_lt?: (Scalars['DateTime'] | null),
+/** All values less than or equal the given value. */
+createdAt_lte?: (Scalars['DateTime'] | null),
+/** All values greater than the given value. */
+createdAt_gt?: (Scalars['DateTime'] | null),
+/** All values greater than or equal the given value. */
+createdAt_gte?: (Scalars['DateTime'] | null),id?: (Scalars['ID'] | null),
+/** Any other value that exists and is not equal to the given value. */
+id_not?: (Scalars['ID'] | null),
+/** All values that are contained in given list. */
+id_in?: ((Scalars['ID'] | null)[] | null),
+/** All values that are not contained in given list. */
+id_not_in?: ((Scalars['ID'] | null)[] | null),
+/** All values containing the given string. */
+id_contains?: (Scalars['ID'] | null),
+/** All values not containing the given string. */
+id_not_contains?: (Scalars['ID'] | null),
+/** All values starting with the given string. */
+id_starts_with?: (Scalars['ID'] | null),
+/** All values not starting with the given string. */
+id_not_starts_with?: (Scalars['ID'] | null),
+/** All values ending with the given string. */
+id_ends_with?: (Scalars['ID'] | null),
+/** All values not ending with the given string */
+id_not_ends_with?: (Scalars['ID'] | null),about?: (Scalars['String'] | null),
+/** Any other value that exists and is not equal to the given value. */
+about_not?: (Scalars['String'] | null),
+/** All values that are contained in given list. */
+about_in?: ((Scalars['String'] | null)[] | null),
+/** All values that are not contained in given list. */
+about_not_in?: ((Scalars['String'] | null)[] | null),
+/** All values containing the given string. */
+about_contains?: (Scalars['String'] | null),
+/** All values not containing the given string. */
+about_not_contains?: (Scalars['String'] | null),
+/** All values starting with the given string. */
+about_starts_with?: (Scalars['String'] | null),
+/** All values not starting with the given string. */
+about_not_starts_with?: (Scalars['String'] | null),
+/** All values ending with the given string. */
+about_ends_with?: (Scalars['String'] | null),
+/** All values not ending with the given string */
+about_not_ends_with?: (Scalars['String'] | null),title?: (Scalars['String'] | null),
+/** Any other value that exists and is not equal to the given value. */
+title_not?: (Scalars['String'] | null),
+/** All values that are contained in given list. */
+title_in?: ((Scalars['String'] | null)[] | null),
+/** All values that are not contained in given list. */
+title_not_in?: ((Scalars['String'] | null)[] | null),
+/** All values containing the given string. */
+title_contains?: (Scalars['String'] | null),
+/** All values not containing the given string. */
+title_not_contains?: (Scalars['String'] | null),
+/** All values starting with the given string. */
+title_starts_with?: (Scalars['String'] | null),
+/** All values not starting with the given string. */
+title_not_starts_with?: (Scalars['String'] | null),
+/** All values ending with the given string. */
+title_ends_with?: (Scalars['String'] | null),
+/** All values not ending with the given string */
+title_not_ends_with?: (Scalars['String'] | null),slug?: (Scalars['String'] | null),
+/** Any other value that exists and is not equal to the given value. */
+slug_not?: (Scalars['String'] | null),
+/** All values that are contained in given list. */
+slug_in?: ((Scalars['String'] | null)[] | null),
+/** All values that are not contained in given list. */
+slug_not_in?: ((Scalars['String'] | null)[] | null),
+/** All values containing the given string. */
+slug_contains?: (Scalars['String'] | null),
+/** All values not containing the given string. */
+slug_not_contains?: (Scalars['String'] | null),
+/** All values starting with the given string. */
+slug_starts_with?: (Scalars['String'] | null),
+/** All values not starting with the given string. */
+slug_not_starts_with?: (Scalars['String'] | null),
+/** All values ending with the given string. */
+slug_ends_with?: (Scalars['String'] | null),
+/** All values not ending with the given string */
+slug_not_ends_with?: (Scalars['String'] | null),
+/** Matches if the field array contains *all* items provided to the filter and order does match */
+stack?: (Scalars['String'][] | null),
+/** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+stack_not?: (Scalars['String'][] | null),
+/** Matches if the field array contains *all* items provided to the filter */
+stack_contains_all?: (Scalars['String'][] | null),
+/** Matches if the field array contains at least one item provided to the filter */
+stack_contains_some?: (Scalars['String'][] | null),
+/** Matches if the field array does not contain any of the items provided to the filter */
+stack_contains_none?: (Scalars['String'][] | null),hobbies?: (Scalars['String'] | null),
+/** Any other value that exists and is not equal to the given value. */
+hobbies_not?: (Scalars['String'] | null),
+/** All values that are contained in given list. */
+hobbies_in?: ((Scalars['String'] | null)[] | null),
+/** All values that are not contained in given list. */
+hobbies_not_in?: ((Scalars['String'] | null)[] | null),
+/** All values containing the given string. */
+hobbies_contains?: (Scalars['String'] | null),
+/** All values not containing the given string. */
+hobbies_not_contains?: (Scalars['String'] | null),
+/** All values starting with the given string. */
+hobbies_starts_with?: (Scalars['String'] | null),
+/** All values not starting with the given string. */
+hobbies_not_starts_with?: (Scalars['String'] | null),
+/** All values ending with the given string. */
+hobbies_ends_with?: (Scalars['String'] | null),
+/** All values not ending with the given string */
+hobbies_not_ends_with?: (Scalars['String'] | null),publishedBy?: (UserWhereInput | null),updatedBy?: (UserWhereInput | null),createdBy?: (UserWhereInput | null),scheduledIn_every?: (ScheduledOperationWhereInput | null),scheduledIn_some?: (ScheduledOperationWhereInput | null),scheduledIn_none?: (ScheduledOperationWhereInput | null)}
+
+export interface HomeUpdateInput {about?: (Scalars['String'] | null),title?: (Scalars['String'] | null),slug?: (Scalars['String'] | null),stack?: (Scalars['String'][] | null),hobbies?: (Scalars['String'] | null)}
+
+export interface HomeUpdateManyInlineInput {
+/** Create and connect multiple Home documents */
+create?: (HomeCreateInput[] | null),
+/** Connect multiple existing Home documents */
+connect?: (HomeConnectInput[] | null),
+/** Override currently-connected documents with multiple existing Home documents */
+set?: (HomeWhereUniqueInput[] | null),
+/** Update multiple Home documents */
+update?: (HomeUpdateWithNestedWhereUniqueInput[] | null),
+/** Upsert multiple Home documents */
+upsert?: (HomeUpsertWithNestedWhereUniqueInput[] | null),
+/** Disconnect multiple Home documents */
+disconnect?: (HomeWhereUniqueInput[] | null),
+/** Delete multiple Home documents */
+delete?: (HomeWhereUniqueInput[] | null)}
+
+export interface HomeUpdateManyInput {about?: (Scalars['String'] | null),title?: (Scalars['String'] | null),stack?: (Scalars['String'][] | null),hobbies?: (Scalars['String'] | null)}
+
+export interface HomeUpdateManyWithNestedWhereInput {
+/** Document search */
+where?: HomeWhereInput,
+/** Update many input */
+data?: HomeUpdateManyInput}
+
+export interface HomeUpdateOneInlineInput {
+/** Create and connect one Home document */
+create?: (HomeCreateInput | null),
+/** Update single Home document */
+update?: (HomeUpdateWithNestedWhereUniqueInput | null),
+/** Upsert single Home document */
+upsert?: (HomeUpsertWithNestedWhereUniqueInput | null),
+/** Connect existing Home document */
+connect?: (HomeWhereUniqueInput | null),
+/** Disconnect currently connected Home document */
+disconnect?: (Scalars['Boolean'] | null),
+/** Delete currently connected Home document */
+delete?: (Scalars['Boolean'] | null)}
+
+export interface HomeUpdateWithNestedWhereUniqueInput {
+/** Unique document search */
+where?: HomeWhereUniqueInput,
+/** Document to update */
+data?: HomeUpdateInput}
+
+export interface HomeUpsertInput {
+/** Create document if it didn't exist */
+create?: HomeCreateInput,
+/** Update document if it exists */
+update?: HomeUpdateInput}
+
+export interface HomeUpsertWithNestedWhereUniqueInput {
+/** Unique document search */
+where?: HomeWhereUniqueInput,
+/** Upsert data */
+data?: HomeUpsertInput}
+
+
+/** This contains a set of filters that can be used to compare values internally */
+export interface HomeWhereComparatorInput {
+/** This field can be used to request to check if the entry is outdated by internal comparison */
+outdated_to?: (Scalars['Boolean'] | null)}
+
+
+/** Identifies documents */
+export interface HomeWhereInput {
+/** Contains search across all appropriate fields. */
+_search?: (Scalars['String'] | null),
+/** Logical AND on all given filters. */
+AND?: (HomeWhereInput[] | null),
+/** Logical OR on all given filters. */
+OR?: (HomeWhereInput[] | null),
+/** Logical NOT on all given filters combined by AND. */
+NOT?: (HomeWhereInput[] | null),documentInStages_every?: (HomeWhereStageInput | null),documentInStages_some?: (HomeWhereStageInput | null),documentInStages_none?: (HomeWhereStageInput | null),publishedAt?: (Scalars['DateTime'] | null),
+/** Any other value that exists and is not equal to the given value. */
+publishedAt_not?: (Scalars['DateTime'] | null),
+/** All values that are contained in given list. */
+publishedAt_in?: ((Scalars['DateTime'] | null)[] | null),
+/** All values that are not contained in given list. */
+publishedAt_not_in?: ((Scalars['DateTime'] | null)[] | null),
+/** All values less than the given value. */
+publishedAt_lt?: (Scalars['DateTime'] | null),
+/** All values less than or equal the given value. */
+publishedAt_lte?: (Scalars['DateTime'] | null),
+/** All values greater than the given value. */
+publishedAt_gt?: (Scalars['DateTime'] | null),
+/** All values greater than or equal the given value. */
+publishedAt_gte?: (Scalars['DateTime'] | null),updatedAt?: (Scalars['DateTime'] | null),
+/** Any other value that exists and is not equal to the given value. */
+updatedAt_not?: (Scalars['DateTime'] | null),
+/** All values that are contained in given list. */
+updatedAt_in?: ((Scalars['DateTime'] | null)[] | null),
+/** All values that are not contained in given list. */
+updatedAt_not_in?: ((Scalars['DateTime'] | null)[] | null),
+/** All values less than the given value. */
+updatedAt_lt?: (Scalars['DateTime'] | null),
+/** All values less than or equal the given value. */
+updatedAt_lte?: (Scalars['DateTime'] | null),
+/** All values greater than the given value. */
+updatedAt_gt?: (Scalars['DateTime'] | null),
+/** All values greater than or equal the given value. */
+updatedAt_gte?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),
+/** Any other value that exists and is not equal to the given value. */
+createdAt_not?: (Scalars['DateTime'] | null),
+/** All values that are contained in given list. */
+createdAt_in?: ((Scalars['DateTime'] | null)[] | null),
+/** All values that are not contained in given list. */
+createdAt_not_in?: ((Scalars['DateTime'] | null)[] | null),
+/** All values less than the given value. */
+createdAt_lt?: (Scalars['DateTime'] | null),
+/** All values less than or equal the given value. */
+createdAt_lte?: (Scalars['DateTime'] | null),
+/** All values greater than the given value. */
+createdAt_gt?: (Scalars['DateTime'] | null),
+/** All values greater than or equal the given value. */
+createdAt_gte?: (Scalars['DateTime'] | null),id?: (Scalars['ID'] | null),
+/** Any other value that exists and is not equal to the given value. */
+id_not?: (Scalars['ID'] | null),
+/** All values that are contained in given list. */
+id_in?: ((Scalars['ID'] | null)[] | null),
+/** All values that are not contained in given list. */
+id_not_in?: ((Scalars['ID'] | null)[] | null),
+/** All values containing the given string. */
+id_contains?: (Scalars['ID'] | null),
+/** All values not containing the given string. */
+id_not_contains?: (Scalars['ID'] | null),
+/** All values starting with the given string. */
+id_starts_with?: (Scalars['ID'] | null),
+/** All values not starting with the given string. */
+id_not_starts_with?: (Scalars['ID'] | null),
+/** All values ending with the given string. */
+id_ends_with?: (Scalars['ID'] | null),
+/** All values not ending with the given string */
+id_not_ends_with?: (Scalars['ID'] | null),about?: (Scalars['String'] | null),
+/** Any other value that exists and is not equal to the given value. */
+about_not?: (Scalars['String'] | null),
+/** All values that are contained in given list. */
+about_in?: ((Scalars['String'] | null)[] | null),
+/** All values that are not contained in given list. */
+about_not_in?: ((Scalars['String'] | null)[] | null),
+/** All values containing the given string. */
+about_contains?: (Scalars['String'] | null),
+/** All values not containing the given string. */
+about_not_contains?: (Scalars['String'] | null),
+/** All values starting with the given string. */
+about_starts_with?: (Scalars['String'] | null),
+/** All values not starting with the given string. */
+about_not_starts_with?: (Scalars['String'] | null),
+/** All values ending with the given string. */
+about_ends_with?: (Scalars['String'] | null),
+/** All values not ending with the given string */
+about_not_ends_with?: (Scalars['String'] | null),title?: (Scalars['String'] | null),
+/** Any other value that exists and is not equal to the given value. */
+title_not?: (Scalars['String'] | null),
+/** All values that are contained in given list. */
+title_in?: ((Scalars['String'] | null)[] | null),
+/** All values that are not contained in given list. */
+title_not_in?: ((Scalars['String'] | null)[] | null),
+/** All values containing the given string. */
+title_contains?: (Scalars['String'] | null),
+/** All values not containing the given string. */
+title_not_contains?: (Scalars['String'] | null),
+/** All values starting with the given string. */
+title_starts_with?: (Scalars['String'] | null),
+/** All values not starting with the given string. */
+title_not_starts_with?: (Scalars['String'] | null),
+/** All values ending with the given string. */
+title_ends_with?: (Scalars['String'] | null),
+/** All values not ending with the given string */
+title_not_ends_with?: (Scalars['String'] | null),slug?: (Scalars['String'] | null),
+/** Any other value that exists and is not equal to the given value. */
+slug_not?: (Scalars['String'] | null),
+/** All values that are contained in given list. */
+slug_in?: ((Scalars['String'] | null)[] | null),
+/** All values that are not contained in given list. */
+slug_not_in?: ((Scalars['String'] | null)[] | null),
+/** All values containing the given string. */
+slug_contains?: (Scalars['String'] | null),
+/** All values not containing the given string. */
+slug_not_contains?: (Scalars['String'] | null),
+/** All values starting with the given string. */
+slug_starts_with?: (Scalars['String'] | null),
+/** All values not starting with the given string. */
+slug_not_starts_with?: (Scalars['String'] | null),
+/** All values ending with the given string. */
+slug_ends_with?: (Scalars['String'] | null),
+/** All values not ending with the given string */
+slug_not_ends_with?: (Scalars['String'] | null),
+/** Matches if the field array contains *all* items provided to the filter and order does match */
+stack?: (Scalars['String'][] | null),
+/** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+stack_not?: (Scalars['String'][] | null),
+/** Matches if the field array contains *all* items provided to the filter */
+stack_contains_all?: (Scalars['String'][] | null),
+/** Matches if the field array contains at least one item provided to the filter */
+stack_contains_some?: (Scalars['String'][] | null),
+/** Matches if the field array does not contain any of the items provided to the filter */
+stack_contains_none?: (Scalars['String'][] | null),hobbies?: (Scalars['String'] | null),
+/** Any other value that exists and is not equal to the given value. */
+hobbies_not?: (Scalars['String'] | null),
+/** All values that are contained in given list. */
+hobbies_in?: ((Scalars['String'] | null)[] | null),
+/** All values that are not contained in given list. */
+hobbies_not_in?: ((Scalars['String'] | null)[] | null),
+/** All values containing the given string. */
+hobbies_contains?: (Scalars['String'] | null),
+/** All values not containing the given string. */
+hobbies_not_contains?: (Scalars['String'] | null),
+/** All values starting with the given string. */
+hobbies_starts_with?: (Scalars['String'] | null),
+/** All values not starting with the given string. */
+hobbies_not_starts_with?: (Scalars['String'] | null),
+/** All values ending with the given string. */
+hobbies_ends_with?: (Scalars['String'] | null),
+/** All values not ending with the given string */
+hobbies_not_ends_with?: (Scalars['String'] | null),publishedBy?: (UserWhereInput | null),updatedBy?: (UserWhereInput | null),createdBy?: (UserWhereInput | null),scheduledIn_every?: (ScheduledOperationWhereInput | null),scheduledIn_some?: (ScheduledOperationWhereInput | null),scheduledIn_none?: (ScheduledOperationWhereInput | null)}
+
+
+/** The document in stages filter allows specifying a stage entry to cross compare the same document between different stages */
+export interface HomeWhereStageInput {
+/** Logical AND on all given filters. */
+AND?: (HomeWhereStageInput[] | null),
+/** Logical OR on all given filters. */
+OR?: (HomeWhereStageInput[] | null),
+/** Logical NOT on all given filters combined by AND. */
+NOT?: (HomeWhereStageInput[] | null),
+/** Specify the stage to compare with */
+stage?: (Stage | null),
+/** This field contains fields which can be set as true or false to specify an internal comparison */
+compareWithParent?: (HomeWhereComparatorInput | null)}
+
+
+/** References Home record uniquely */
+export interface HomeWhereUniqueInput {id?: (Scalars['ID'] | null),slug?: (Scalars['String'] | null)}
+
 export interface ImageResizeInput {
 /** The width in pixels to resize the image to. The value must be an integer from 1 to 10000. */
 width?: (Scalars['Int'] | null),
@@ -1961,102 +1923,102 @@ export interface LocationGenqlSelection{
 export interface LocationInput {latitude?: Scalars['Float'],longitude?: Scalars['Float']}
 
 export interface MutationGenqlSelection{
-    /** Create one about */
-    createAbout?: (AboutGenqlSelection & { __args: {data: AboutCreateInput} })
-    /** Update one about */
-    updateAbout?: (AboutGenqlSelection & { __args: {where: AboutWhereUniqueInput, data: AboutUpdateInput} })
-    /** Delete one about from _all_ existing stages. Returns deleted document. */
-    deleteAbout?: (AboutGenqlSelection & { __args: {
+    /** Create one home */
+    createHome?: (HomeGenqlSelection & { __args: {data: HomeCreateInput} })
+    /** Update one home */
+    updateHome?: (HomeGenqlSelection & { __args: {where: HomeWhereUniqueInput, data: HomeUpdateInput} })
+    /** Delete one home from _all_ existing stages. Returns deleted document. */
+    deleteHome?: (HomeGenqlSelection & { __args: {
     /** Document to delete */
-    where: AboutWhereUniqueInput} })
-    /** Upsert one about */
-    upsertAbout?: (AboutGenqlSelection & { __args: {where: AboutWhereUniqueInput, upsert: AboutUpsertInput} })
-    /** Publish one about */
-    publishAbout?: (AboutGenqlSelection & { __args: {
+    where: HomeWhereUniqueInput} })
+    /** Upsert one home */
+    upsertHome?: (HomeGenqlSelection & { __args: {where: HomeWhereUniqueInput, upsert: HomeUpsertInput} })
+    /** Publish one home */
+    publishHome?: (HomeGenqlSelection & { __args: {
     /** Document to publish */
-    where: AboutWhereUniqueInput, 
+    where: HomeWhereUniqueInput, 
     /** Publishing target stage */
     to: Stage[]} })
-    /** Unpublish one about from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
-    unpublishAbout?: (AboutGenqlSelection & { __args: {
+    /** Unpublish one home from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+    unpublishHome?: (HomeGenqlSelection & { __args: {
     /** Document to unpublish */
-    where: AboutWhereUniqueInput, 
+    where: HomeWhereUniqueInput, 
     /** Stages to unpublish document from */
     from: Stage[]} })
-    /** Update many About documents */
-    updateManyAbout_pageConnection?: (AboutConnectionGenqlSelection & { __args: {
+    /** Update many Home documents */
+    updateManyHome_pageConnection?: (HomeConnectionGenqlSelection & { __args: {
     /** Documents to apply update on */
-    where?: (AboutManyWhereInput | null), 
+    where?: (HomeManyWhereInput | null), 
     /** Updates to document content */
-    data: AboutUpdateManyInput, skip?: (Scalars['Int'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), before?: (Scalars['ID'] | null), after?: (Scalars['ID'] | null)} })
-    /** Delete many About documents, return deleted documents */
-    deleteManyAbout_pageConnection?: (AboutConnectionGenqlSelection & { __args?: {
+    data: HomeUpdateManyInput, skip?: (Scalars['Int'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), before?: (Scalars['ID'] | null), after?: (Scalars['ID'] | null)} })
+    /** Delete many Home documents, return deleted documents */
+    deleteManyHome_pageConnection?: (HomeConnectionGenqlSelection & { __args?: {
     /** Documents to delete */
-    where?: (AboutManyWhereInput | null), skip?: (Scalars['Int'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), before?: (Scalars['ID'] | null), after?: (Scalars['ID'] | null)} })
-    /** Publish many About documents */
-    publishManyAbout_pageConnection?: (AboutConnectionGenqlSelection & { __args: {
+    where?: (HomeManyWhereInput | null), skip?: (Scalars['Int'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), before?: (Scalars['ID'] | null), after?: (Scalars['ID'] | null)} })
+    /** Publish many Home documents */
+    publishManyHome_pageConnection?: (HomeConnectionGenqlSelection & { __args: {
     /** Identifies documents in each stage to be published */
-    where?: (AboutManyWhereInput | null), 
+    where?: (HomeManyWhereInput | null), 
     /** Stage to find matching documents in */
     from?: (Stage | null), 
     /** Stages to publish documents to */
     to: Stage[], skip?: (Scalars['Int'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), before?: (Scalars['ID'] | null), after?: (Scalars['ID'] | null)} })
-    /** Find many About documents that match criteria in specified stage and unpublish from target stages */
-    unpublishManyAbout_pageConnection?: (AboutConnectionGenqlSelection & { __args: {
+    /** Find many Home documents that match criteria in specified stage and unpublish from target stages */
+    unpublishManyHome_pageConnection?: (HomeConnectionGenqlSelection & { __args: {
     /** Identifies documents in draft stage */
-    where?: (AboutManyWhereInput | null), 
+    where?: (HomeManyWhereInput | null), 
     /** Stage to find matching documents in */
     stage?: (Stage | null), 
     /** Stages to unpublish documents from */
     from: Stage[], skip?: (Scalars['Int'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), before?: (Scalars['ID'] | null), after?: (Scalars['ID'] | null)} })
     /**
-     * @deprecated Please use the new paginated many mutation (updateManyAbout_pageConnection)
-     * Update many about_page
+     * @deprecated Please use the new paginated many mutation (updateManyHome_pageConnection)
+     * Update many home_page
      */
-    updateManyAbout_page?: (BatchPayloadGenqlSelection & { __args: {
+    updateManyHome_page?: (BatchPayloadGenqlSelection & { __args: {
     /** Documents to apply update on */
-    where?: (AboutManyWhereInput | null), 
+    where?: (HomeManyWhereInput | null), 
     /** Updates to document content */
-    data: AboutUpdateManyInput} })
+    data: HomeUpdateManyInput} })
     /**
-     * @deprecated Please use the new paginated many mutation (deleteManyAbout_pageConnection)
-     * Delete many About documents
+     * @deprecated Please use the new paginated many mutation (deleteManyHome_pageConnection)
+     * Delete many Home documents
      */
-    deleteManyAbout_page?: (BatchPayloadGenqlSelection & { __args?: {
+    deleteManyHome_page?: (BatchPayloadGenqlSelection & { __args?: {
     /** Documents to delete */
-    where?: (AboutManyWhereInput | null)} })
+    where?: (HomeManyWhereInput | null)} })
     /**
-     * @deprecated Please use the new paginated many mutation (publishManyAbout_pageConnection)
-     * Publish many About documents
+     * @deprecated Please use the new paginated many mutation (publishManyHome_pageConnection)
+     * Publish many Home documents
      */
-    publishManyAbout_page?: (BatchPayloadGenqlSelection & { __args: {
+    publishManyHome_page?: (BatchPayloadGenqlSelection & { __args: {
     /** Identifies documents in each stage to be published */
-    where?: (AboutManyWhereInput | null), 
+    where?: (HomeManyWhereInput | null), 
     /** Stages to publish documents to */
     to: Stage[]} })
     /**
-     * @deprecated Please use the new paginated many mutation (unpublishManyAbout_pageConnection)
-     * Unpublish many About documents
+     * @deprecated Please use the new paginated many mutation (unpublishManyHome_pageConnection)
+     * Unpublish many Home documents
      */
-    unpublishManyAbout_page?: (BatchPayloadGenqlSelection & { __args: {
+    unpublishManyHome_page?: (BatchPayloadGenqlSelection & { __args: {
     /** Identifies documents in each stage */
-    where?: (AboutManyWhereInput | null), 
+    where?: (HomeManyWhereInput | null), 
     /** Stages to unpublish documents from */
     from: Stage[]} })
-    /** Schedule to publish one about */
-    schedulePublishAbout?: (AboutGenqlSelection & { __args: {
+    /** Schedule to publish one home */
+    schedulePublishHome?: (HomeGenqlSelection & { __args: {
     /** Document to publish */
-    where: AboutWhereUniqueInput, 
+    where: HomeWhereUniqueInput, 
     /** Publishing target stage */
     to: Stage[], 
     /** Release at point in time, will create new release containing this operation */
     releaseAt?: (Scalars['DateTime'] | null), 
     /** Optionally attach this scheduled operation to an existing release */
     releaseId?: (Scalars['String'] | null)} })
-    /** Unpublish one about from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
-    scheduleUnpublishAbout?: (AboutGenqlSelection & { __args: {
+    /** Unpublish one home from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+    scheduleUnpublishHome?: (HomeGenqlSelection & { __args: {
     /** Document to unpublish */
-    where: AboutWhereUniqueInput, 
+    where: HomeWhereUniqueInput, 
     /** Stages to unpublish document from */
     from: Stage[], 
     /** Release at point in time, will create new release containing this operation */
@@ -2333,8 +2295,8 @@ export interface NodeGenqlSelection{
     id?: boolean | number
     /** The Stage of an object */
     stage?: boolean | number
-    on_About?: AboutGenqlSelection
     on_Asset?: AssetGenqlSelection
+    on_Home?: HomeGenqlSelection
     on_ScheduledOperation?: ScheduledOperationGenqlSelection
     on_ScheduledRelease?: ScheduledReleaseGenqlSelection
     on_User?: UserGenqlSelection
@@ -2380,41 +2342,41 @@ export interface QueryGenqlSelection{
      * This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
      */
     locales: Locale[]} })
-    /** Retrieve multiple about_page */
-    about_page?: (AboutGenqlSelection & { __args: {where?: (AboutWhereInput | null), orderBy?: (AboutOrderByInput | null), skip?: (Scalars['Int'] | null), after?: (Scalars['String'] | null), before?: (Scalars['String'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), stage: Stage, 
+    /** Retrieve multiple home_page */
+    home_page?: (HomeGenqlSelection & { __args: {where?: (HomeWhereInput | null), orderBy?: (HomeOrderByInput | null), skip?: (Scalars['Int'] | null), after?: (Scalars['String'] | null), before?: (Scalars['String'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), stage: Stage, 
     /**
      * Defines which locales should be returned.
      * 
-     * Note that `About` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
+     * Note that `Home` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
      * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
      * 
      * This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
      */
     locales: Locale[]} })
-    /** Retrieve a single about */
-    about?: (AboutGenqlSelection & { __args: {where: AboutWhereUniqueInput, stage: Stage, 
+    /** Retrieve a single home */
+    home?: (HomeGenqlSelection & { __args: {where: HomeWhereUniqueInput, stage: Stage, 
     /**
      * Defines which locales should be returned.
      * 
-     * Note that `About` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
+     * Note that `Home` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
      * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
      * 
      * This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
      */
     locales: Locale[]} })
-    /** Retrieve multiple about_page using the Relay connection interface */
-    about_pageConnection?: (AboutConnectionGenqlSelection & { __args: {where?: (AboutWhereInput | null), orderBy?: (AboutOrderByInput | null), skip?: (Scalars['Int'] | null), after?: (Scalars['String'] | null), before?: (Scalars['String'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), stage: Stage, 
+    /** Retrieve multiple home_page using the Relay connection interface */
+    home_pageConnection?: (HomeConnectionGenqlSelection & { __args: {where?: (HomeWhereInput | null), orderBy?: (HomeOrderByInput | null), skip?: (Scalars['Int'] | null), after?: (Scalars['String'] | null), before?: (Scalars['String'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), stage: Stage, 
     /**
      * Defines which locales should be returned.
      * 
-     * Note that `About` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
+     * Note that `Home` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
      * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
      * 
      * This argument may be overwritten by another locales definition in a relational child field, this will effectively use the overwritten argument for the affected query's subtree.
      */
     locales: Locale[]} })
     /** Retrieve document version */
-    aboutVersion?: (DocumentVersionGenqlSelection & { __args: {where: VersionWhereInput} })
+    homeVersion?: (DocumentVersionGenqlSelection & { __args: {where: VersionWhereInput} })
     /** Retrieve multiple users */
     users?: (UserGenqlSelection & { __args: {where?: (UserWhereInput | null), orderBy?: (UserOrderByInput | null), skip?: (Scalars['Int'] | null), after?: (Scalars['String'] | null), before?: (Scalars['String'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), stage: Stage, 
     /**
@@ -2751,8 +2713,8 @@ export interface ScheduledOperationGenqlSelection{
 }
 
 export interface ScheduledOperationAffectedDocumentGenqlSelection{
-    on_About?:AboutGenqlSelection,
     on_Asset?:AssetGenqlSelection,
+    on_Home?:HomeGenqlSelection,
     on_Works?:WorksGenqlSelection,
     on_Node?: NodeGenqlSelection,
     __typename?: boolean | number
@@ -4504,30 +4466,6 @@ compareWithParent?: (WorksWhereComparatorInput | null)}
 export interface WorksWhereUniqueInput {id?: (Scalars['ID'] | null),slug?: (Scalars['String'] | null)}
 
 
-    const About_possibleTypes: string[] = ['About']
-    export const isAbout = (obj?: { __typename?: any } | null): obj is About => {
-      if (!obj?.__typename) throw new Error('__typename is missing in "isAbout"')
-      return About_possibleTypes.includes(obj.__typename)
-    }
-    
-
-
-    const AboutConnection_possibleTypes: string[] = ['AboutConnection']
-    export const isAboutConnection = (obj?: { __typename?: any } | null): obj is AboutConnection => {
-      if (!obj?.__typename) throw new Error('__typename is missing in "isAboutConnection"')
-      return AboutConnection_possibleTypes.includes(obj.__typename)
-    }
-    
-
-
-    const AboutEdge_possibleTypes: string[] = ['AboutEdge']
-    export const isAboutEdge = (obj?: { __typename?: any } | null): obj is AboutEdge => {
-      if (!obj?.__typename) throw new Error('__typename is missing in "isAboutEdge"')
-      return AboutEdge_possibleTypes.includes(obj.__typename)
-    }
-    
-
-
     const Aggregate_possibleTypes: string[] = ['Aggregate']
     export const isAggregate = (obj?: { __typename?: any } | null): obj is Aggregate => {
       if (!obj?.__typename) throw new Error('__typename is missing in "isAggregate"')
@@ -4584,6 +4522,30 @@ export interface WorksWhereUniqueInput {id?: (Scalars['ID'] | null),slug?: (Scal
     
 
 
+    const Home_possibleTypes: string[] = ['Home']
+    export const isHome = (obj?: { __typename?: any } | null): obj is Home => {
+      if (!obj?.__typename) throw new Error('__typename is missing in "isHome"')
+      return Home_possibleTypes.includes(obj.__typename)
+    }
+    
+
+
+    const HomeConnection_possibleTypes: string[] = ['HomeConnection']
+    export const isHomeConnection = (obj?: { __typename?: any } | null): obj is HomeConnection => {
+      if (!obj?.__typename) throw new Error('__typename is missing in "isHomeConnection"')
+      return HomeConnection_possibleTypes.includes(obj.__typename)
+    }
+    
+
+
+    const HomeEdge_possibleTypes: string[] = ['HomeEdge']
+    export const isHomeEdge = (obj?: { __typename?: any } | null): obj is HomeEdge => {
+      if (!obj?.__typename) throw new Error('__typename is missing in "isHomeEdge"')
+      return HomeEdge_possibleTypes.includes(obj.__typename)
+    }
+    
+
+
     const Location_possibleTypes: string[] = ['Location']
     export const isLocation = (obj?: { __typename?: any } | null): obj is Location => {
       if (!obj?.__typename) throw new Error('__typename is missing in "isLocation"')
@@ -4600,7 +4562,7 @@ export interface WorksWhereUniqueInput {id?: (Scalars['ID'] | null),slug?: (Scal
     
 
 
-    const Node_possibleTypes: string[] = ['About','Asset','ScheduledOperation','ScheduledRelease','User','Works']
+    const Node_possibleTypes: string[] = ['Asset','Home','ScheduledOperation','ScheduledRelease','User','Works']
     export const isNode = (obj?: { __typename?: any } | null): obj is Node => {
       if (!obj?.__typename) throw new Error('__typename is missing in "isNode"')
       return Node_possibleTypes.includes(obj.__typename)
@@ -4648,7 +4610,7 @@ export interface WorksWhereUniqueInput {id?: (Scalars['ID'] | null),slug?: (Scal
     
 
 
-    const ScheduledOperationAffectedDocument_possibleTypes: string[] = ['About','Asset','Works']
+    const ScheduledOperationAffectedDocument_possibleTypes: string[] = ['Asset','Home','Works']
     export const isScheduledOperationAffectedDocument = (obj?: { __typename?: any } | null): obj is ScheduledOperationAffectedDocument => {
       if (!obj?.__typename) throw new Error('__typename is missing in "isScheduledOperationAffectedDocument"')
       return ScheduledOperationAffectedDocument_possibleTypes.includes(obj.__typename)
@@ -4751,29 +4713,6 @@ export interface WorksWhereUniqueInput {id?: (Scalars['ID'] | null),slug?: (Scal
     }
     
 
-export const enumAboutOrderByInput = {
-   publishedAt_ASC: 'publishedAt_ASC' as const,
-   publishedAt_DESC: 'publishedAt_DESC' as const,
-   updatedAt_ASC: 'updatedAt_ASC' as const,
-   updatedAt_DESC: 'updatedAt_DESC' as const,
-   createdAt_ASC: 'createdAt_ASC' as const,
-   createdAt_DESC: 'createdAt_DESC' as const,
-   id_ASC: 'id_ASC' as const,
-   id_DESC: 'id_DESC' as const,
-   content1_ASC: 'content1_ASC' as const,
-   content1_DESC: 'content1_DESC' as const,
-   content2_ASC: 'content2_ASC' as const,
-   content2_DESC: 'content2_DESC' as const,
-   toolsTitle_ASC: 'toolsTitle_ASC' as const,
-   toolsTitle_DESC: 'toolsTitle_DESC' as const,
-   slug_ASC: 'slug_ASC' as const,
-   slug_DESC: 'slug_DESC' as const,
-   stack_ASC: 'stack_ASC' as const,
-   stack_DESC: 'stack_DESC' as const,
-   hobbies_ASC: 'hobbies_ASC' as const,
-   hobbies_DESC: 'hobbies_DESC' as const
-}
-
 export const enumAssetOrderByInput = {
    mimeType_ASC: 'mimeType_ASC' as const,
    mimeType_DESC: 'mimeType_DESC' as const,
@@ -4814,6 +4753,27 @@ export const enumDocumentFileTypes = {
    xls: 'xls' as const,
    pptx: 'pptx' as const,
    ppt: 'ppt' as const
+}
+
+export const enumHomeOrderByInput = {
+   publishedAt_ASC: 'publishedAt_ASC' as const,
+   publishedAt_DESC: 'publishedAt_DESC' as const,
+   updatedAt_ASC: 'updatedAt_ASC' as const,
+   updatedAt_DESC: 'updatedAt_DESC' as const,
+   createdAt_ASC: 'createdAt_ASC' as const,
+   createdAt_DESC: 'createdAt_DESC' as const,
+   id_ASC: 'id_ASC' as const,
+   id_DESC: 'id_DESC' as const,
+   about_ASC: 'about_ASC' as const,
+   about_DESC: 'about_DESC' as const,
+   title_ASC: 'title_ASC' as const,
+   title_DESC: 'title_DESC' as const,
+   slug_ASC: 'slug_ASC' as const,
+   slug_DESC: 'slug_DESC' as const,
+   stack_ASC: 'stack_ASC' as const,
+   stack_DESC: 'stack_DESC' as const,
+   hobbies_ASC: 'hobbies_ASC' as const,
+   hobbies_DESC: 'hobbies_DESC' as const
 }
 
 export const enumImageFit = {
