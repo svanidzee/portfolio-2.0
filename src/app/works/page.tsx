@@ -5,9 +5,7 @@ export default async function Page() {
   const works = await getWorksPage();
   return (
     <>
-      {works.map(({ id, ...rest }) => (
-        <Projects key={id} {...rest} />
-      ))}
+      <Projects works={works} />
     </>
   );
 }

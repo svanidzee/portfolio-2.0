@@ -6,7 +6,6 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 );
 
 const baseStyle = definePartsStyle({
-  // define the part you're going to style
   container: {
     backgroundColor: 'white',
   },
@@ -21,13 +20,4 @@ const baseStyle = definePartsStyle({
   //   },
 });
 
-// const sizes = {
-//   md: definePartsStyle({
-//     container: {
-//       borderRadius: '0px',
-//     },
-//   }),
-// };
-
-// export const cardTheme = defineMultiStyleConfig({ baseStyle, sizes });
 export const cardTheme = defineMultiStyleConfig({ baseStyle });

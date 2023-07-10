@@ -3,10 +3,6 @@ import { Poppins } from 'next/font/google';
 import { Montserrat } from 'next/font/google';
 import { Playfair_Display } from 'next/font/google';
 import { Rokkitt } from 'next/font/google';
-import localFont from 'next/font/local';
-
-// Font files can be colocated inside of `pages`
-export const myFont = localFont({ src: '../fonts/Amble-Bold.ttf' });
 
 export const archivo = Archivo({
   subsets: ['latin'],
