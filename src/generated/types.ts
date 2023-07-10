@@ -166,39 +166,6 @@ export default {
                     ]
                 }
             ],
-            "bgWorks": [
-                143,
-                {
-                    "where": [
-                        161
-                    ],
-                    "orderBy": [
-                        151
-                    ],
-                    "skip": [
-                        71
-                    ],
-                    "after": [
-                        123
-                    ],
-                    "before": [
-                        123
-                    ],
-                    "first": [
-                        71
-                    ],
-                    "last": [
-                        71
-                    ],
-                    "locales": [
-                        73,
-                        "[Locale!]"
-                    ],
-                    "forceParentLocale": [
-                        34
-                    ]
-                }
-            ],
             "scheduledIn": [
                 88,
                 {
@@ -306,9 +273,6 @@ export default {
             ],
             "createdAt": [
                 39
-            ],
-            "bgWorks": [
-                147
             ],
             "localizations": [
                 7
@@ -531,15 +495,6 @@ export default {
             "createdBy": [
                 138
             ],
-            "bgWorks_every": [
-                161
-            ],
-            "bgWorks_some": [
-                161
-            ],
-            "bgWorks_none": [
-                161
-            ],
             "scheduledIn_every": [
                 100
             ],
@@ -586,9 +541,6 @@ export default {
             ],
             "handle": [
                 123
-            ],
-            "bgWorks": [
-                153
             ],
             "localizations": [
                 17
@@ -1119,15 +1071,6 @@ export default {
             ],
             "createdBy": [
                 138
-            ],
-            "bgWorks_every": [
-                161
-            ],
-            "bgWorks_some": [
-                161
-            ],
-            "bgWorks_none": [
-                161
             ],
             "scheduledIn_every": [
                 100
@@ -6050,9 +5993,6 @@ export default {
             "slug": [
                 123
             ],
-            "stack": [
-                123
-            ],
             "description": [
                 123
             ],
@@ -6060,6 +6000,9 @@ export default {
                 123
             ],
             "githubUrl": [
+                123
+            ],
+            "url": [
                 123
             ],
             "publishedBy": [
@@ -6089,39 +6032,6 @@ export default {
             "createdBy": [
                 126,
                 {
-                    "locales": [
-                        73,
-                        "[Locale!]"
-                    ],
-                    "forceParentLocale": [
-                        34
-                    ]
-                }
-            ],
-            "bg": [
-                1,
-                {
-                    "where": [
-                        30
-                    ],
-                    "orderBy": [
-                        12
-                    ],
-                    "skip": [
-                        71
-                    ],
-                    "after": [
-                        123
-                    ],
-                    "before": [
-                        123
-                    ],
-                    "first": [
-                        71
-                    ],
-                    "last": [
-                        71
-                    ],
                     "locales": [
                         73,
                         "[Locale!]"
@@ -6216,9 +6126,6 @@ export default {
             "slug": [
                 123
             ],
-            "stack": [
-                123
-            ],
             "description": [
                 123
             ],
@@ -6228,8 +6135,8 @@ export default {
             "githubUrl": [
                 123
             ],
-            "bg": [
-                8
+            "url": [
+                123
             ],
             "__typename": [
                 123
@@ -6422,21 +6329,6 @@ export default {
             "slug_not_ends_with": [
                 123
             ],
-            "stack": [
-                123
-            ],
-            "stack_not": [
-                123
-            ],
-            "stack_contains_all": [
-                123
-            ],
-            "stack_contains_some": [
-                123
-            ],
-            "stack_contains_none": [
-                123
-            ],
             "description": [
                 123
             ],
@@ -6527,6 +6419,36 @@ export default {
             "githubUrl_not_ends_with": [
                 123
             ],
+            "url": [
+                123
+            ],
+            "url_not": [
+                123
+            ],
+            "url_in": [
+                123
+            ],
+            "url_not_in": [
+                123
+            ],
+            "url_contains": [
+                123
+            ],
+            "url_not_contains": [
+                123
+            ],
+            "url_starts_with": [
+                123
+            ],
+            "url_not_starts_with": [
+                123
+            ],
+            "url_ends_with": [
+                123
+            ],
+            "url_not_ends_with": [
+                123
+            ],
             "publishedBy": [
                 138
             ],
@@ -6535,15 +6457,6 @@ export default {
             ],
             "createdBy": [
                 138
-            ],
-            "bg_every": [
-                30
-            ],
-            "bg_some": [
-                30
-            ],
-            "bg_none": [
-                30
             ],
             "scheduledIn_every": [
                 100
@@ -6563,9 +6476,6 @@ export default {
             "slug": [
                 123
             ],
-            "stack": [
-                123
-            ],
             "description": [
                 123
             ],
@@ -6575,8 +6485,8 @@ export default {
             "githubUrl": [
                 123
             ],
-            "bg": [
-                18
+            "url": [
+                123
             ],
             "__typename": [
                 123
@@ -6609,9 +6519,6 @@ export default {
             ]
         },
         "WorksUpdateManyInput": {
-            "stack": [
-                123
-            ],
             "description": [
                 123
             ],
@@ -6619,6 +6526,9 @@ export default {
                 123
             ],
             "githubUrl": [
+                123
+            ],
+            "url": [
                 123
             ],
             "__typename": [
@@ -6854,21 +6764,6 @@ export default {
             "slug_not_ends_with": [
                 123
             ],
-            "stack": [
-                123
-            ],
-            "stack_not": [
-                123
-            ],
-            "stack_contains_all": [
-                123
-            ],
-            "stack_contains_some": [
-                123
-            ],
-            "stack_contains_none": [
-                123
-            ],
             "description": [
                 123
             ],
@@ -6959,6 +6854,36 @@ export default {
             "githubUrl_not_ends_with": [
                 123
             ],
+            "url": [
+                123
+            ],
+            "url_not": [
+                123
+            ],
+            "url_in": [
+                123
+            ],
+            "url_not_in": [
+                123
+            ],
+            "url_contains": [
+                123
+            ],
+            "url_not_contains": [
+                123
+            ],
+            "url_starts_with": [
+                123
+            ],
+            "url_not_starts_with": [
+                123
+            ],
+            "url_ends_with": [
+                123
+            ],
+            "url_not_ends_with": [
+                123
+            ],
             "publishedBy": [
                 138
             ],
@@ -6967,15 +6892,6 @@ export default {
             ],
             "createdBy": [
                 138
-            ],
-            "bg_every": [
-                30
-            ],
-            "bg_some": [
-                30
-            ],
-            "bg_none": [
-                30
             ],
             "scheduledIn_every": [
                 100

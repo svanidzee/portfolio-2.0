@@ -3,7 +3,7 @@
 import { Box, Container } from '@chakra-ui/react';
 
 import { Providers } from './providers';
-import { kanit, poppins, archivo, myFont } from '../lib/fonts';
+import { rokkitt } from '../lib/fonts';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Providers>
           <Header />
-          <Box as='main' maxW='max-content' className={poppins.className}>
+          <Box as='main' maxW='max-content' className={rokkitt.className}>
             {/* <Box as='main' maxW='max-content' className={myFont.className}> */}
             {children}
           </Box>

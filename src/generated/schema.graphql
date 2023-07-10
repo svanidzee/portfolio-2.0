@@ -156,35 +156,6 @@ type Asset implements Node {
     """
     forceParentLocale: Boolean
   ): User
-  bgWorks(
-    where: WorksWhereInput
-    orderBy: WorksOrderByInput
-    skip: Int
-    after: String
-    before: String
-    first: Int
-    last: Int
-
-    """
-    Allows to optionally override locale filtering behaviour in the query's subtree.
-    
-    Note that `bgWorks` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-    For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
-    
-    This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
-    """
-    locales: [Locale!]
-
-    """
-    Sets the locale of the resolved parent document as the only locale in the query's subtree.
-    
-    Note that `bgWorks` is a model without localized fields and will not be affected directly by this argument, however the locale will be passed on to any relational fields in the query's subtree for filtering.
-    For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
-    
-    This argument will affect any existing locale filtering defined in the query's tree for the subtree.
-    """
-    forceParentLocale: Boolean
-  ): [Works!]!
   scheduledIn(
     where: ScheduledOperationWhereInput
     skip: Int
@@ -258,7 +229,6 @@ input AssetCreateInput {
   handle: String!
   updatedAt: DateTime
   createdAt: DateTime
-  bgWorks: WorksCreateManyInlineInput
 
   """
   Inline mutations for managing document localizations excluding the default locale
@@ -426,9 +396,6 @@ input AssetManyWhereInput {
   publishedBy: UserWhereInput
   updatedBy: UserWhereInput
   createdBy: UserWhereInput
-  bgWorks_every: WorksWhereInput
-  bgWorks_some: WorksWhereInput
-  bgWorks_none: WorksWhereInput
   scheduledIn_every: ScheduledOperationWhereInput
   scheduledIn_some: ScheduledOperationWhereInput
   scheduledIn_none: ScheduledOperationWhereInput
@@ -473,7 +440,6 @@ input AssetUpdateInput {
   height: Float
   fileName: String
   handle: String
-  bgWorks: WorksUpdateManyInlineInput
 
   """Manage document localizations"""
   localizations: AssetUpdateLocalizationsInput
@@ -890,9 +856,6 @@ input AssetWhereInput {
   publishedBy: UserWhereInput
   updatedBy: UserWhereInput
   createdBy: UserWhereInput
-  bgWorks_every: WorksWhereInput
-  bgWorks_some: WorksWhereInput
-  bgWorks_none: WorksWhereInput
   scheduledIn_every: ScheduledOperationWhereInput
   scheduledIn_some: ScheduledOperationWhereInput
   scheduledIn_none: ScheduledOperationWhereInput
@@ -5071,10 +5034,10 @@ type Works implements Node {
   """The unique identifier"""
   id: ID!
   slug: String
-  stack: [String!]!
   description: String!
   name: String!
   githubUrl: String!
+  url: String!
 
   """User that last published this document"""
   publishedBy(
@@ -5144,35 +5107,6 @@ type Works implements Node {
     """
     forceParentLocale: Boolean
   ): User
-  bg(
-    where: AssetWhereInput
-    orderBy: AssetOrderByInput
-    skip: Int
-    after: String
-    before: String
-    first: Int
-    last: Int
-
-    """
-    Allows to optionally override locale filtering behaviour in the query's subtree.
-    
-    Note that `bg` will be affected directly by this argument, as well as any other related models with localized fields in the query's subtree.
-    The first locale matching the provided list will be returned, localized entries that do not have the provided locale defined will be filtered out.
-    
-    This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
-    """
-    locales: [Locale!]
-
-    """
-    Sets the locale of the parent document as the first locale in the fallback locales in the query's subtree.
-    
-    Note that `bg` will be affected directly by this argument, as well as any other related models with localized fields in the query's subtree.
-    The first locale matching the provided list will be returned, localized entries that do not have the provided locale defined will be filtered out.
-    
-    This argument will affect any existing locale filtering defined in the query's tree for the subtree.
-    """
-    forceParentLocale: Boolean
-  ): [Asset!]!
   scheduledIn(
     where: ScheduledOperationWhereInput
     skip: Int
@@ -5238,11 +5172,10 @@ input WorksCreateInput {
   updatedAt: DateTime
   createdAt: DateTime
   slug: String
-  stack: [String!]!
   description: String!
   name: String!
   githubUrl: String!
-  bg: AssetCreateManyInlineInput
+  url: String!
 }
 
 input WorksCreateManyInlineInput {
@@ -5408,29 +5341,6 @@ input WorksManyWhereInput {
 
   """All values not ending with the given string"""
   slug_not_ends_with: String
-
-  """
-  Matches if the field array contains *all* items provided to the filter and order does match
-  """
-  stack: [String!]
-
-  """
-  Matches if the field array does not contains *all* items provided to the filter or order does not match
-  """
-  stack_not: [String!]
-
-  """Matches if the field array contains *all* items provided to the filter"""
-  stack_contains_all: [String!]
-
-  """
-  Matches if the field array contains at least one item provided to the filter
-  """
-  stack_contains_some: [String!]
-
-  """
-  Matches if the field array does not contain any of the items provided to the filter
-  """
-  stack_contains_none: [String!]
   description: String
 
   """Any other value that exists and is not equal to the given value."""
@@ -5515,12 +5425,37 @@ input WorksManyWhereInput {
 
   """All values not ending with the given string"""
   githubUrl_not_ends_with: String
+  url: String
+
+  """Any other value that exists and is not equal to the given value."""
+  url_not: String
+
+  """All values that are contained in given list."""
+  url_in: [String]
+
+  """All values that are not contained in given list."""
+  url_not_in: [String]
+
+  """All values containing the given string."""
+  url_contains: String
+
+  """All values not containing the given string."""
+  url_not_contains: String
+
+  """All values starting with the given string."""
+  url_starts_with: String
+
+  """All values not starting with the given string."""
+  url_not_starts_with: String
+
+  """All values ending with the given string."""
+  url_ends_with: String
+
+  """All values not ending with the given string"""
+  url_not_ends_with: String
   publishedBy: UserWhereInput
   updatedBy: UserWhereInput
   createdBy: UserWhereInput
-  bg_every: AssetWhereInput
-  bg_some: AssetWhereInput
-  bg_none: AssetWhereInput
   scheduledIn_every: ScheduledOperationWhereInput
   scheduledIn_some: ScheduledOperationWhereInput
   scheduledIn_none: ScheduledOperationWhereInput
@@ -5537,23 +5472,22 @@ enum WorksOrderByInput {
   id_DESC
   slug_ASC
   slug_DESC
-  stack_ASC
-  stack_DESC
   description_ASC
   description_DESC
   name_ASC
   name_DESC
   githubUrl_ASC
   githubUrl_DESC
+  url_ASC
+  url_DESC
 }
 
 input WorksUpdateInput {
   slug: String
-  stack: [String!]
   description: String
   name: String
   githubUrl: String
-  bg: AssetUpdateManyInlineInput
+  url: String
 }
 
 input WorksUpdateManyInlineInput {
@@ -5582,10 +5516,10 @@ input WorksUpdateManyInlineInput {
 }
 
 input WorksUpdateManyInput {
-  stack: [String!]
   description: String
   name: String
   githubUrl: String
+  url: String
 }
 
 input WorksUpdateManyWithNestedWhereInput {
@@ -5788,29 +5722,6 @@ input WorksWhereInput {
 
   """All values not ending with the given string"""
   slug_not_ends_with: String
-
-  """
-  Matches if the field array contains *all* items provided to the filter and order does match
-  """
-  stack: [String!]
-
-  """
-  Matches if the field array does not contains *all* items provided to the filter or order does not match
-  """
-  stack_not: [String!]
-
-  """Matches if the field array contains *all* items provided to the filter"""
-  stack_contains_all: [String!]
-
-  """
-  Matches if the field array contains at least one item provided to the filter
-  """
-  stack_contains_some: [String!]
-
-  """
-  Matches if the field array does not contain any of the items provided to the filter
-  """
-  stack_contains_none: [String!]
   description: String
 
   """Any other value that exists and is not equal to the given value."""
@@ -5895,12 +5806,37 @@ input WorksWhereInput {
 
   """All values not ending with the given string"""
   githubUrl_not_ends_with: String
+  url: String
+
+  """Any other value that exists and is not equal to the given value."""
+  url_not: String
+
+  """All values that are contained in given list."""
+  url_in: [String]
+
+  """All values that are not contained in given list."""
+  url_not_in: [String]
+
+  """All values containing the given string."""
+  url_contains: String
+
+  """All values not containing the given string."""
+  url_not_contains: String
+
+  """All values starting with the given string."""
+  url_starts_with: String
+
+  """All values not starting with the given string."""
+  url_not_starts_with: String
+
+  """All values ending with the given string."""
+  url_ends_with: String
+
+  """All values not ending with the given string"""
+  url_not_ends_with: String
   publishedBy: UserWhereInput
   updatedBy: UserWhereInput
   createdBy: UserWhereInput
-  bg_every: AssetWhereInput
-  bg_some: AssetWhereInput
-  bg_none: AssetWhereInput
   scheduledIn_every: ScheduledOperationWhereInput
   scheduledIn_some: ScheduledOperationWhereInput
   scheduledIn_none: ScheduledOperationWhereInput

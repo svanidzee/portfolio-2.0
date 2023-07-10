@@ -31,27 +31,24 @@ export async function getWorksPage() {
       id: true,
       name: true,
       githubUrl: true,
-      stack: true,
       description: true,
-      bg: {
-        url: true,
-      },
+      url: true,
     },
   });
 
   return work;
 }
 
-export async function geTAssets() {
-  const { assets } = await client.query({
-    assets: {
-      __args: {
-        stage: 'PUBLISHED',
-        locales: ['en'],
-      },
-      url: true,
-    },
-  });
+// export async function geTAssets() {
+//   const { assets } = await client.query({
+//     assets: {
+//       __args: {
+//         stage: 'PUBLISHED',
+//         locales: ['en'],
+//       },
+//       url: true,
+//     },
+//   });
 
-  return assets;
-}
+//   return assets;
+// }

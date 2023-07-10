@@ -1,5 +1,4 @@
-import { extendTheme, theme as baseTheme } from '@chakra-ui/react';
-import { createMultiStyleConfigHelpers, defineStyle, defineStyleConfig } from '@chakra-ui/react';
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react';
 import { menuAnatomy } from '@chakra-ui/anatomy';
 
 const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(
@@ -115,7 +114,7 @@ const variants = {
 };
 
 // export the component theme
-const menuTheme = defineMultiStyleConfig({
+export const menuTheme = defineMultiStyleConfig({
   baseStyle,
   sizes,
   variants,
@@ -124,98 +123,3 @@ const menuTheme = defineMultiStyleConfig({
     size: 'xl',
   },
 });
-//////////////////////////
-
-//////////////////
-const thick = defineStyle({
-  borderWidth: '2.8px',
-  borderStyle: 'solid',
-  // borderRadius: 5,
-  borderColor: '#2a2a2a',
-  // border: '10px solid',
-  // borderRadius: '10px',
-});
-
-const dividerTheme = defineStyleConfig({
-  variants: { thick },
-});
-/////////////////
-
-const Text = defineStyleConfig({
-  baseStyle: {
-    fontWeight: 700,
-  },
-  variants: {
-    // ?
-    primary: {
-      fontSize: '176px',
-      lineHeight: '160px',
-      fontWeight: '900',
-      textIndent: '1em',
-    },
-    secondary: {
-      lineHeight: ['2.438rem', '2.438rem', '2.438rem', '2.438rem', '4.4rem'],
-      fontSize: ['1.563rem', '1.563rem', '1.875rem', '2.5rem', '4rem'],
-      letterSpacing: ['-0.125rem', '-0.125rem', '0', '0', '0rem'],
-    },
-  },
-});
-
-const Heading = defineStyleConfig({
-  baseStyle: {
-    fontWeight: 600,
-  },
-  variants: {
-    base: {
-      lineHeight: ['6.25rem', '6.25rem', '3.125rem', '5rem', '5rem'],
-      fontSize: ['1.875rem', '1.875rem', '1.875rem', '2.625rem', '4.813rem'],
-    },
-  },
-});
-
-const WrapItem = defineStyleConfig({
-  baseStyle: {
-    fontWeight: 600,
-  },
-  variants: {
-    base: {
-      lineHeight: ['1.25rem', '1.25rem', '3.125rem', '5rem', '5rem'],
-      fontSize: ['1.375rem', '1.375rem', '1.875rem', '2.625rem', '3.75rem'],
-    },
-  },
-});
-
-const Box = defineStyleConfig({
-  variants: {
-    navigation: {
-      width: '100%',
-      marginBottom: '3.75rem',
-      background: 'white',
-      color: 'black',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'end',
-    },
-  },
-});
-
-const theme = extendTheme({
-  styles: {
-    global: {
-      body: {
-        bg: 'white',
-        color: 'black',
-      },
-    },
-  },
-  components: {
-    Divider: dividerTheme,
-    Text,
-    Box,
-    Heading,
-    WrapItem,
-    Menu: menuTheme,
-  },
-});
-
-export default theme;

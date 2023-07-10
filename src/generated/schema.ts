@@ -61,7 +61,6 @@ export interface Asset {
     updatedBy: (User | null)
     /** User that created this document */
     createdBy: (User | null)
-    bgWorks: Works[]
     scheduledIn: ScheduledOperation[]
     /** List of Asset versions */
     history: Version[]
@@ -638,17 +637,16 @@ export interface Works {
     /** The unique identifier */
     id: Scalars['ID']
     slug: (Scalars['String'] | null)
-    stack: Scalars['String'][]
     description: Scalars['String']
     name: Scalars['String']
     githubUrl: Scalars['String']
+    url: Scalars['String']
     /** User that last published this document */
     publishedBy: (User | null)
     /** User that last updated this document */
     updatedBy: (User | null)
     /** User that created this document */
     createdBy: (User | null)
-    bg: Asset[]
     scheduledIn: ScheduledOperation[]
     /** List of Works versions */
     history: Version[]
@@ -676,7 +674,7 @@ export interface WorksEdge {
     __typename: 'WorksEdge'
 }
 
-export type WorksOrderByInput = 'publishedAt_ASC' | 'publishedAt_DESC' | 'updatedAt_ASC' | 'updatedAt_DESC' | 'createdAt_ASC' | 'createdAt_DESC' | 'id_ASC' | 'id_DESC' | 'slug_ASC' | 'slug_DESC' | 'stack_ASC' | 'stack_DESC' | 'description_ASC' | 'description_DESC' | 'name_ASC' | 'name_DESC' | 'githubUrl_ASC' | 'githubUrl_DESC'
+export type WorksOrderByInput = 'publishedAt_ASC' | 'publishedAt_DESC' | 'updatedAt_ASC' | 'updatedAt_DESC' | 'createdAt_ASC' | 'createdAt_DESC' | 'id_ASC' | 'id_DESC' | 'slug_ASC' | 'slug_DESC' | 'description_ASC' | 'description_DESC' | 'name_ASC' | 'name_DESC' | 'githubUrl_ASC' | 'githubUrl_DESC' | 'url_ASC' | 'url_DESC'
 
 export type _FilterKind = 'search' | 'AND' | 'OR' | 'NOT' | 'eq' | 'eq_not' | 'in' | 'not_in' | 'lt' | 'lte' | 'gt' | 'gte' | 'contains' | 'not_contains' | 'starts_with' | 'not_starts_with' | 'ends_with' | 'not_ends_with' | 'contains_all' | 'contains_some' | 'contains_none' | 'relational_single' | 'relational_every' | 'relational_some' | 'relational_none' | 'json_path_exists' | 'json_value_recursive' | 'union_empty' | 'union_single' | 'union_some' | 'union_every' | 'union_none'
 
@@ -817,25 +815,6 @@ export interface AssetGenqlSelection{
      * This argument will affect any existing locale filtering defined in the query's tree for the subtree.
      */
     forceParentLocale?: (Scalars['Boolean'] | null)} })
-    bgWorks?: (WorksGenqlSelection & { __args?: {where?: (WorksWhereInput | null), orderBy?: (WorksOrderByInput | null), skip?: (Scalars['Int'] | null), after?: (Scalars['String'] | null), before?: (Scalars['String'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), 
-    /**
-     * Allows to optionally override locale filtering behaviour in the query's subtree.
-     * 
-     * Note that `bgWorks` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.
-     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
-     * 
-     * This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
-     */
-    locales?: (Locale[] | null), 
-    /**
-     * Sets the locale of the resolved parent document as the only locale in the query's subtree.
-     * 
-     * Note that `bgWorks` is a model without localized fields and will not be affected directly by this argument, however the locale will be passed on to any relational fields in the query's subtree for filtering.
-     * For related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.
-     * 
-     * This argument will affect any existing locale filtering defined in the query's tree for the subtree.
-     */
-    forceParentLocale?: (Scalars['Boolean'] | null)} })
     scheduledIn?: (ScheduledOperationGenqlSelection & { __args?: {where?: (ScheduledOperationWhereInput | null), skip?: (Scalars['Int'] | null), after?: (Scalars['String'] | null), before?: (Scalars['String'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), 
     /**
      * Allows to optionally override locale filtering behaviour in the query's subtree.
@@ -883,7 +862,7 @@ export interface AssetConnectionGenqlSelection{
     __scalar?: boolean | number
 }
 
-export interface AssetCreateInput {mimeType?: (Scalars['String'] | null),size?: (Scalars['Float'] | null),width?: (Scalars['Float'] | null),height?: (Scalars['Float'] | null),fileName?: Scalars['String'],handle?: Scalars['String'],updatedAt?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),bgWorks?: (WorksCreateManyInlineInput | null),
+export interface AssetCreateInput {mimeType?: (Scalars['String'] | null),size?: (Scalars['Float'] | null),width?: (Scalars['Float'] | null),height?: (Scalars['Float'] | null),fileName?: Scalars['String'],handle?: Scalars['String'],updatedAt?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),
 /** Inline mutations for managing document localizations excluding the default locale */
 localizations?: (AssetCreateLocalizationsInput | null)}
 
@@ -990,7 +969,7 @@ id_not_starts_with?: (Scalars['ID'] | null),
 /** All values ending with the given string. */
 id_ends_with?: (Scalars['ID'] | null),
 /** All values not ending with the given string */
-id_not_ends_with?: (Scalars['ID'] | null),publishedBy?: (UserWhereInput | null),updatedBy?: (UserWhereInput | null),createdBy?: (UserWhereInput | null),bgWorks_every?: (WorksWhereInput | null),bgWorks_some?: (WorksWhereInput | null),bgWorks_none?: (WorksWhereInput | null),scheduledIn_every?: (ScheduledOperationWhereInput | null),scheduledIn_some?: (ScheduledOperationWhereInput | null),scheduledIn_none?: (ScheduledOperationWhereInput | null)}
+id_not_ends_with?: (Scalars['ID'] | null),publishedBy?: (UserWhereInput | null),updatedBy?: (UserWhereInput | null),createdBy?: (UserWhereInput | null),scheduledIn_every?: (ScheduledOperationWhereInput | null),scheduledIn_some?: (ScheduledOperationWhereInput | null),scheduledIn_none?: (ScheduledOperationWhereInput | null)}
 
 
 /** Transformations for Assets */
@@ -998,7 +977,7 @@ export interface AssetTransformationInput {image?: (ImageTransformationInput | n
 /** Pass true if you want to validate the passed transformation parameters */
 validateOptions?: (Scalars['Boolean'] | null)}
 
-export interface AssetUpdateInput {mimeType?: (Scalars['String'] | null),size?: (Scalars['Float'] | null),width?: (Scalars['Float'] | null),height?: (Scalars['Float'] | null),fileName?: (Scalars['String'] | null),handle?: (Scalars['String'] | null),bgWorks?: (WorksUpdateManyInlineInput | null),
+export interface AssetUpdateInput {mimeType?: (Scalars['String'] | null),size?: (Scalars['Float'] | null),width?: (Scalars['Float'] | null),height?: (Scalars['Float'] | null),fileName?: (Scalars['String'] | null),handle?: (Scalars['String'] | null),
 /** Manage document localizations */
 localizations?: (AssetUpdateLocalizationsInput | null)}
 
@@ -1254,7 +1233,7 @@ id_not_starts_with?: (Scalars['ID'] | null),
 /** All values ending with the given string. */
 id_ends_with?: (Scalars['ID'] | null),
 /** All values not ending with the given string */
-id_not_ends_with?: (Scalars['ID'] | null),publishedBy?: (UserWhereInput | null),updatedBy?: (UserWhereInput | null),createdBy?: (UserWhereInput | null),bgWorks_every?: (WorksWhereInput | null),bgWorks_some?: (WorksWhereInput | null),bgWorks_none?: (WorksWhereInput | null),scheduledIn_every?: (ScheduledOperationWhereInput | null),scheduledIn_some?: (ScheduledOperationWhereInput | null),scheduledIn_none?: (ScheduledOperationWhereInput | null)}
+id_not_ends_with?: (Scalars['ID'] | null),publishedBy?: (UserWhereInput | null),updatedBy?: (UserWhereInput | null),createdBy?: (UserWhereInput | null),scheduledIn_every?: (ScheduledOperationWhereInput | null),scheduledIn_some?: (ScheduledOperationWhereInput | null),scheduledIn_none?: (ScheduledOperationWhereInput | null)}
 
 
 /** The document in stages filter allows specifying a stage entry to cross compare the same document between different stages */
@@ -3922,10 +3901,10 @@ export interface WorksGenqlSelection{
     /** The unique identifier */
     id?: boolean | number
     slug?: boolean | number
-    stack?: boolean | number
     description?: boolean | number
     name?: boolean | number
     githubUrl?: boolean | number
+    url?: boolean | number
     /** User that last published this document */
     publishedBy?: (UserGenqlSelection & { __args?: {
     /**
@@ -3986,25 +3965,6 @@ export interface WorksGenqlSelection{
      * This argument will affect any existing locale filtering defined in the query's tree for the subtree.
      */
     forceParentLocale?: (Scalars['Boolean'] | null)} })
-    bg?: (AssetGenqlSelection & { __args?: {where?: (AssetWhereInput | null), orderBy?: (AssetOrderByInput | null), skip?: (Scalars['Int'] | null), after?: (Scalars['String'] | null), before?: (Scalars['String'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), 
-    /**
-     * Allows to optionally override locale filtering behaviour in the query's subtree.
-     * 
-     * Note that `bg` will be affected directly by this argument, as well as any other related models with localized fields in the query's subtree.
-     * The first locale matching the provided list will be returned, localized entries that do not have the provided locale defined will be filtered out.
-     * 
-     * This argument will overwrite any existing locale filtering defined in the query's tree for the subtree.
-     */
-    locales?: (Locale[] | null), 
-    /**
-     * Sets the locale of the parent document as the first locale in the fallback locales in the query's subtree.
-     * 
-     * Note that `bg` will be affected directly by this argument, as well as any other related models with localized fields in the query's subtree.
-     * The first locale matching the provided list will be returned, localized entries that do not have the provided locale defined will be filtered out.
-     * 
-     * This argument will affect any existing locale filtering defined in the query's tree for the subtree.
-     */
-    forceParentLocale?: (Scalars['Boolean'] | null)} })
     scheduledIn?: (ScheduledOperationGenqlSelection & { __args?: {where?: (ScheduledOperationWhereInput | null), skip?: (Scalars['Int'] | null), after?: (Scalars['String'] | null), before?: (Scalars['String'] | null), first?: (Scalars['Int'] | null), last?: (Scalars['Int'] | null), 
     /**
      * Allows to optionally override locale filtering behaviour in the query's subtree.
@@ -4050,7 +4010,7 @@ export interface WorksConnectionGenqlSelection{
     __scalar?: boolean | number
 }
 
-export interface WorksCreateInput {updatedAt?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),slug?: (Scalars['String'] | null),stack?: Scalars['String'][],description?: Scalars['String'],name?: Scalars['String'],githubUrl?: Scalars['String'],bg?: (AssetCreateManyInlineInput | null)}
+export interface WorksCreateInput {updatedAt?: (Scalars['DateTime'] | null),createdAt?: (Scalars['DateTime'] | null),slug?: (Scalars['String'] | null),description?: Scalars['String'],name?: Scalars['String'],githubUrl?: Scalars['String'],url?: Scalars['String']}
 
 export interface WorksCreateManyInlineInput {
 /** Create and connect multiple existing Works documents */
@@ -4163,17 +4123,7 @@ slug_not_starts_with?: (Scalars['String'] | null),
 /** All values ending with the given string. */
 slug_ends_with?: (Scalars['String'] | null),
 /** All values not ending with the given string */
-slug_not_ends_with?: (Scalars['String'] | null),
-/** Matches if the field array contains *all* items provided to the filter and order does match */
-stack?: (Scalars['String'][] | null),
-/** Matches if the field array does not contains *all* items provided to the filter or order does not match */
-stack_not?: (Scalars['String'][] | null),
-/** Matches if the field array contains *all* items provided to the filter */
-stack_contains_all?: (Scalars['String'][] | null),
-/** Matches if the field array contains at least one item provided to the filter */
-stack_contains_some?: (Scalars['String'][] | null),
-/** Matches if the field array does not contain any of the items provided to the filter */
-stack_contains_none?: (Scalars['String'][] | null),description?: (Scalars['String'] | null),
+slug_not_ends_with?: (Scalars['String'] | null),description?: (Scalars['String'] | null),
 /** Any other value that exists and is not equal to the given value. */
 description_not?: (Scalars['String'] | null),
 /** All values that are contained in given list. */
@@ -4227,9 +4177,27 @@ githubUrl_not_starts_with?: (Scalars['String'] | null),
 /** All values ending with the given string. */
 githubUrl_ends_with?: (Scalars['String'] | null),
 /** All values not ending with the given string */
-githubUrl_not_ends_with?: (Scalars['String'] | null),publishedBy?: (UserWhereInput | null),updatedBy?: (UserWhereInput | null),createdBy?: (UserWhereInput | null),bg_every?: (AssetWhereInput | null),bg_some?: (AssetWhereInput | null),bg_none?: (AssetWhereInput | null),scheduledIn_every?: (ScheduledOperationWhereInput | null),scheduledIn_some?: (ScheduledOperationWhereInput | null),scheduledIn_none?: (ScheduledOperationWhereInput | null)}
+githubUrl_not_ends_with?: (Scalars['String'] | null),url?: (Scalars['String'] | null),
+/** Any other value that exists and is not equal to the given value. */
+url_not?: (Scalars['String'] | null),
+/** All values that are contained in given list. */
+url_in?: ((Scalars['String'] | null)[] | null),
+/** All values that are not contained in given list. */
+url_not_in?: ((Scalars['String'] | null)[] | null),
+/** All values containing the given string. */
+url_contains?: (Scalars['String'] | null),
+/** All values not containing the given string. */
+url_not_contains?: (Scalars['String'] | null),
+/** All values starting with the given string. */
+url_starts_with?: (Scalars['String'] | null),
+/** All values not starting with the given string. */
+url_not_starts_with?: (Scalars['String'] | null),
+/** All values ending with the given string. */
+url_ends_with?: (Scalars['String'] | null),
+/** All values not ending with the given string */
+url_not_ends_with?: (Scalars['String'] | null),publishedBy?: (UserWhereInput | null),updatedBy?: (UserWhereInput | null),createdBy?: (UserWhereInput | null),scheduledIn_every?: (ScheduledOperationWhereInput | null),scheduledIn_some?: (ScheduledOperationWhereInput | null),scheduledIn_none?: (ScheduledOperationWhereInput | null)}
 
-export interface WorksUpdateInput {slug?: (Scalars['String'] | null),stack?: (Scalars['String'][] | null),description?: (Scalars['String'] | null),name?: (Scalars['String'] | null),githubUrl?: (Scalars['String'] | null),bg?: (AssetUpdateManyInlineInput | null)}
+export interface WorksUpdateInput {slug?: (Scalars['String'] | null),description?: (Scalars['String'] | null),name?: (Scalars['String'] | null),githubUrl?: (Scalars['String'] | null),url?: (Scalars['String'] | null)}
 
 export interface WorksUpdateManyInlineInput {
 /** Create and connect multiple Works documents */
@@ -4247,7 +4215,7 @@ disconnect?: (WorksWhereUniqueInput[] | null),
 /** Delete multiple Works documents */
 delete?: (WorksWhereUniqueInput[] | null)}
 
-export interface WorksUpdateManyInput {stack?: (Scalars['String'][] | null),description?: (Scalars['String'] | null),name?: (Scalars['String'] | null),githubUrl?: (Scalars['String'] | null)}
+export interface WorksUpdateManyInput {description?: (Scalars['String'] | null),name?: (Scalars['String'] | null),githubUrl?: (Scalars['String'] | null),url?: (Scalars['String'] | null)}
 
 export interface WorksUpdateManyWithNestedWhereInput {
 /** Document search */
@@ -4381,17 +4349,7 @@ slug_not_starts_with?: (Scalars['String'] | null),
 /** All values ending with the given string. */
 slug_ends_with?: (Scalars['String'] | null),
 /** All values not ending with the given string */
-slug_not_ends_with?: (Scalars['String'] | null),
-/** Matches if the field array contains *all* items provided to the filter and order does match */
-stack?: (Scalars['String'][] | null),
-/** Matches if the field array does not contains *all* items provided to the filter or order does not match */
-stack_not?: (Scalars['String'][] | null),
-/** Matches if the field array contains *all* items provided to the filter */
-stack_contains_all?: (Scalars['String'][] | null),
-/** Matches if the field array contains at least one item provided to the filter */
-stack_contains_some?: (Scalars['String'][] | null),
-/** Matches if the field array does not contain any of the items provided to the filter */
-stack_contains_none?: (Scalars['String'][] | null),description?: (Scalars['String'] | null),
+slug_not_ends_with?: (Scalars['String'] | null),description?: (Scalars['String'] | null),
 /** Any other value that exists and is not equal to the given value. */
 description_not?: (Scalars['String'] | null),
 /** All values that are contained in given list. */
@@ -4445,7 +4403,25 @@ githubUrl_not_starts_with?: (Scalars['String'] | null),
 /** All values ending with the given string. */
 githubUrl_ends_with?: (Scalars['String'] | null),
 /** All values not ending with the given string */
-githubUrl_not_ends_with?: (Scalars['String'] | null),publishedBy?: (UserWhereInput | null),updatedBy?: (UserWhereInput | null),createdBy?: (UserWhereInput | null),bg_every?: (AssetWhereInput | null),bg_some?: (AssetWhereInput | null),bg_none?: (AssetWhereInput | null),scheduledIn_every?: (ScheduledOperationWhereInput | null),scheduledIn_some?: (ScheduledOperationWhereInput | null),scheduledIn_none?: (ScheduledOperationWhereInput | null)}
+githubUrl_not_ends_with?: (Scalars['String'] | null),url?: (Scalars['String'] | null),
+/** Any other value that exists and is not equal to the given value. */
+url_not?: (Scalars['String'] | null),
+/** All values that are contained in given list. */
+url_in?: ((Scalars['String'] | null)[] | null),
+/** All values that are not contained in given list. */
+url_not_in?: ((Scalars['String'] | null)[] | null),
+/** All values containing the given string. */
+url_contains?: (Scalars['String'] | null),
+/** All values not containing the given string. */
+url_not_contains?: (Scalars['String'] | null),
+/** All values starting with the given string. */
+url_starts_with?: (Scalars['String'] | null),
+/** All values not starting with the given string. */
+url_not_starts_with?: (Scalars['String'] | null),
+/** All values ending with the given string. */
+url_ends_with?: (Scalars['String'] | null),
+/** All values not ending with the given string */
+url_not_ends_with?: (Scalars['String'] | null),publishedBy?: (UserWhereInput | null),updatedBy?: (UserWhereInput | null),createdBy?: (UserWhereInput | null),scheduledIn_every?: (ScheduledOperationWhereInput | null),scheduledIn_some?: (ScheduledOperationWhereInput | null),scheduledIn_none?: (ScheduledOperationWhereInput | null)}
 
 
 /** The document in stages filter allows specifying a stage entry to cross compare the same document between different stages */
@@ -4892,14 +4868,14 @@ export const enumWorksOrderByInput = {
    id_DESC: 'id_DESC' as const,
    slug_ASC: 'slug_ASC' as const,
    slug_DESC: 'slug_DESC' as const,
-   stack_ASC: 'stack_ASC' as const,
-   stack_DESC: 'stack_DESC' as const,
    description_ASC: 'description_ASC' as const,
    description_DESC: 'description_DESC' as const,
    name_ASC: 'name_ASC' as const,
    name_DESC: 'name_DESC' as const,
    githubUrl_ASC: 'githubUrl_ASC' as const,
-   githubUrl_DESC: 'githubUrl_DESC' as const
+   githubUrl_DESC: 'githubUrl_DESC' as const,
+   url_ASC: 'url_ASC' as const,
+   url_DESC: 'url_DESC' as const
 }
 
 export const enum_filterKind = {

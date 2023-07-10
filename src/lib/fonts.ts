@@ -1,6 +1,8 @@
 import { Archivo } from 'next/font/google';
 import { Poppins } from 'next/font/google';
-import { Lexend } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
+import { Playfair_Display } from 'next/font/google';
+import { Rokkitt } from 'next/font/google';
 import localFont from 'next/font/local';
 
 // Font files can be colocated inside of `pages`
@@ -16,9 +18,21 @@ export const poppins = Poppins({
   weight: ['400', '500', '600', '700', '800', '900'],
 });
 
-export const kanit = Lexend({
+export const rokkitt = Rokkitt({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+});
+
+export const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  // weight: ["400" | "700" | ("400" | "700")]
+});
+
+export const playfair_display = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
+  style: ['italic'],
   // weight: ["400" | "700" | ("400" | "700")]
 });
 

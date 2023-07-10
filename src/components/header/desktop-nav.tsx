@@ -3,7 +3,7 @@
 import NextLink from 'next/link';
 import { Box, Stack } from '@chakra-ui/react';
 
-import { poppins } from '../../lib/fonts';
+import { poppins, rokkitt } from '../../lib/fonts';
 import { desktop_items } from './data';
 import Paragraph from '../paragraph';
 
@@ -18,8 +18,8 @@ export default function DesktopNav() {
       justifyContent='right'
       mt={{ base: 4, md: 0 }}>
       {desktop_items.map(({ path, label }) => (
-        <Box key={label} as={NextLink} href={path} prefetch={false} className={poppins.className}>
-          <Paragraph variant='secondary' fontSize={55} mr={5}>
+        <Box key={label} as={NextLink} href={path} prefetch={false} className={rokkitt.className}>
+          <Paragraph variant='secondary' fontSize={55} mr={5} color='#2a2a2a'>
             {label}
           </Paragraph>
         </Box>

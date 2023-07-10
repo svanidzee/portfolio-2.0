@@ -3,7 +3,7 @@
 import { Heading, Wrap, WrapItem, useStyleConfig } from '@chakra-ui/react';
 
 import { Container } from '../components/container';
-import { poppins } from '../lib/fonts';
+import { poppins, rokkitt } from '../lib/fonts';
 import Section from './layout/section';
 
 type StacksProps = {
@@ -16,7 +16,7 @@ export const Stack = ({ title, stack }: StacksProps) => {
 
   return (
     <Section>
-      <Heading className={poppins.className} variant='base'>
+      <Heading className={rokkitt.className} variant='base'>
         {title}
       </Heading>
 
