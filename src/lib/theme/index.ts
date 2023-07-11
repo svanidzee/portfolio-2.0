@@ -5,7 +5,4 @@ import { components } from './components';
 export const theme = extendTheme({
   styles,
   components,
-  //   semanticTokens,
-  //   fonts,
-  //   colors,
 });

@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Head from 'next/head';
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },
@@ -9,11 +8,11 @@ const variants = {
   exit: { opacity: 0, x: -0, y: 20 },
 };
 
-type A = {
-  children: React.ReactNode; // 👈️ type children
+type LayoutProps = {
+  children: React.ReactNode;
 };
 
-const Layout = ({ children }: A) => {
+export default function Layout({ children }: LayoutProps) {
   return (
     <motion.article
       initial='hidden'
@@ -25,6 +24,4 @@ const Layout = ({ children }: A) => {
       <>{children}</>
     </motion.article>
   );
-};
-
-export default Layout;
+}

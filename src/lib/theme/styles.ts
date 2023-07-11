@@ -3,6 +3,7 @@ export const styles = {
     body: {
       bg: 'white',
       color: 'black',
+      // fontFamily: "'Rokkitt'",
     },
   }),
 };

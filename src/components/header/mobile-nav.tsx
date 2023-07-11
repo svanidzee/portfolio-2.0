@@ -4,8 +4,8 @@ import NextLink from 'next/link';
 import { Box, Menu, MenuItem, MenuList, MenuButton, Button } from '@chakra-ui/react';
 import { BsArrowRightShort } from 'react-icons/bs';
 
-import { poppins } from '../../lib/fonts';
-import { mobile_items } from './data';
+import { rokkitt } from 'lib/fonts';
+import { mobileItems } from './data';
 
 export default function MobileNav() {
   return (
@@ -18,13 +18,15 @@ export default function MobileNav() {
             iconSpacing='-1.2'
             variant='ghost'
             color='black'
-            fontSize='2xl'
-            className={poppins.className}>
+            fontSize='1.6rem'
+            mt={1}
+            fontWeight={700}
+            className={rokkitt.className}>
             Menu
           </MenuButton>
 
-          <MenuList transition='all 0.2s' className={poppins.className}>
-            {mobile_items.map(({ label, href }, i) => (
+          <MenuList transition='all 0.2s' className={rokkitt.className}>
+            {mobileItems.map(({ label, href }, i) => (
               <NextLink key={i} href={href} passHref prefetch={false}>
                 <MenuItem as='a'>{label}</MenuItem>
               </NextLink>

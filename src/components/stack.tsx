@@ -1,17 +1,16 @@
 'use client';
 
-import { Heading, Wrap, WrapItem, useStyleConfig } from '@chakra-ui/react';
+import { useStyleConfig, Heading, Wrap, WrapItem } from '@chakra-ui/react';
 
-import { Container } from '../components/container';
-import { poppins, rokkitt } from '../lib/fonts';
-import Section from './layout/section';
+import { rokkitt } from '../lib/fonts';
+import Section from './layouts/section';
 
 type StacksProps = {
   title: string;
   stack: string[];
 };
 
-export const Stack = ({ title, stack }: StacksProps) => {
+export default function Stack({ title, stack }: StacksProps) {
   const styles = useStyleConfig('WrapItem', { variant: 'base' });
 
   return (
@@ -20,7 +19,7 @@ export const Stack = ({ title, stack }: StacksProps) => {
         {title}
       </Heading>
 
-      <Wrap spacing={7} maxH='auto'>
+      <Wrap spacing={6} maxH='auto' paddingY={5}>
         {stack.map((s, i) => (
           <WrapItem key={i} __css={styles}>
             {s}
@@ -29,4 +28,4 @@ export const Stack = ({ title, stack }: StacksProps) => {
       </Wrap>
     </Section>
   );
-};
+}

@@ -1,31 +1,36 @@
 'use client';
 
-import { Divider, Container } from '@chakra-ui/react';
+import { Box, Container, Divider, Heading, Text } from '@chakra-ui/react';
 
 import { Works } from '../generated/schema';
-import ProjectCard from './card';
+import ProjectCard from './project-card';
 
 type WantedKeys = 'id' | 'name' | 'githubUrl' | 'description' | 'url';
 type ProjectsProps = Pick<Works, WantedKeys>;
 
-const Projects = ({ works }: { works: ProjectsProps[] }) => {
+export default function Projects({ data }: { data: ProjectsProps[] }) {
   return (
-    <Container display='flex' flexDir='column' maxW='container.xl' px={10}>
-      {works &&
-        works.map(({ id, name, githubUrl, description, url }, i) => (
-          <>
-            <ProjectCard
-              key={id}
-              name={name}
-              githubUrl={githubUrl}
-              description={description}
-              url={url}
-            />
-            {i !== works.length - 1 && <Divider variant='thick' />}
-          </>
-        ))}
+    <Container
+      display='flex'
+      flexDir='column'
+      maxW='max-content'
+      paddingInlineStart='6'
+      paddingInlineEnd='6'>
+      <Box>
+        {data &&
+          data.map(({ id, name, githubUrl, description, url }, i) => (
+            <>
+              <ProjectCard
+                key={id}
+                name={name}
+                githubUrl={githubUrl}
+                description={description}
+                url={url}
+              />
+              {i !== data.length - 1 && <Divider variant='thick' />}
+            </>
+          ))}
+      </Box>
     </Container>
   );
-};
-
-export default Projects;
+}

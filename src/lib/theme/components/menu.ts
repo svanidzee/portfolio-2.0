@@ -9,13 +9,13 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 const baseStyle = definePartsStyle({
   button: {
     // MenuButton component
-    fontWeight: 'bold',
+    fontWeight: 700,
     // fontSize: '110',
     bg: 'white',
     color: 'black',
     _hover: {
       bg: 'red',
-      color: 'white',
+      color: 'red',
     },
   },
   list: {

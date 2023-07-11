@@ -1,11 +1,11 @@
 'use client';
 
 import NextLink from 'next/link';
-import { Box, Stack } from '@chakra-ui/react';
+import { Stack, Box } from '@chakra-ui/react';
 
-import { poppins, rokkitt } from '../../lib/fonts';
-import { desktop_items } from './data';
-import Paragraph from '../paragraph';
+import { desktopItems } from './data';
+import { rokkitt } from 'lib/fonts';
+import Paragraph from 'components/paragraph';
 
 export default function DesktopNav() {
   return (
@@ -17,9 +17,12 @@ export default function DesktopNav() {
       flexGrow={1}
       justifyContent='right'
       mt={{ base: 4, md: 0 }}>
-      {desktop_items.map(({ path, label }) => (
+      {desktopItems.map(({ path, label }) => (
         <Box key={label} as={NextLink} href={path} prefetch={false} className={rokkitt.className}>
-          <Paragraph variant='secondary' fontSize={55} mr={5} color='#2a2a2a'>
+          <Paragraph
+            variant='secondary'
+            fontSize={{ base: '11rem', md: '1.8rem', lg: '2.5rem', xl: '4rem' }}
+            mr={5}>
             {label}
           </Paragraph>
         </Box>

@@ -6,21 +6,18 @@ export const Text = defineStyleConfig({
   },
   variants: {
     primary: {
-      fontSize: '4.5rem',
-      lineHeight: 1,
-      color: '#2a2a2a',
-      fontWeight: 'bold',
-      textTransform: 'uppercase',
-      letterSpacing: '-3px',
+      lineHeight: ['2.1rem', '2.1rem', '2.438rem', '2.438rem', '4.4rem'],
+      fontSize: ['1.6rem', '1.6rem', '1.875rem', '2.5rem', '4rem'],
+      letterSpacing: ['-0.02rem', '-0.02rem', '0', '0', '0rem'],
     },
     secondary: {
-      lineHeight: ['2.438rem', '2.438rem', '2.438rem', '2.438rem', '4.4rem'],
-      fontSize: ['1.563rem', '1.563rem', '1.875rem', '2.5rem', '4rem'],
-      letterSpacing: ['-0.125rem', '-0.125rem', '0', '0', '0rem'],
+      lineHeight: ['2.1rem', '2.1rem', '2.438rem', '2.438rem', '4.4rem'],
+      fontSize: ['1.6rem', '1.6rem', '1.875rem', '2.5rem', '4rem'],
+      letterSpacing: ['-0.02rem', '-0.02rem', '0', '0', '0rem'],
     },
-    sub: {
+    tertiary: {
       color: '#312a2a',
-      fontSize: '28px',
+      fontSize: ['1.4rem', '1.2rem', '1.275rem', '2.5rem', '2rem'],
       fontStyle: 'italic',
       fontWeight: 500,
     },

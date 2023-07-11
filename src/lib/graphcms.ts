@@ -1,7 +1,7 @@
 import { createClient } from '../generated';
 
 export const client = createClient({
-  url: 'https://api-eu-central-1.hygraph.com/v2/cl7oxpeax3pg801uhhojx4bgb/master',
+  url: process.env.NEXT_PUBLIC_GRAPHCMS_API as string,
 });
 
 export async function getHomePage() {
@@ -38,17 +38,3 @@ export async function getWorksPage() {
 
   return work;
 }
-
-// export async function geTAssets() {
-//   const { assets } = await client.query({
-//     assets: {
-//       __args: {
-//         stage: 'PUBLISHED',
-//         locales: ['en'],
-//       },
-//       url: true,
-//     },
-//   });
-
-//   return assets;
-// }

@@ -1,4 +1,4 @@
-export const desktop_items = [
+export const desktopItems = [
   {
     path: '/',
     label: 'Home',
@@ -9,7 +9,7 @@ export const desktop_items = [
   },
 ];
 
-export const mobile_items = [
+export const mobileItems = [
   { label: 'Home', href: '/' },
   { label: 'Works', href: '/works' },
 ];
